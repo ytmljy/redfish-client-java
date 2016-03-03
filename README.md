@@ -1,13 +1,43 @@
-# redfish-client-java
-Redfish 1.0 Java client code.
+# swagger-java-client
 
-## Generating code
+## Requirements
+
+Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
+
+## Installation & Usage
+
+To install the API client library to your local Maven repository, simply execute:
+
+```shell
+mvn install
 ```
-sudo apt-get install -y maven
-git clone https://github.com/RackHD/on-http.git
-git clone https://github.com/swagger-api/swagger-codegen.git
-pushd ./swagger-codegen && mvn package && popd
-java -jar ./swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
-  generate -i on-http/static/redfish.yaml -o redfish-client-java -l java
+
+To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
+
+```shell
+mvn deploy
 ```
-NOTE: For redfish.yaml see https://github.com/RackHD/on-http/blob/master/static/redfish.yaml
+
+Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.
+
+After the client library is installed/deployed, you can use it in your Maven project by adding the following to your *pom.xml*:
+
+```xml
+<dependency>
+    <groupId>io.swagger</groupId>
+    <artifactId>swagger-java-client</artifactId>
+    <version>1.0.0</version>
+    <scope>compile</scope>
+</dependency>
+
+```
+
+## Recommendation
+
+It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issue.
+
+## Author
+
+
+
+
