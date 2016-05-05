@@ -2,6 +2,7 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.ResourceOem;
@@ -11,29 +12,62 @@ import io.swagger.client.model.ResourceStatus;
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class SimpleStorage100Device   {
   
+  private String manufacturer = null;
+  private String model = null;
   private String name = null;
   private ResourceOem oem = null;
   private ResourceStatus status = null;
 
   
-  @ApiModelProperty(example = "null", required = true, value = "The name of the resource or array element.")
+  /**
+   * The name of the manufacturer of this device
+   **/
+  
+  @ApiModelProperty(value = "The name of the manufacturer of this device")
+  @JsonProperty("Manufacturer")
+  public String getManufacturer() {
+    return manufacturer;
+  }
+  public void setManufacturer(String manufacturer) {
+    this.manufacturer = manufacturer;
+  }
+
+  
+  /**
+   * The product model number of this device
+   **/
+  
+  @ApiModelProperty(value = "The product model number of this device")
+  @JsonProperty("Model")
+  public String getModel() {
+    return model;
+  }
+  public void setModel(String model) {
+    this.model = model;
+  }
+
+  
+  /**
+   * The name of the resource or array element.
+   **/
+  
+  @ApiModelProperty(required = true, value = "The name of the resource or array element.")
   @JsonProperty("Name")
   public String getName() {
     return name;
+  }
+  public void setName(String name) {
+    this.name = name;
   }
 
   
   /**
    **/
-  public SimpleStorage100Device oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -45,12 +79,8 @@ public class SimpleStorage100Device   {
   
   /**
    **/
-  public SimpleStorage100Device status(ResourceStatus status) {
-    this.status = status;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Status")
   public ResourceStatus getStatus() {
     return status;
@@ -62,7 +92,7 @@ public class SimpleStorage100Device   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -70,14 +100,16 @@ public class SimpleStorage100Device   {
       return false;
     }
     SimpleStorage100Device simpleStorage100Device = (SimpleStorage100Device) o;
-    return Objects.equals(this.name, simpleStorage100Device.name) &&
-        Objects.equals(this.oem, simpleStorage100Device.oem) &&
-        Objects.equals(this.status, simpleStorage100Device.status);
+    return Objects.equals(manufacturer, simpleStorage100Device.manufacturer) &&
+        Objects.equals(model, simpleStorage100Device.model) &&
+        Objects.equals(name, simpleStorage100Device.name) &&
+        Objects.equals(oem, simpleStorage100Device.oem) &&
+        Objects.equals(status, simpleStorage100Device.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, oem, status);
+    return Objects.hash(manufacturer, model, name, oem, status);
   }
 
   @Override
@@ -85,6 +117,8 @@ public class SimpleStorage100Device   {
     StringBuilder sb = new StringBuilder();
     sb.append("class SimpleStorage100Device {\n");
     
+    sb.append("    manufacturer: ").append(toIndentedString(manufacturer)).append("\n");
+    sb.append("    model: ").append(toIndentedString(model)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    oem: ").append(toIndentedString(oem)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -96,7 +130,7 @@ public class SimpleStorage100Device   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

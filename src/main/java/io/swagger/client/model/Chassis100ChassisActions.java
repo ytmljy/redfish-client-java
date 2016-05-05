@@ -2,6 +2,7 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.Chassis100Reset;
@@ -13,7 +14,7 @@ import io.swagger.client.model.Chassis100Reset;
  **/
 
 @ApiModel(description = "The Actions object contains the available custom actions on this resource.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class Chassis100ChassisActions   {
   
   private Object oem = null;
@@ -22,12 +23,8 @@ public class Chassis100ChassisActions   {
   
   /**
    **/
-  public Chassis100ChassisActions oem(Object oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Oem")
   public Object getOem() {
     return oem;
@@ -39,12 +36,8 @@ public class Chassis100ChassisActions   {
   
   /**
    **/
-  public Chassis100ChassisActions chassisReset(Chassis100Reset chassisReset) {
-    this.chassisReset = chassisReset;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("#Chassis.Reset")
   public Chassis100Reset getChassisReset() {
     return chassisReset;
@@ -56,7 +49,7 @@ public class Chassis100ChassisActions   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -64,8 +57,8 @@ public class Chassis100ChassisActions   {
       return false;
     }
     Chassis100ChassisActions chassis100ChassisActions = (Chassis100ChassisActions) o;
-    return Objects.equals(this.oem, chassis100ChassisActions.oem) &&
-        Objects.equals(this.chassisReset, chassis100ChassisActions.chassisReset);
+    return Objects.equals(oem, chassis100ChassisActions.oem) &&
+        Objects.equals(chassisReset, chassis100ChassisActions.chassisReset);
   }
 
   @Override
@@ -88,7 +81,7 @@ public class Chassis100ChassisActions   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

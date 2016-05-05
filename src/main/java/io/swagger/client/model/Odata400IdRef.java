@@ -2,40 +2,36 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Odata400Id;
 
 
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class Odata400IdRef   {
   
-  private Odata400Id odataId = null;
+  private String odataId = null;
 
   
   /**
    **/
-  public Odata400IdRef odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -43,7 +39,7 @@ public class Odata400IdRef   {
       return false;
     }
     Odata400IdRef odata400IdRef = (Odata400IdRef) o;
-    return Objects.equals(this.odataId, odata400IdRef.odataId);
+    return Objects.equals(odataId, odata400IdRef.odataId);
   }
 
   @Override
@@ -65,7 +61,7 @@ public class Odata400IdRef   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

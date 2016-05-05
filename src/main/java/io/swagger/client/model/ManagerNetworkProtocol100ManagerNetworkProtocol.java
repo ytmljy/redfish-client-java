@@ -2,16 +2,11 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.ManagerNetworkProtocol100Protocol;
 import io.swagger.client.model.ManagerNetworkProtocol100SSDProtocol;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Id;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
 import io.swagger.client.model.ResourceStatus;
 
@@ -22,19 +17,21 @@ import io.swagger.client.model.ResourceStatus;
  **/
 
 @ApiModel(description = "This resource is used to obtain or modify the network services managed by a given manager.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private ResourceDescription description = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+  private String description = null;
+  private String FQDN = null;
   private ManagerNetworkProtocol100Protocol HTTP = null;
   private ManagerNetworkProtocol100Protocol HTTPS = null;
+  private String hostName = null;
   private ManagerNetworkProtocol100Protocol IPMI = null;
-  private ResourceId id = null;
+  private String id = null;
   private ManagerNetworkProtocol100Protocol KVMIP = null;
-  private ResourceName name = null;
+  private String name = null;
   private ResourceOem oem = null;
   private ManagerNetworkProtocol100Protocol SNMP = null;
   private ManagerNetworkProtocol100SSDProtocol SSDP = null;
@@ -46,81 +43,76 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   
   /**
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
+  }
+
+  
+  /**
+   * This is the fully qualified domain name for the manager obtained by DNS including the host name and top-level domain name.
+   **/
+  
+  @ApiModelProperty(value = "This is the fully qualified domain name for the manager obtained by DNS including the host name and top-level domain name.")
+  @JsonProperty("FQDN")
+  public String getFQDN() {
+    return FQDN;
+  }
+  public void setFQDN(String FQDN) {
+    this.FQDN = FQDN;
   }
 
   
   /**
    * Settings for this Manager's HTTP protocol support
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol HTTP(ManagerNetworkProtocol100Protocol HTTP) {
-    this.HTTP = HTTP;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Settings for this Manager's HTTP protocol support")
+  @ApiModelProperty(value = "Settings for this Manager's HTTP protocol support")
   @JsonProperty("HTTP")
   public ManagerNetworkProtocol100Protocol getHTTP() {
     return HTTP;
@@ -133,12 +125,8 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   /**
    * Settings for this Manager's HTTPS protocol support
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol HTTPS(ManagerNetworkProtocol100Protocol HTTPS) {
-    this.HTTPS = HTTPS;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Settings for this Manager's HTTPS protocol support")
+  @ApiModelProperty(value = "Settings for this Manager's HTTPS protocol support")
   @JsonProperty("HTTPS")
   public ManagerNetworkProtocol100Protocol getHTTPS() {
     return HTTPS;
@@ -149,14 +137,24 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
 
   
   /**
+   * The DNS Host Name of this manager, without any domain information
+   **/
+  
+  @ApiModelProperty(value = "The DNS Host Name of this manager, without any domain information")
+  @JsonProperty("HostName")
+  public String getHostName() {
+    return hostName;
+  }
+  public void setHostName(String hostName) {
+    this.hostName = hostName;
+  }
+
+  
+  /**
    * Settings for this Manager's IPMI-over-LAN protocol support
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol IPMI(ManagerNetworkProtocol100Protocol IPMI) {
-    this.IPMI = IPMI;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Settings for this Manager's IPMI-over-LAN protocol support")
+  @ApiModelProperty(value = "Settings for this Manager's IPMI-over-LAN protocol support")
   @JsonProperty("IPMI")
   public ManagerNetworkProtocol100Protocol getIPMI() {
     return IPMI;
@@ -167,18 +165,15 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -186,12 +181,8 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   /**
    * Settings for this Manager's KVM-IP protocol support
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol KVMIP(ManagerNetworkProtocol100Protocol KVMIP) {
-    this.KVMIP = KVMIP;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Settings for this Manager's KVM-IP protocol support")
+  @ApiModelProperty(value = "Settings for this Manager's KVM-IP protocol support")
   @JsonProperty("KVMIP")
   public ManagerNetworkProtocol100Protocol getKVMIP() {
     return KVMIP;
@@ -202,18 +193,15 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
 
   
   /**
+   * The name of the resource or array element.
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -221,12 +209,8 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -239,12 +223,8 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   /**
    * Settings for this Manager's SNMP support
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol SNMP(ManagerNetworkProtocol100Protocol SNMP) {
-    this.SNMP = SNMP;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Settings for this Manager's SNMP support")
+  @ApiModelProperty(value = "Settings for this Manager's SNMP support")
   @JsonProperty("SNMP")
   public ManagerNetworkProtocol100Protocol getSNMP() {
     return SNMP;
@@ -257,12 +237,8 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   /**
    * Settings for this Manager's SSDP support
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol SSDP(ManagerNetworkProtocol100SSDProtocol SSDP) {
-    this.SSDP = SSDP;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Settings for this Manager's SSDP support")
+  @ApiModelProperty(value = "Settings for this Manager's SSDP support")
   @JsonProperty("SSDP")
   public ManagerNetworkProtocol100SSDProtocol getSSDP() {
     return SSDP;
@@ -275,12 +251,8 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   /**
    * Settings for this Manager's SSH (Secure Shell) protocol support
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol SSH(ManagerNetworkProtocol100Protocol SSH) {
-    this.SSH = SSH;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Settings for this Manager's SSH (Secure Shell) protocol support")
+  @ApiModelProperty(value = "Settings for this Manager's SSH (Secure Shell) protocol support")
   @JsonProperty("SSH")
   public ManagerNetworkProtocol100Protocol getSSH() {
     return SSH;
@@ -292,12 +264,8 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   
   /**
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol status(ResourceStatus status) {
-    this.status = status;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Status")
   public ResourceStatus getStatus() {
     return status;
@@ -310,12 +278,8 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   /**
    * Settings for this Manager's Telnet protocol support
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol telnet(ManagerNetworkProtocol100Protocol telnet) {
-    this.telnet = telnet;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Settings for this Manager's Telnet protocol support")
+  @ApiModelProperty(value = "Settings for this Manager's Telnet protocol support")
   @JsonProperty("Telnet")
   public ManagerNetworkProtocol100Protocol getTelnet() {
     return telnet;
@@ -328,12 +292,8 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   /**
    * Settings for this Manager's Virtual Media support
    **/
-  public ManagerNetworkProtocol100ManagerNetworkProtocol virtualMedia(ManagerNetworkProtocol100Protocol virtualMedia) {
-    this.virtualMedia = virtualMedia;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Settings for this Manager's Virtual Media support")
+  @ApiModelProperty(value = "Settings for this Manager's Virtual Media support")
   @JsonProperty("VirtualMedia")
   public ManagerNetworkProtocol100Protocol getVirtualMedia() {
     return virtualMedia;
@@ -345,7 +305,7 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -353,28 +313,30 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
       return false;
     }
     ManagerNetworkProtocol100ManagerNetworkProtocol managerNetworkProtocol100ManagerNetworkProtocol = (ManagerNetworkProtocol100ManagerNetworkProtocol) o;
-    return Objects.equals(this.odataContext, managerNetworkProtocol100ManagerNetworkProtocol.odataContext) &&
-        Objects.equals(this.odataId, managerNetworkProtocol100ManagerNetworkProtocol.odataId) &&
-        Objects.equals(this.odataType, managerNetworkProtocol100ManagerNetworkProtocol.odataType) &&
-        Objects.equals(this.description, managerNetworkProtocol100ManagerNetworkProtocol.description) &&
-        Objects.equals(this.HTTP, managerNetworkProtocol100ManagerNetworkProtocol.HTTP) &&
-        Objects.equals(this.HTTPS, managerNetworkProtocol100ManagerNetworkProtocol.HTTPS) &&
-        Objects.equals(this.IPMI, managerNetworkProtocol100ManagerNetworkProtocol.IPMI) &&
-        Objects.equals(this.id, managerNetworkProtocol100ManagerNetworkProtocol.id) &&
-        Objects.equals(this.KVMIP, managerNetworkProtocol100ManagerNetworkProtocol.KVMIP) &&
-        Objects.equals(this.name, managerNetworkProtocol100ManagerNetworkProtocol.name) &&
-        Objects.equals(this.oem, managerNetworkProtocol100ManagerNetworkProtocol.oem) &&
-        Objects.equals(this.SNMP, managerNetworkProtocol100ManagerNetworkProtocol.SNMP) &&
-        Objects.equals(this.SSDP, managerNetworkProtocol100ManagerNetworkProtocol.SSDP) &&
-        Objects.equals(this.SSH, managerNetworkProtocol100ManagerNetworkProtocol.SSH) &&
-        Objects.equals(this.status, managerNetworkProtocol100ManagerNetworkProtocol.status) &&
-        Objects.equals(this.telnet, managerNetworkProtocol100ManagerNetworkProtocol.telnet) &&
-        Objects.equals(this.virtualMedia, managerNetworkProtocol100ManagerNetworkProtocol.virtualMedia);
+    return Objects.equals(odataContext, managerNetworkProtocol100ManagerNetworkProtocol.odataContext) &&
+        Objects.equals(odataId, managerNetworkProtocol100ManagerNetworkProtocol.odataId) &&
+        Objects.equals(odataType, managerNetworkProtocol100ManagerNetworkProtocol.odataType) &&
+        Objects.equals(description, managerNetworkProtocol100ManagerNetworkProtocol.description) &&
+        Objects.equals(FQDN, managerNetworkProtocol100ManagerNetworkProtocol.FQDN) &&
+        Objects.equals(HTTP, managerNetworkProtocol100ManagerNetworkProtocol.HTTP) &&
+        Objects.equals(HTTPS, managerNetworkProtocol100ManagerNetworkProtocol.HTTPS) &&
+        Objects.equals(hostName, managerNetworkProtocol100ManagerNetworkProtocol.hostName) &&
+        Objects.equals(IPMI, managerNetworkProtocol100ManagerNetworkProtocol.IPMI) &&
+        Objects.equals(id, managerNetworkProtocol100ManagerNetworkProtocol.id) &&
+        Objects.equals(KVMIP, managerNetworkProtocol100ManagerNetworkProtocol.KVMIP) &&
+        Objects.equals(name, managerNetworkProtocol100ManagerNetworkProtocol.name) &&
+        Objects.equals(oem, managerNetworkProtocol100ManagerNetworkProtocol.oem) &&
+        Objects.equals(SNMP, managerNetworkProtocol100ManagerNetworkProtocol.SNMP) &&
+        Objects.equals(SSDP, managerNetworkProtocol100ManagerNetworkProtocol.SSDP) &&
+        Objects.equals(SSH, managerNetworkProtocol100ManagerNetworkProtocol.SSH) &&
+        Objects.equals(status, managerNetworkProtocol100ManagerNetworkProtocol.status) &&
+        Objects.equals(telnet, managerNetworkProtocol100ManagerNetworkProtocol.telnet) &&
+        Objects.equals(virtualMedia, managerNetworkProtocol100ManagerNetworkProtocol.virtualMedia);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(odataContext, odataId, odataType, description, HTTP, HTTPS, IPMI, id, KVMIP, name, oem, SNMP, SSDP, SSH, status, telnet, virtualMedia);
+    return Objects.hash(odataContext, odataId, odataType, description, FQDN, HTTP, HTTPS, hostName, IPMI, id, KVMIP, name, oem, SNMP, SSDP, SSH, status, telnet, virtualMedia);
   }
 
   @Override
@@ -386,8 +348,10 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
     sb.append("    odataId: ").append(toIndentedString(odataId)).append("\n");
     sb.append("    odataType: ").append(toIndentedString(odataType)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    FQDN: ").append(toIndentedString(FQDN)).append("\n");
     sb.append("    HTTP: ").append(toIndentedString(HTTP)).append("\n");
     sb.append("    HTTPS: ").append(toIndentedString(HTTPS)).append("\n");
+    sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
     sb.append("    IPMI: ").append(toIndentedString(IPMI)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    KVMIP: ").append(toIndentedString(KVMIP)).append("\n");
@@ -407,7 +371,7 @@ public class ManagerNetworkProtocol100ManagerNetworkProtocol   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

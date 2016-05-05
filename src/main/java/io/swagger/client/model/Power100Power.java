@@ -2,23 +2,16 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Count;
-import io.swagger.client.model.Odata400Id;
 import io.swagger.client.model.Odata400IdRef;
-import io.swagger.client.model.Odata400Type;
 import io.swagger.client.model.Power100PowerControl;
 import io.swagger.client.model.Power100PowerSupply;
 import io.swagger.client.model.Power100Voltage;
-import io.swagger.client.model.RedundancyRedundancy;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
 
 
 
@@ -27,128 +20,107 @@ import java.util.List;
  **/
 
 @ApiModel(description = "This is the schema definition for the Power Metrics.  It represents the properties for Power Consumption and Power Limiting.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class Power100Power   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private ResourceDescription description = null;
-  private ResourceId id = null;
-  private ResourceName name = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+  private String description = null;
+  private String id = null;
+  private String name = null;
   private ResourceOem oem = null;
   private List<Power100PowerControl> powerControl = new ArrayList<Power100PowerControl>();
-  private Odata400Count powerControlodataCount = null;
+  private BigDecimal powerControlodataCount = null;
   private Odata400IdRef powerControlodataNavigationLink = null;
   private List<Power100PowerSupply> powerSupplies = new ArrayList<Power100PowerSupply>();
-  private Odata400Count powerSuppliesodataCount = null;
+  private BigDecimal powerSuppliesodataCount = null;
   private Odata400IdRef powerSuppliesodataNavigationLink = null;
-  private List<RedundancyRedundancy> redundancy = new ArrayList<RedundancyRedundancy>();
-  private Odata400Count redundancyodataCount = null;
+  private List<Odata400IdRef> redundancy = new ArrayList<Odata400IdRef>();
+  private BigDecimal redundancyodataCount = null;
   private Odata400IdRef redundancyodataNavigationLink = null;
   private List<Power100Voltage> voltages = new ArrayList<Power100Voltage>();
-  private Odata400Count voltagesodataCount = null;
+  private BigDecimal voltagesodataCount = null;
   private Odata400IdRef voltagesodataNavigationLink = null;
 
   
   /**
    **/
-  public Power100Power odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public Power100Power odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public Power100Power odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public Power100Power description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public Power100Power id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
   
   /**
+   * The name of the resource or array element.
    **/
-  public Power100Power name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -156,12 +128,8 @@ public class Power100Power   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public Power100Power oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -174,12 +142,8 @@ public class Power100Power   {
   /**
    * This is the definition for power control function (power reading/limiting).
    **/
-  public Power100Power powerControl(List<Power100PowerControl> powerControl) {
-    this.powerControl = powerControl;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the definition for power control function (power reading/limiting).")
+  @ApiModelProperty(value = "This is the definition for power control function (power reading/limiting).")
   @JsonProperty("PowerControl")
   public List<Power100PowerControl> getPowerControl() {
     return powerControl;
@@ -191,29 +155,21 @@ public class Power100Power   {
   
   /**
    **/
-  public Power100Power powerControlodataCount(Odata400Count powerControlodataCount) {
-    this.powerControlodataCount = powerControlodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("PowerControl@odata.count")
-  public Odata400Count getPowerControlodataCount() {
+  public BigDecimal getPowerControlodataCount() {
     return powerControlodataCount;
   }
-  public void setPowerControlodataCount(Odata400Count powerControlodataCount) {
+  public void setPowerControlodataCount(BigDecimal powerControlodataCount) {
     this.powerControlodataCount = powerControlodataCount;
   }
 
   
   /**
    **/
-  public Power100Power powerControlodataNavigationLink(Odata400IdRef powerControlodataNavigationLink) {
-    this.powerControlodataNavigationLink = powerControlodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("PowerControl@odata.navigationLink")
   public Odata400IdRef getPowerControlodataNavigationLink() {
     return powerControlodataNavigationLink;
@@ -226,12 +182,8 @@ public class Power100Power   {
   /**
    * Details of the power supplies associated with this system or device
    **/
-  public Power100Power powerSupplies(List<Power100PowerSupply> powerSupplies) {
-    this.powerSupplies = powerSupplies;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Details of the power supplies associated with this system or device")
+  @ApiModelProperty(value = "Details of the power supplies associated with this system or device")
   @JsonProperty("PowerSupplies")
   public List<Power100PowerSupply> getPowerSupplies() {
     return powerSupplies;
@@ -243,29 +195,21 @@ public class Power100Power   {
   
   /**
    **/
-  public Power100Power powerSuppliesodataCount(Odata400Count powerSuppliesodataCount) {
-    this.powerSuppliesodataCount = powerSuppliesodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("PowerSupplies@odata.count")
-  public Odata400Count getPowerSuppliesodataCount() {
+  public BigDecimal getPowerSuppliesodataCount() {
     return powerSuppliesodataCount;
   }
-  public void setPowerSuppliesodataCount(Odata400Count powerSuppliesodataCount) {
+  public void setPowerSuppliesodataCount(BigDecimal powerSuppliesodataCount) {
     this.powerSuppliesodataCount = powerSuppliesodataCount;
   }
 
   
   /**
    **/
-  public Power100Power powerSuppliesodataNavigationLink(Odata400IdRef powerSuppliesodataNavigationLink) {
-    this.powerSuppliesodataNavigationLink = powerSuppliesodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("PowerSupplies@odata.navigationLink")
   public Odata400IdRef getPowerSuppliesodataNavigationLink() {
     return powerSuppliesodataNavigationLink;
@@ -278,46 +222,34 @@ public class Power100Power   {
   /**
    * Redundancy information for the power subsystem of this system or device
    **/
-  public Power100Power redundancy(List<RedundancyRedundancy> redundancy) {
-    this.redundancy = redundancy;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Redundancy information for the power subsystem of this system or device")
+  @ApiModelProperty(value = "Redundancy information for the power subsystem of this system or device")
   @JsonProperty("Redundancy")
-  public List<RedundancyRedundancy> getRedundancy() {
+  public List<Odata400IdRef> getRedundancy() {
     return redundancy;
   }
-  public void setRedundancy(List<RedundancyRedundancy> redundancy) {
+  public void setRedundancy(List<Odata400IdRef> redundancy) {
     this.redundancy = redundancy;
   }
 
   
   /**
    **/
-  public Power100Power redundancyodataCount(Odata400Count redundancyodataCount) {
-    this.redundancyodataCount = redundancyodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Redundancy@odata.count")
-  public Odata400Count getRedundancyodataCount() {
+  public BigDecimal getRedundancyodataCount() {
     return redundancyodataCount;
   }
-  public void setRedundancyodataCount(Odata400Count redundancyodataCount) {
+  public void setRedundancyodataCount(BigDecimal redundancyodataCount) {
     this.redundancyodataCount = redundancyodataCount;
   }
 
   
   /**
    **/
-  public Power100Power redundancyodataNavigationLink(Odata400IdRef redundancyodataNavigationLink) {
-    this.redundancyodataNavigationLink = redundancyodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Redundancy@odata.navigationLink")
   public Odata400IdRef getRedundancyodataNavigationLink() {
     return redundancyodataNavigationLink;
@@ -330,12 +262,8 @@ public class Power100Power   {
   /**
    * This is the definition for voltage sensors.
    **/
-  public Power100Power voltages(List<Power100Voltage> voltages) {
-    this.voltages = voltages;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the definition for voltage sensors.")
+  @ApiModelProperty(value = "This is the definition for voltage sensors.")
   @JsonProperty("Voltages")
   public List<Power100Voltage> getVoltages() {
     return voltages;
@@ -347,29 +275,21 @@ public class Power100Power   {
   
   /**
    **/
-  public Power100Power voltagesodataCount(Odata400Count voltagesodataCount) {
-    this.voltagesodataCount = voltagesodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Voltages@odata.count")
-  public Odata400Count getVoltagesodataCount() {
+  public BigDecimal getVoltagesodataCount() {
     return voltagesodataCount;
   }
-  public void setVoltagesodataCount(Odata400Count voltagesodataCount) {
+  public void setVoltagesodataCount(BigDecimal voltagesodataCount) {
     this.voltagesodataCount = voltagesodataCount;
   }
 
   
   /**
    **/
-  public Power100Power voltagesodataNavigationLink(Odata400IdRef voltagesodataNavigationLink) {
-    this.voltagesodataNavigationLink = voltagesodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Voltages@odata.navigationLink")
   public Odata400IdRef getVoltagesodataNavigationLink() {
     return voltagesodataNavigationLink;
@@ -381,7 +301,7 @@ public class Power100Power   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -389,25 +309,25 @@ public class Power100Power   {
       return false;
     }
     Power100Power power100Power = (Power100Power) o;
-    return Objects.equals(this.odataContext, power100Power.odataContext) &&
-        Objects.equals(this.odataId, power100Power.odataId) &&
-        Objects.equals(this.odataType, power100Power.odataType) &&
-        Objects.equals(this.description, power100Power.description) &&
-        Objects.equals(this.id, power100Power.id) &&
-        Objects.equals(this.name, power100Power.name) &&
-        Objects.equals(this.oem, power100Power.oem) &&
-        Objects.equals(this.powerControl, power100Power.powerControl) &&
-        Objects.equals(this.powerControlodataCount, power100Power.powerControlodataCount) &&
-        Objects.equals(this.powerControlodataNavigationLink, power100Power.powerControlodataNavigationLink) &&
-        Objects.equals(this.powerSupplies, power100Power.powerSupplies) &&
-        Objects.equals(this.powerSuppliesodataCount, power100Power.powerSuppliesodataCount) &&
-        Objects.equals(this.powerSuppliesodataNavigationLink, power100Power.powerSuppliesodataNavigationLink) &&
-        Objects.equals(this.redundancy, power100Power.redundancy) &&
-        Objects.equals(this.redundancyodataCount, power100Power.redundancyodataCount) &&
-        Objects.equals(this.redundancyodataNavigationLink, power100Power.redundancyodataNavigationLink) &&
-        Objects.equals(this.voltages, power100Power.voltages) &&
-        Objects.equals(this.voltagesodataCount, power100Power.voltagesodataCount) &&
-        Objects.equals(this.voltagesodataNavigationLink, power100Power.voltagesodataNavigationLink);
+    return Objects.equals(odataContext, power100Power.odataContext) &&
+        Objects.equals(odataId, power100Power.odataId) &&
+        Objects.equals(odataType, power100Power.odataType) &&
+        Objects.equals(description, power100Power.description) &&
+        Objects.equals(id, power100Power.id) &&
+        Objects.equals(name, power100Power.name) &&
+        Objects.equals(oem, power100Power.oem) &&
+        Objects.equals(powerControl, power100Power.powerControl) &&
+        Objects.equals(powerControlodataCount, power100Power.powerControlodataCount) &&
+        Objects.equals(powerControlodataNavigationLink, power100Power.powerControlodataNavigationLink) &&
+        Objects.equals(powerSupplies, power100Power.powerSupplies) &&
+        Objects.equals(powerSuppliesodataCount, power100Power.powerSuppliesodataCount) &&
+        Objects.equals(powerSuppliesodataNavigationLink, power100Power.powerSuppliesodataNavigationLink) &&
+        Objects.equals(redundancy, power100Power.redundancy) &&
+        Objects.equals(redundancyodataCount, power100Power.redundancyodataCount) &&
+        Objects.equals(redundancyodataNavigationLink, power100Power.redundancyodataNavigationLink) &&
+        Objects.equals(voltages, power100Power.voltages) &&
+        Objects.equals(voltagesodataCount, power100Power.voltagesodataCount) &&
+        Objects.equals(voltagesodataNavigationLink, power100Power.voltagesodataNavigationLink);
   }
 
   @Override
@@ -447,7 +367,7 @@ public class Power100Power   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

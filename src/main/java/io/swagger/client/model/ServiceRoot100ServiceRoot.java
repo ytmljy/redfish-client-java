@@ -2,18 +2,16 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.AccountServiceAccountService;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Id;
+import io.swagger.client.model.ChassisCollectionChassisCollection;
+import io.swagger.client.model.ComputerSystemCollectionComputerSystemCollection;
+import io.swagger.client.model.JsonSchemaFileCollectionJsonSchemaFileCollection;
+import io.swagger.client.model.ManagerCollectionManagerCollection;
+import io.swagger.client.model.MessageRegistryFileCollectionMessageRegistryFileCollection;
 import io.swagger.client.model.Odata400IdRef;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
-import io.swagger.client.model.ResourceUUID;
 import io.swagger.client.model.ServiceRoot100ServiceRootLinks;
 
 
@@ -23,77 +21,65 @@ import io.swagger.client.model.ServiceRoot100ServiceRootLinks;
  **/
 
 @ApiModel(description = "This object represents the root Redfish service.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class ServiceRoot100ServiceRoot   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private AccountServiceAccountService accountService = null;
-  private Odata400IdRef chassis = null;
-  private ResourceDescription description = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+  private Odata400IdRef accountService = null;
+  private ChassisCollectionChassisCollection chassis = null;
+  private String description = null;
   private Odata400IdRef eventService = null;
-  private ResourceId id = null;
-  private Odata400IdRef jsonSchemas = null;
+  private String id = null;
+  private JsonSchemaFileCollectionJsonSchemaFileCollection jsonSchemas = null;
   private ServiceRoot100ServiceRootLinks links = null;
-  private Odata400IdRef managers = null;
-  private ResourceName name = null;
+  private ManagerCollectionManagerCollection managers = null;
+  private String name = null;
   private ResourceOem oem = null;
   private String redfishVersion = null;
-  private Odata400IdRef registries = null;
+  private MessageRegistryFileCollectionMessageRegistryFileCollection registries = null;
   private Odata400IdRef sessionService = null;
-  private Odata400IdRef systems = null;
+  private ComputerSystemCollectionComputerSystemCollection systems = null;
   private Odata400IdRef tasks = null;
-  private ResourceUUID UUID = null;
+  private String UUID = null;
 
   
   /**
    **/
-  public ServiceRoot100ServiceRoot odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public ServiceRoot100ServiceRoot odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public ServiceRoot100ServiceRoot odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
@@ -101,17 +87,13 @@ public class ServiceRoot100ServiceRoot   {
   /**
    * This is a link to the Account Service.
    **/
-  public ServiceRoot100ServiceRoot accountService(AccountServiceAccountService accountService) {
-    this.accountService = accountService;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a link to the Account Service.")
+  @ApiModelProperty(value = "This is a link to the Account Service.")
   @JsonProperty("AccountService")
-  public AccountServiceAccountService getAccountService() {
+  public Odata400IdRef getAccountService() {
     return accountService;
   }
-  public void setAccountService(AccountServiceAccountService accountService) {
+  public void setAccountService(Odata400IdRef accountService) {
     this.accountService = accountService;
   }
 
@@ -119,34 +101,27 @@ public class ServiceRoot100ServiceRoot   {
   /**
    * This is a link to a collection of Chassis.
    **/
-  public ServiceRoot100ServiceRoot chassis(Odata400IdRef chassis) {
-    this.chassis = chassis;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a link to a collection of Chassis.")
+  @ApiModelProperty(value = "This is a link to a collection of Chassis.")
   @JsonProperty("Chassis")
-  public Odata400IdRef getChassis() {
+  public ChassisCollectionChassisCollection getChassis() {
     return chassis;
   }
-  public void setChassis(Odata400IdRef chassis) {
+  public void setChassis(ChassisCollectionChassisCollection chassis) {
     this.chassis = chassis;
   }
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public ServiceRoot100ServiceRoot description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
@@ -154,12 +129,8 @@ public class ServiceRoot100ServiceRoot   {
   /**
    * This is a link to the EventService.
    **/
-  public ServiceRoot100ServiceRoot eventService(Odata400IdRef eventService) {
-    this.eventService = eventService;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a link to the EventService.")
+  @ApiModelProperty(value = "This is a link to the EventService.")
   @JsonProperty("EventService")
   public Odata400IdRef getEventService() {
     return eventService;
@@ -170,18 +141,15 @@ public class ServiceRoot100ServiceRoot   {
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public ServiceRoot100ServiceRoot id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -189,29 +157,21 @@ public class ServiceRoot100ServiceRoot   {
   /**
    * This is a link to a collection of Json-Schema files.
    **/
-  public ServiceRoot100ServiceRoot jsonSchemas(Odata400IdRef jsonSchemas) {
-    this.jsonSchemas = jsonSchemas;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a link to a collection of Json-Schema files.")
+  @ApiModelProperty(value = "This is a link to a collection of Json-Schema files.")
   @JsonProperty("JsonSchemas")
-  public Odata400IdRef getJsonSchemas() {
+  public JsonSchemaFileCollectionJsonSchemaFileCollection getJsonSchemas() {
     return jsonSchemas;
   }
-  public void setJsonSchemas(Odata400IdRef jsonSchemas) {
+  public void setJsonSchemas(JsonSchemaFileCollectionJsonSchemaFileCollection jsonSchemas) {
     this.jsonSchemas = jsonSchemas;
   }
 
   
   /**
    **/
-  public ServiceRoot100ServiceRoot links(ServiceRoot100ServiceRootLinks links) {
-    this.links = links;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Links")
   public ServiceRoot100ServiceRootLinks getLinks() {
     return links;
@@ -224,34 +184,27 @@ public class ServiceRoot100ServiceRoot   {
   /**
    * This is a link to a collection of Managers.
    **/
-  public ServiceRoot100ServiceRoot managers(Odata400IdRef managers) {
-    this.managers = managers;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a link to a collection of Managers.")
+  @ApiModelProperty(value = "This is a link to a collection of Managers.")
   @JsonProperty("Managers")
-  public Odata400IdRef getManagers() {
+  public ManagerCollectionManagerCollection getManagers() {
     return managers;
   }
-  public void setManagers(Odata400IdRef managers) {
+  public void setManagers(ManagerCollectionManagerCollection managers) {
     this.managers = managers;
   }
 
   
   /**
+   * The name of the resource or array element.
    **/
-  public ServiceRoot100ServiceRoot name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -259,12 +212,8 @@ public class ServiceRoot100ServiceRoot   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public ServiceRoot100ServiceRoot oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -274,27 +223,30 @@ public class ServiceRoot100ServiceRoot   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The version of the Redfish service")
+  /**
+   * The version of the Redfish service
+   **/
+  
+  @ApiModelProperty(value = "The version of the Redfish service")
   @JsonProperty("RedfishVersion")
   public String getRedfishVersion() {
     return redfishVersion;
+  }
+  public void setRedfishVersion(String redfishVersion) {
+    this.redfishVersion = redfishVersion;
   }
 
   
   /**
    * This is a link to a collection of Registries.
    **/
-  public ServiceRoot100ServiceRoot registries(Odata400IdRef registries) {
-    this.registries = registries;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a link to a collection of Registries.")
+  @ApiModelProperty(value = "This is a link to a collection of Registries.")
   @JsonProperty("Registries")
-  public Odata400IdRef getRegistries() {
+  public MessageRegistryFileCollectionMessageRegistryFileCollection getRegistries() {
     return registries;
   }
-  public void setRegistries(Odata400IdRef registries) {
+  public void setRegistries(MessageRegistryFileCollectionMessageRegistryFileCollection registries) {
     this.registries = registries;
   }
 
@@ -302,12 +254,8 @@ public class ServiceRoot100ServiceRoot   {
   /**
    * This is a link to the Sessions Service.
    **/
-  public ServiceRoot100ServiceRoot sessionService(Odata400IdRef sessionService) {
-    this.sessionService = sessionService;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a link to the Sessions Service.")
+  @ApiModelProperty(value = "This is a link to the Sessions Service.")
   @JsonProperty("SessionService")
   public Odata400IdRef getSessionService() {
     return sessionService;
@@ -320,17 +268,13 @@ public class ServiceRoot100ServiceRoot   {
   /**
    * This is a link to a collection of Systems.
    **/
-  public ServiceRoot100ServiceRoot systems(Odata400IdRef systems) {
-    this.systems = systems;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a link to a collection of Systems.")
+  @ApiModelProperty(value = "This is a link to a collection of Systems.")
   @JsonProperty("Systems")
-  public Odata400IdRef getSystems() {
+  public ComputerSystemCollectionComputerSystemCollection getSystems() {
     return systems;
   }
-  public void setSystems(Odata400IdRef systems) {
+  public void setSystems(ComputerSystemCollectionComputerSystemCollection systems) {
     this.systems = systems;
   }
 
@@ -338,12 +282,8 @@ public class ServiceRoot100ServiceRoot   {
   /**
    * This is a link to the Task Service.
    **/
-  public ServiceRoot100ServiceRoot tasks(Odata400IdRef tasks) {
-    this.tasks = tasks;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a link to the Task Service.")
+  @ApiModelProperty(value = "This is a link to the Task Service.")
   @JsonProperty("Tasks")
   public Odata400IdRef getTasks() {
     return tasks;
@@ -356,24 +296,20 @@ public class ServiceRoot100ServiceRoot   {
   /**
    * Unique identifier for a service instance. When SSDP is used, this value should be an exact match of the UUID value returned in a 200OK from an SSDP M-SEARCH request during discovery.
    **/
-  public ServiceRoot100ServiceRoot UUID(ResourceUUID UUID) {
-    this.UUID = UUID;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Unique identifier for a service instance. When SSDP is used, this value should be an exact match of the UUID value returned in a 200OK from an SSDP M-SEARCH request during discovery.")
+  @ApiModelProperty(value = "Unique identifier for a service instance. When SSDP is used, this value should be an exact match of the UUID value returned in a 200OK from an SSDP M-SEARCH request during discovery.")
   @JsonProperty("UUID")
-  public ResourceUUID getUUID() {
+  public String getUUID() {
     return UUID;
   }
-  public void setUUID(ResourceUUID UUID) {
+  public void setUUID(String UUID) {
     this.UUID = UUID;
   }
 
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -381,25 +317,25 @@ public class ServiceRoot100ServiceRoot   {
       return false;
     }
     ServiceRoot100ServiceRoot serviceRoot100ServiceRoot = (ServiceRoot100ServiceRoot) o;
-    return Objects.equals(this.odataContext, serviceRoot100ServiceRoot.odataContext) &&
-        Objects.equals(this.odataId, serviceRoot100ServiceRoot.odataId) &&
-        Objects.equals(this.odataType, serviceRoot100ServiceRoot.odataType) &&
-        Objects.equals(this.accountService, serviceRoot100ServiceRoot.accountService) &&
-        Objects.equals(this.chassis, serviceRoot100ServiceRoot.chassis) &&
-        Objects.equals(this.description, serviceRoot100ServiceRoot.description) &&
-        Objects.equals(this.eventService, serviceRoot100ServiceRoot.eventService) &&
-        Objects.equals(this.id, serviceRoot100ServiceRoot.id) &&
-        Objects.equals(this.jsonSchemas, serviceRoot100ServiceRoot.jsonSchemas) &&
-        Objects.equals(this.links, serviceRoot100ServiceRoot.links) &&
-        Objects.equals(this.managers, serviceRoot100ServiceRoot.managers) &&
-        Objects.equals(this.name, serviceRoot100ServiceRoot.name) &&
-        Objects.equals(this.oem, serviceRoot100ServiceRoot.oem) &&
-        Objects.equals(this.redfishVersion, serviceRoot100ServiceRoot.redfishVersion) &&
-        Objects.equals(this.registries, serviceRoot100ServiceRoot.registries) &&
-        Objects.equals(this.sessionService, serviceRoot100ServiceRoot.sessionService) &&
-        Objects.equals(this.systems, serviceRoot100ServiceRoot.systems) &&
-        Objects.equals(this.tasks, serviceRoot100ServiceRoot.tasks) &&
-        Objects.equals(this.UUID, serviceRoot100ServiceRoot.UUID);
+    return Objects.equals(odataContext, serviceRoot100ServiceRoot.odataContext) &&
+        Objects.equals(odataId, serviceRoot100ServiceRoot.odataId) &&
+        Objects.equals(odataType, serviceRoot100ServiceRoot.odataType) &&
+        Objects.equals(accountService, serviceRoot100ServiceRoot.accountService) &&
+        Objects.equals(chassis, serviceRoot100ServiceRoot.chassis) &&
+        Objects.equals(description, serviceRoot100ServiceRoot.description) &&
+        Objects.equals(eventService, serviceRoot100ServiceRoot.eventService) &&
+        Objects.equals(id, serviceRoot100ServiceRoot.id) &&
+        Objects.equals(jsonSchemas, serviceRoot100ServiceRoot.jsonSchemas) &&
+        Objects.equals(links, serviceRoot100ServiceRoot.links) &&
+        Objects.equals(managers, serviceRoot100ServiceRoot.managers) &&
+        Objects.equals(name, serviceRoot100ServiceRoot.name) &&
+        Objects.equals(oem, serviceRoot100ServiceRoot.oem) &&
+        Objects.equals(redfishVersion, serviceRoot100ServiceRoot.redfishVersion) &&
+        Objects.equals(registries, serviceRoot100ServiceRoot.registries) &&
+        Objects.equals(sessionService, serviceRoot100ServiceRoot.sessionService) &&
+        Objects.equals(systems, serviceRoot100ServiceRoot.systems) &&
+        Objects.equals(tasks, serviceRoot100ServiceRoot.tasks) &&
+        Objects.equals(UUID, serviceRoot100ServiceRoot.UUID);
   }
 
   @Override
@@ -439,7 +375,7 @@ public class ServiceRoot100ServiceRoot   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -2,10 +2,9 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.ComputerSystem100BootSource;
-import io.swagger.client.model.ComputerSystem100BootSourceOverrideEnabled;
 
 
 
@@ -14,27 +13,72 @@ import io.swagger.client.model.ComputerSystem100BootSourceOverrideEnabled;
  **/
 
 @ApiModel(description = "This object contains the boot information for the current resource.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class ComputerSystem100Boot   {
   
-  private ComputerSystem100BootSourceOverrideEnabled bootSourceOverrideEnabled = null;
-  private ComputerSystem100BootSource bootSourceOverrideTarget = null;
+
+
+  public enum BootSourceOverrideEnabledEnum {
+    DISABLED("Disabled"),
+    ONCE("Once"),
+    CONTINUOUS("Continuous");
+
+    private String value;
+
+    BootSourceOverrideEnabledEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private BootSourceOverrideEnabledEnum bootSourceOverrideEnabled = null;
+
+
+  public enum BootSourceOverrideTargetEnum {
+    NONE("None"),
+    PXE("Pxe"),
+    FLOPPY("Floppy"),
+    CD("Cd"),
+    USB("Usb"),
+    HDD("Hdd"),
+    BIOSSETUP("BiosSetup"),
+    UTILITIES("Utilities"),
+    DIAGS("Diags"),
+    UEFISHELL("UefiShell"),
+    UEFITARGET("UefiTarget");
+
+    private String value;
+
+    BootSourceOverrideTargetEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private BootSourceOverrideTargetEnum bootSourceOverrideTarget = null;
+  private String uefiTargetBootSourceOverride = null;
 
   
   /**
    * Describes the state of the Boot Source Override feature
    **/
-  public ComputerSystem100Boot bootSourceOverrideEnabled(ComputerSystem100BootSourceOverrideEnabled bootSourceOverrideEnabled) {
-    this.bootSourceOverrideEnabled = bootSourceOverrideEnabled;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Describes the state of the Boot Source Override feature")
+  @ApiModelProperty(value = "Describes the state of the Boot Source Override feature")
   @JsonProperty("BootSourceOverrideEnabled")
-  public ComputerSystem100BootSourceOverrideEnabled getBootSourceOverrideEnabled() {
+  public BootSourceOverrideEnabledEnum getBootSourceOverrideEnabled() {
     return bootSourceOverrideEnabled;
   }
-  public void setBootSourceOverrideEnabled(ComputerSystem100BootSourceOverrideEnabled bootSourceOverrideEnabled) {
+  public void setBootSourceOverrideEnabled(BootSourceOverrideEnabledEnum bootSourceOverrideEnabled) {
     this.bootSourceOverrideEnabled = bootSourceOverrideEnabled;
   }
 
@@ -42,24 +86,34 @@ public class ComputerSystem100Boot   {
   /**
    * The current boot source to be used at next boot instead of the normal boot device, if BootSourceOverrideEnabled is true.
    **/
-  public ComputerSystem100Boot bootSourceOverrideTarget(ComputerSystem100BootSource bootSourceOverrideTarget) {
-    this.bootSourceOverrideTarget = bootSourceOverrideTarget;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The current boot source to be used at next boot instead of the normal boot device, if BootSourceOverrideEnabled is true.")
+  @ApiModelProperty(value = "The current boot source to be used at next boot instead of the normal boot device, if BootSourceOverrideEnabled is true.")
   @JsonProperty("BootSourceOverrideTarget")
-  public ComputerSystem100BootSource getBootSourceOverrideTarget() {
+  public BootSourceOverrideTargetEnum getBootSourceOverrideTarget() {
     return bootSourceOverrideTarget;
   }
-  public void setBootSourceOverrideTarget(ComputerSystem100BootSource bootSourceOverrideTarget) {
+  public void setBootSourceOverrideTarget(BootSourceOverrideTargetEnum bootSourceOverrideTarget) {
     this.bootSourceOverrideTarget = bootSourceOverrideTarget;
+  }
+
+  
+  /**
+   * This property is the Uefi Device Path of the device to boot from when BootSourceOverrideSupported is UefiTarget.
+   **/
+  
+  @ApiModelProperty(value = "This property is the Uefi Device Path of the device to boot from when BootSourceOverrideSupported is UefiTarget.")
+  @JsonProperty("UefiTargetBootSourceOverride")
+  public String getUefiTargetBootSourceOverride() {
+    return uefiTargetBootSourceOverride;
+  }
+  public void setUefiTargetBootSourceOverride(String uefiTargetBootSourceOverride) {
+    this.uefiTargetBootSourceOverride = uefiTargetBootSourceOverride;
   }
 
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -67,13 +121,14 @@ public class ComputerSystem100Boot   {
       return false;
     }
     ComputerSystem100Boot computerSystem100Boot = (ComputerSystem100Boot) o;
-    return Objects.equals(this.bootSourceOverrideEnabled, computerSystem100Boot.bootSourceOverrideEnabled) &&
-        Objects.equals(this.bootSourceOverrideTarget, computerSystem100Boot.bootSourceOverrideTarget);
+    return Objects.equals(bootSourceOverrideEnabled, computerSystem100Boot.bootSourceOverrideEnabled) &&
+        Objects.equals(bootSourceOverrideTarget, computerSystem100Boot.bootSourceOverrideTarget) &&
+        Objects.equals(uefiTargetBootSourceOverride, computerSystem100Boot.uefiTargetBootSourceOverride);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bootSourceOverrideEnabled, bootSourceOverrideTarget);
+    return Objects.hash(bootSourceOverrideEnabled, bootSourceOverrideTarget, uefiTargetBootSourceOverride);
   }
 
   @Override
@@ -83,6 +138,7 @@ public class ComputerSystem100Boot   {
     
     sb.append("    bootSourceOverrideEnabled: ").append(toIndentedString(bootSourceOverrideEnabled)).append("\n");
     sb.append("    bootSourceOverrideTarget: ").append(toIndentedString(bootSourceOverrideTarget)).append("\n");
+    sb.append("    uefiTargetBootSourceOverride: ").append(toIndentedString(uefiTargetBootSourceOverride)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -91,7 +147,7 @@ public class ComputerSystem100Boot   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

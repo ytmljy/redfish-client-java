@@ -2,18 +2,11 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Id;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.Privileges100PrivilegeType;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 
@@ -22,68 +15,78 @@ import java.util.List;
  **/
 
 @ApiModel(description = "This schema defines a user role to be used in conjunction with a manager account.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class Role100Role   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private List<Privileges100PrivilegeType> assignedPrivileges = new ArrayList<Privileges100PrivilegeType>();
-  private ResourceDescription description = null;
-  private ResourceId id = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+
+
+  public enum AssignedPrivilegesEnum {
+    LOGIN("Login"),
+    CONFIGUREMANAGER("ConfigureManager"),
+    CONFIGUREUSERS("ConfigureUsers"),
+    CONFIGURESELF("ConfigureSelf"),
+    CONFIGURECOMPONENTS("ConfigureComponents");
+
+    private String value;
+
+    AssignedPrivilegesEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private List<AssignedPrivilegesEnum> assignedPrivileges = new ArrayList<AssignedPrivilegesEnum>();
+  private String description = null;
+  private String id = null;
   private Boolean isPredefined = null;
-  private ResourceName name = null;
+  private String name = null;
   private ResourceOem oem = null;
   private List<String> oemPrivileges = new ArrayList<String>();
 
   
   /**
    **/
-  public Role100Role odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public Role100Role odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public Role100Role odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
@@ -91,75 +94,69 @@ public class Role100Role   {
   /**
    * The redfish privileges that this role includes.
    **/
-  public Role100Role assignedPrivileges(List<Privileges100PrivilegeType> assignedPrivileges) {
-    this.assignedPrivileges = assignedPrivileges;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The redfish privileges that this role includes.")
+  @ApiModelProperty(value = "The redfish privileges that this role includes.")
   @JsonProperty("AssignedPrivileges")
-  public List<Privileges100PrivilegeType> getAssignedPrivileges() {
+  public List<AssignedPrivilegesEnum> getAssignedPrivileges() {
     return assignedPrivileges;
   }
-  public void setAssignedPrivileges(List<Privileges100PrivilegeType> assignedPrivileges) {
+  public void setAssignedPrivileges(List<AssignedPrivilegesEnum> assignedPrivileges) {
     this.assignedPrivileges = assignedPrivileges;
   }
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public Role100Role description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public Role100Role id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
   
-  @ApiModelProperty(example = "null", value = "This property is used to indicate if the Role is one of the Redfish Predefined Roles vs a Custom role.")
+  /**
+   * This property is used to indicate if the Role is one of the Redfish Predefined Roles vs a Custom role.
+   **/
+  
+  @ApiModelProperty(value = "This property is used to indicate if the Role is one of the Redfish Predefined Roles vs a Custom role.")
   @JsonProperty("IsPredefined")
   public Boolean getIsPredefined() {
     return isPredefined;
   }
+  public void setIsPredefined(Boolean isPredefined) {
+    this.isPredefined = isPredefined;
+  }
 
   
   /**
+   * The name of the resource or array element.
    **/
-  public Role100Role name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -167,12 +164,8 @@ public class Role100Role   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public Role100Role oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -185,12 +178,8 @@ public class Role100Role   {
   /**
    * The OEM privileges that this role includes.
    **/
-  public Role100Role oemPrivileges(List<String> oemPrivileges) {
-    this.oemPrivileges = oemPrivileges;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The OEM privileges that this role includes.")
+  @ApiModelProperty(value = "The OEM privileges that this role includes.")
   @JsonProperty("OemPrivileges")
   public List<String> getOemPrivileges() {
     return oemPrivileges;
@@ -202,7 +191,7 @@ public class Role100Role   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -210,16 +199,16 @@ public class Role100Role   {
       return false;
     }
     Role100Role role100Role = (Role100Role) o;
-    return Objects.equals(this.odataContext, role100Role.odataContext) &&
-        Objects.equals(this.odataId, role100Role.odataId) &&
-        Objects.equals(this.odataType, role100Role.odataType) &&
-        Objects.equals(this.assignedPrivileges, role100Role.assignedPrivileges) &&
-        Objects.equals(this.description, role100Role.description) &&
-        Objects.equals(this.id, role100Role.id) &&
-        Objects.equals(this.isPredefined, role100Role.isPredefined) &&
-        Objects.equals(this.name, role100Role.name) &&
-        Objects.equals(this.oem, role100Role.oem) &&
-        Objects.equals(this.oemPrivileges, role100Role.oemPrivileges);
+    return Objects.equals(odataContext, role100Role.odataContext) &&
+        Objects.equals(odataId, role100Role.odataId) &&
+        Objects.equals(odataType, role100Role.odataType) &&
+        Objects.equals(assignedPrivileges, role100Role.assignedPrivileges) &&
+        Objects.equals(description, role100Role.description) &&
+        Objects.equals(id, role100Role.id) &&
+        Objects.equals(isPredefined, role100Role.isPredefined) &&
+        Objects.equals(name, role100Role.name) &&
+        Objects.equals(oem, role100Role.oem) &&
+        Objects.equals(oemPrivileges, role100Role.oemPrivileges);
   }
 
   @Override
@@ -250,7 +239,7 @@ public class Role100Role   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

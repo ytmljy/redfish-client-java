@@ -10,22 +10,34 @@ import io.swagger.client.Pair;
 import io.swagger.client.model.ServiceRoot100ServiceRoot;
 import io.swagger.client.model.ErrorResponse;
 import io.swagger.client.model.AccountService100AccountService;
+import io.swagger.client.model.ManagerAccountCollectionManagerAccountCollection;
+import io.swagger.client.model.ManagerAccount100ManagerAccount;
+import io.swagger.client.model.RoleCollectionRoleCollection;
+import io.swagger.client.model.Role100Role;
 import io.swagger.client.model.ChassisCollectionChassisCollection;
 import io.swagger.client.model.Chassis100Chassis;
 import io.swagger.client.model.Power100Power;
 import io.swagger.client.model.Thermal100Thermal;
-import io.swagger.client.model.ManagerAccountCollectionManagerAccountCollection;
-import io.swagger.client.model.ManagerAccount100ManagerAccount;
+import io.swagger.client.model.EventService100EventService;
+import io.swagger.client.model.Body;
+import io.swagger.client.model.EventDestinationCollectionEventDestinationCollection;
+import io.swagger.client.model.EventDestination100EventDestination;
 import io.swagger.client.model.ManagerCollectionManagerCollection;
 import io.swagger.client.model.Manager100Manager;
-import io.swagger.client.model.MessageRegistryMessageRegistry;
-import io.swagger.client.model.RoleCollectionRoleCollection;
-import io.swagger.client.model.Role100Role;
+import io.swagger.client.model.EthernetInterfaceCollectionEthernetInterfaceCollection;
+import io.swagger.client.model.EthernetInterface100EthernetInterface;
+import io.swagger.client.model.SerialInterface100SerialInterface;
+import io.swagger.client.model.VirtualMedia100VirtualMedia;
+import io.swagger.client.model.MessageRegistryFileCollectionMessageRegistryFileCollection;
+import io.swagger.client.model.MessageRegistryFile100MessageRegistryFile;
+import io.swagger.client.model.JsonSchemaFile100JsonSchemaFile;
 import io.swagger.client.model.JsonSchemaFileCollectionJsonSchemaFileCollection;
 import io.swagger.client.model.SessionService100SessionService;
+import io.swagger.client.model.SessionCollectionSessionCollection;
+import io.swagger.client.model.Session100Session;
 import io.swagger.client.model.ComputerSystemCollectionComputerSystemCollection;
 import io.swagger.client.model.ComputerSystem100ComputerSystem;
-import io.swagger.client.model.RackHDResetAction;
+import io.swagger.client.model.RackHDResetActionResetAction;
 import io.swagger.client.model.RackHDBootImageBootImageList;
 import io.swagger.client.model.RackHDBootImageBootImage;
 import io.swagger.client.model.LogServiceCollectionLogServiceCollection;
@@ -40,12 +52,9 @@ import io.swagger.client.model.TaskService100TaskService;
 import io.swagger.client.model.TaskCollectionTaskCollection;
 import io.swagger.client.model.Task100Task;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class RedfishvApi {
   private ApiClient apiClient;
 
@@ -70,18 +79,17 @@ public class RedfishvApi {
    * retrieve list of root-level resources
    * This object represents the root Redfish service.  All values for resources described  by this schema shall comply to the requirements as described in the Redfish specification. This object represents the root Redfish service.
    * @return ServiceRoot100ServiceRoot
-   * @throws ApiException if fails to make API call
    */
   public ServiceRoot100ServiceRoot getServiceRoot() throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/".replaceAll("\\{format\\}","json");
+    String path = "/".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -89,21 +97,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<ServiceRoot100ServiceRoot> localVarReturnType = new GenericType<ServiceRoot100ServiceRoot>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<ServiceRoot100ServiceRoot> returnType = new GenericType<ServiceRoot100ServiceRoot>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -111,18 +119,17 @@ public class RedfishvApi {
    * retrieve account service information
    * 
    * @return AccountService100AccountService
-   * @throws ApiException if fails to make API call
    */
-  public AccountService100AccountService unimplemented() throws ApiException {
-    Object localVarPostBody = null;
+  public AccountService100AccountService getAccountService() throws ApiException {
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/AccountService".replaceAll("\\{format\\}","json");
+    String path = "/AccountService".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -130,21 +137,338 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<AccountService100AccountService> localVarReturnType = new GenericType<AccountService100AccountService>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<AccountService100AccountService> returnType = new GenericType<AccountService100AccountService>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * retrieve information about the accounts
+   * 
+   * @return ManagerAccountCollectionManagerAccountCollection
+   */
+  public ManagerAccountCollectionManagerAccountCollection getAccounts() throws ApiException {
+    Object postBody = null;
+    
+    // create path and map variables
+    String path = "/AccountService/Accounts".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<ManagerAccountCollectionManagerAccountCollection> returnType = new GenericType<ManagerAccountCollectionManagerAccountCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * create a user with the provided information
+   * 
+   * @param payload 
+   * @return void
+   */
+  public void createAccount(ManagerAccount100ManagerAccount payload) throws ApiException {
+    Object postBody = payload;
+    
+     // verify the required parameter 'payload' is set
+     if (payload == null) {
+        throw new ApiException(400, "Missing the required parameter 'payload' when calling createAccount");
+     }
+     
+    // create path and map variables
+    String path = "/AccountService/Accounts".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
+    
+  }
+  
+  /**
+   * retrieve information about the specified account
+   * 
+   * @param name 
+   * @return ManagerAccount100ManagerAccount
+   */
+  public ManagerAccount100ManagerAccount getAccount(String name) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'name' is set
+     if (name == null) {
+        throw new ApiException(400, "Missing the required parameter 'name' when calling getAccount");
+     }
+     
+    // create path and map variables
+    String path = "/AccountService/Accounts/{name}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<ManagerAccount100ManagerAccount> returnType = new GenericType<ManagerAccount100ManagerAccount>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * delete the specified account
+   * 
+   * @param name 
+   * @return void
+   */
+  public void removeAccount(String name) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'name' is set
+     if (name == null) {
+        throw new ApiException(400, "Missing the required parameter 'name' when calling removeAccount");
+     }
+     
+    // create path and map variables
+    String path = "/AccountService/Accounts/{name}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
+    
+  }
+  
+  /**
+   * update the user with the provided information
+   * 
+   * @param name 
+   * @param payload 
+   * @return void
+   */
+  public void modifyAccount(String name, ManagerAccount100ManagerAccount payload) throws ApiException {
+    Object postBody = payload;
+    
+     // verify the required parameter 'name' is set
+     if (name == null) {
+        throw new ApiException(400, "Missing the required parameter 'name' when calling modifyAccount");
+     }
+     
+     // verify the required parameter 'payload' is set
+     if (payload == null) {
+        throw new ApiException(400, "Missing the required parameter 'payload' when calling modifyAccount");
+     }
+     
+    // create path and map variables
+    String path = "/AccountService/Accounts/{name}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    apiClient.invokeAPI(path, "PATCH", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
+    
+  }
+  
+  /**
+   * retrieve list of roles
+   * 
+   * @return RoleCollectionRoleCollection
+   */
+  public RoleCollectionRoleCollection listRoles() throws ApiException {
+    Object postBody = null;
+    
+    // create path and map variables
+    String path = "/AccountService/Roles".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<RoleCollectionRoleCollection> returnType = new GenericType<RoleCollectionRoleCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * retrieve privileges for a role
+   * 
+   * @param identifier 
+   * @return Role100Role
+   */
+  public Role100Role getRole(String identifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getRole");
+     }
+     
+    // create path and map variables
+    String path = "/AccountService/Roles/{identifier}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<Role100Role> returnType = new GenericType<Role100Role>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -152,18 +476,17 @@ public class RedfishvApi {
    * retrieve list of physical components
    * Defines a collection of physical components managed by the service
    * @return ChassisCollectionChassisCollection
-   * @throws ApiException if fails to make API call
    */
   public ChassisCollectionChassisCollection listChassis() throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/Chassis".replaceAll("\\{format\\}","json");
+    String path = "/Chassis".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -171,21 +494,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<ChassisCollectionChassisCollection> localVarReturnType = new GenericType<ChassisCollectionChassisCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<ChassisCollectionChassisCollection> returnType = new GenericType<ChassisCollectionChassisCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -194,24 +517,23 @@ public class RedfishvApi {
    * Retrieves a detailed information catalog for the physical component  specified by identifier
    * @param identifier 
    * @return Chassis100Chassis
-   * @throws ApiException if fails to make API call
    */
   public Chassis100Chassis getChassis(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getChassis");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getChassis");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Chassis/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/Chassis/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -219,21 +541,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<Chassis100Chassis> localVarReturnType = new GenericType<Chassis100Chassis>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<Chassis100Chassis> returnType = new GenericType<Chassis100Chassis>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -242,24 +564,23 @@ public class RedfishvApi {
    * defines a collection of power elements contained within a resource.
    * @param identifier 
    * @return Power100Power
-   * @throws ApiException if fails to make API call
    */
   public Power100Power getPower(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getPower");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getPower");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Chassis/{identifier}/Power".replaceAll("\\{format\\}","json")
+    String path = "/Chassis/{identifier}/Power".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -267,21 +588,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<Power100Power> localVarReturnType = new GenericType<Power100Power>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<Power100Power> returnType = new GenericType<Power100Power>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -290,24 +611,23 @@ public class RedfishvApi {
    * defines a collection of thermal elements contained within a resource.
    * @param identifier 
    * @return Thermal100Thermal
-   * @throws ApiException if fails to make API call
    */
   public Thermal100Thermal getThermal(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getThermal");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getThermal");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Chassis/{identifier}/Thermal".replaceAll("\\{format\\}","json")
+    String path = "/Chassis/{identifier}/Thermal".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -315,40 +635,39 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<Thermal100Thermal> localVarReturnType = new GenericType<Thermal100Thermal>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<Thermal100Thermal> returnType = new GenericType<Thermal100Thermal>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * retrieve list of policies used by event service listeners
    * 
-   * @return AccountService100AccountService
-   * @throws ApiException if fails to make API call
+   * @return EventService100EventService
    */
-  public AccountService100AccountService unimplemented_0() throws ApiException {
-    Object localVarPostBody = null;
+  public EventService100EventService eventServiceRoot() throws ApiException {
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/EventService".replaceAll("\\{format\\}","json");
+    String path = "/EventService".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -356,40 +675,40 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<AccountService100AccountService> localVarReturnType = new GenericType<AccountService100AccountService>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<EventService100EventService> returnType = new GenericType<EventService100EventService>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * retrieve list of manager accounts
+   * submit a test event action
    * 
-   * @return ManagerAccountCollectionManagerAccountCollection
-   * @throws ApiException if fails to make API call
+   * @param body 
+   * @return void
    */
-  public ManagerAccountCollectionManagerAccountCollection unimplemented_1() throws ApiException {
-    Object localVarPostBody = null;
+  public void testEvent(Body body) throws ApiException {
+    Object postBody = body;
     
     // create path and map variables
-    String localVarPath = "/ManagerAccounts".replaceAll("\\{format\\}","json");
+    String path = "/EventService/Actions/EventService.SubmitTestEvent".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -397,47 +716,38 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<ManagerAccountCollectionManagerAccountCollection> localVarReturnType = new GenericType<ManagerAccountCollectionManagerAccountCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
     
   }
   
   /**
-   * retrieve a manager account by name
+   * retrieve collection of subscribed events
    * 
-   * @param identifier 
-   * @return ManagerAccount100ManagerAccount
-   * @throws ApiException if fails to make API call
+   * @return EventDestinationCollectionEventDestinationCollection
    */
-  public ManagerAccount100ManagerAccount unimplemented_2(String identifier) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling unimplemented_2");
-    }
+  public EventDestinationCollectionEventDestinationCollection getEventsCollection() throws ApiException {
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/ManagerAccounts/{identifier}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+    String path = "/EventService/Subscriptions".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -445,21 +755,160 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<ManagerAccount100ManagerAccount> localVarReturnType = new GenericType<ManagerAccount100ManagerAccount>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<EventDestinationCollectionEventDestinationCollection> returnType = new GenericType<EventDestinationCollectionEventDestinationCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * retrieve collection of subscribed events
+   * 
+   * @param payload 
+   * @return EventDestinationCollectionEventDestinationCollection
+   */
+  public EventDestinationCollectionEventDestinationCollection createSubscription(EventDestination100EventDestination payload) throws ApiException {
+    Object postBody = payload;
+    
+     // verify the required parameter 'payload' is set
+     if (payload == null) {
+        throw new ApiException(400, "Missing the required parameter 'payload' when calling createSubscription");
+     }
+     
+    // create path and map variables
+    String path = "/EventService/Subscriptions".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<EventDestinationCollectionEventDestinationCollection> returnType = new GenericType<EventDestinationCollectionEventDestinationCollection>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * retrieve specific event subscription
+   * 
+   * @param index 
+   * @return EventDestination100EventDestination
+   */
+  public EventDestination100EventDestination getEvent(String index) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'index' is set
+     if (index == null) {
+        throw new ApiException(400, "Missing the required parameter 'index' when calling getEvent");
+     }
+     
+    // create path and map variables
+    String path = "/EventService/Subscriptions/{index}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "index" + "\\}", apiClient.escapeString(index.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<EventDestination100EventDestination> returnType = new GenericType<EventDestination100EventDestination>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * delete specific event subscription
+   * 
+   * @param index 
+   * @return void
+   */
+  public void deleteEvent(String index) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'index' is set
+     if (index == null) {
+        throw new ApiException(400, "Missing the required parameter 'index' when calling deleteEvent");
+     }
+     
+    // create path and map variables
+    String path = "/EventService/Subscriptions/{index}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "index" + "\\}", apiClient.escapeString(index.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
     
   }
   
@@ -467,18 +916,17 @@ public class RedfishvApi {
    * retrieve list of management servers
    * 
    * @return ManagerCollectionManagerCollection
-   * @throws ApiException if fails to make API call
    */
-  public ManagerCollectionManagerCollection unimplemented_3() throws ApiException {
-    Object localVarPostBody = null;
+  public ManagerCollectionManagerCollection listManagers() throws ApiException {
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/Managers".replaceAll("\\{format\\}","json");
+    String path = "/Managers".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -486,21 +934,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<ManagerCollectionManagerCollection> localVarReturnType = new GenericType<ManagerCollectionManagerCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<ManagerCollectionManagerCollection> returnType = new GenericType<ManagerCollectionManagerCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -509,24 +957,23 @@ public class RedfishvApi {
    * 
    * @param identifier 
    * @return Manager100Manager
-   * @throws ApiException if fails to make API call
    */
-  public Manager100Manager unimplemented_4(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public Manager100Manager getManager(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling unimplemented_4");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getManager");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Managers/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/Managers/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -534,129 +981,46 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<Manager100Manager> localVarReturnType = new GenericType<Manager100Manager>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<Manager100Manager> returnType = new GenericType<Manager100Manager>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * Unspecified
-   * 
-   * @return MessageRegistryMessageRegistry
-   * @throws ApiException if fails to make API call
-   */
-  public MessageRegistryMessageRegistry unimplemented_5() throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/Registries".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    
-    GenericType<MessageRegistryMessageRegistry> localVarReturnType = new GenericType<MessageRegistryMessageRegistry>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
-   * retrieve list of roles for use in ManagerAccounts
-   * 
-   * @return RoleCollectionRoleCollection
-   * @throws ApiException if fails to make API call
-   */
-  public RoleCollectionRoleCollection unimplemented_6() throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/Roles".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    
-    GenericType<RoleCollectionRoleCollection> localVarReturnType = new GenericType<RoleCollectionRoleCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
-   * retrieve a manager account role by name
+   * retrieve information about the ethernet interfaces
    * 
    * @param identifier 
-   * @return Role100Role
-   * @throws ApiException if fails to make API call
+   * @return EthernetInterfaceCollectionEthernetInterfaceCollection
    */
-  public Role100Role unimplemented_7(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public EthernetInterfaceCollectionEthernetInterfaceCollection listManagerEthernetInterfaces(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling unimplemented_7");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling listManagerEthernetInterfaces");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Roles/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/Managers/{identifier}/EthernetInterfaces".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -664,40 +1028,53 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<Role100Role> localVarReturnType = new GenericType<Role100Role>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<EthernetInterfaceCollectionEthernetInterfaceCollection> returnType = new GenericType<EthernetInterfaceCollectionEthernetInterfaceCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * Unspecified
+   * retrieve information about the specified ethernet interface
    * 
-   * @return JsonSchemaFileCollectionJsonSchemaFileCollection
-   * @throws ApiException if fails to make API call
+   * @param identifier 
+   * @param index 
+   * @return EthernetInterface100EthernetInterface
    */
-  public JsonSchemaFileCollectionJsonSchemaFileCollection unimplemented_8() throws ApiException {
-    Object localVarPostBody = null;
+  public EthernetInterface100EthernetInterface getManagerEthernetInterface(String identifier, String index) throws ApiException {
+    Object postBody = null;
     
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getManagerEthernetInterface");
+     }
+     
+     // verify the required parameter 'index' is set
+     if (index == null) {
+        throw new ApiException(400, "Missing the required parameter 'index' when calling getManagerEthernetInterface");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Schemas".replaceAll("\\{format\\}","json");
+    String path = "/Managers/{identifier}/EthernetInterfaces/{index}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()))
+      .replaceAll("\\{" + "index" + "\\}", apiClient.escapeString(index.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -705,21 +1082,397 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<JsonSchemaFileCollectionJsonSchemaFileCollection> localVarReturnType = new GenericType<JsonSchemaFileCollectionJsonSchemaFileCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<EthernetInterface100EthernetInterface> returnType = new GenericType<EthernetInterface100EthernetInterface>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * retrieve information about the serial interface
+   * 
+   * @param identifier 
+   * @param index 
+   * @return SerialInterface100SerialInterface
+   */
+  public SerialInterface100SerialInterface unimplemented(String identifier, String index) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling unimplemented");
+     }
+     
+     // verify the required parameter 'index' is set
+     if (index == null) {
+        throw new ApiException(400, "Missing the required parameter 'index' when calling unimplemented");
+     }
+     
+    // create path and map variables
+    String path = "/Managers/{identifier}/SerialInterfaces/{index}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()))
+      .replaceAll("\\{" + "index" + "\\}", apiClient.escapeString(index.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<SerialInterface100SerialInterface> returnType = new GenericType<SerialInterface100SerialInterface>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * retrieve information about the virtual media
+   * 
+   * @param identifier 
+   * @param index 
+   * @return VirtualMedia100VirtualMedia
+   */
+  public VirtualMedia100VirtualMedia unimplemented_0(String identifier, String index) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling unimplemented_0");
+     }
+     
+     // verify the required parameter 'index' is set
+     if (index == null) {
+        throw new ApiException(400, "Missing the required parameter 'index' when calling unimplemented_0");
+     }
+     
+    // create path and map variables
+    String path = "/Managers/{identifier}/VirtualMedia/{index}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()))
+      .replaceAll("\\{" + "index" + "\\}", apiClient.escapeString(index.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<VirtualMedia100VirtualMedia> returnType = new GenericType<VirtualMedia100VirtualMedia>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * Retrieve list of registries
+   * 
+   * @return MessageRegistryFileCollectionMessageRegistryFileCollection
+   */
+  public MessageRegistryFileCollectionMessageRegistryFileCollection listRegistry() throws ApiException {
+    Object postBody = null;
+    
+    // create path and map variables
+    String path = "/Registries".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<MessageRegistryFileCollectionMessageRegistryFileCollection> returnType = new GenericType<MessageRegistryFileCollectionMessageRegistryFileCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * retrieve the content of a specific registry
+   * 
+   * @param identifier 
+   * @return MessageRegistryFile100MessageRegistryFile
+   */
+  public MessageRegistryFile100MessageRegistryFile getRegistryFileContents(String identifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getRegistryFileContents");
+     }
+     
+    // create path and map variables
+    String path = "/Registries/en/{identifier}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<MessageRegistryFile100MessageRegistryFile> returnType = new GenericType<MessageRegistryFile100MessageRegistryFile>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * Retrieve information on a specific registry
+   * 
+   * @param identifier 
+   * @return MessageRegistryFile100MessageRegistryFile
+   */
+  public MessageRegistryFile100MessageRegistryFile getRegistryFile(String identifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getRegistryFile");
+     }
+     
+    // create path and map variables
+    String path = "/Registries/{identifier}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<MessageRegistryFile100MessageRegistryFile> returnType = new GenericType<MessageRegistryFile100MessageRegistryFile>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * display the content of a schema json
+   * 
+   * @param identifier 
+   * @return JsonSchemaFile100JsonSchemaFile
+   */
+  public JsonSchemaFile100JsonSchemaFile getSchemaContent(String identifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSchemaContent");
+     }
+     
+    // create path and map variables
+    String path = "/SchemaStore/en/{identifier}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<JsonSchemaFile100JsonSchemaFile> returnType = new GenericType<JsonSchemaFile100JsonSchemaFile>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * retrieve list of schemas
+   * 
+   * @return JsonSchemaFileCollectionJsonSchemaFileCollection
+   */
+  public JsonSchemaFileCollectionJsonSchemaFileCollection listSchemas() throws ApiException {
+    Object postBody = null;
+    
+    // create path and map variables
+    String path = "/Schemas".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<JsonSchemaFileCollectionJsonSchemaFileCollection> returnType = new GenericType<JsonSchemaFileCollectionJsonSchemaFileCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * retrieve information for a specific schema
+   * 
+   * @param identifier 
+   * @return JsonSchemaFile100JsonSchemaFile
+   */
+  public JsonSchemaFile100JsonSchemaFile getSchema(String identifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSchema");
+     }
+     
+    // create path and map variables
+    String path = "/Schemas/{identifier}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<JsonSchemaFile100JsonSchemaFile> returnType = new GenericType<JsonSchemaFile100JsonSchemaFile>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -727,18 +1480,17 @@ public class RedfishvApi {
    * retrieve a list of sessions
    * 
    * @return SessionService100SessionService
-   * @throws ApiException if fails to make API call
    */
-  public SessionService100SessionService unimplemented_9() throws ApiException {
-    Object localVarPostBody = null;
+  public SessionService100SessionService getSessionService() throws ApiException {
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/Sessions".replaceAll("\\{format\\}","json");
+    String path = "/SessionService".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -746,21 +1498,201 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<SessionService100SessionService> localVarReturnType = new GenericType<SessionService100SessionService>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<SessionService100SessionService> returnType = new GenericType<SessionService100SessionService>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * retrieve a sessions description
+   * 
+   * @return SessionCollectionSessionCollection
+   */
+  public SessionCollectionSessionCollection getSessions() throws ApiException {
+    Object postBody = null;
+    
+    // create path and map variables
+    String path = "/SessionService/Sessions".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<SessionCollectionSessionCollection> returnType = new GenericType<SessionCollectionSessionCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * create a new session
+   * 
+   * @param payload 
+   * @return Session100Session
+   */
+  public Session100Session postSession(Session100Session payload) throws ApiException {
+    Object postBody = payload;
+    
+     // verify the required parameter 'payload' is set
+     if (payload == null) {
+        throw new ApiException(400, "Missing the required parameter 'payload' when calling postSession");
+     }
+     
+    // create path and map variables
+    String path = "/SessionService/Sessions".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<Session100Session> returnType = new GenericType<Session100Session>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * retrieve session information
+   * 
+   * @param identifier 
+   * @return Session100Session
+   */
+  public Session100Session getSessionInfo(String identifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSessionInfo");
+     }
+     
+    // create path and map variables
+    String path = "/SessionService/Sessions/{identifier}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<Session100Session> returnType = new GenericType<Session100Session>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * logout of the session
+   * 
+   * @param identifier 
+   * @return Session100Session
+   */
+  public Session100Session doLogoutSession(String identifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling doLogoutSession");
+     }
+     
+    // create path and map variables
+    String path = "/SessionService/Sessions/{identifier}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<Session100Session> returnType = new GenericType<Session100Session>() {};
+    return apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -768,18 +1700,17 @@ public class RedfishvApi {
    * retrieve list of computer systems
    * retrieve list of computer systems
    * @return ComputerSystemCollectionComputerSystemCollection
-   * @throws ApiException if fails to make API call
    */
   public ComputerSystemCollectionComputerSystemCollection listSystems() throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/Systems".replaceAll("\\{format\\}","json");
+    String path = "/Systems".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -787,21 +1718,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<ComputerSystemCollectionComputerSystemCollection> localVarReturnType = new GenericType<ComputerSystemCollectionComputerSystemCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<ComputerSystemCollectionComputerSystemCollection> returnType = new GenericType<ComputerSystemCollectionComputerSystemCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -810,24 +1741,23 @@ public class RedfishvApi {
    * defines a computer system and its respective properties.  A computer system represents a  machine (physical or virtual) and the local resources such as memory, cpu and other  devices that can be accessed from that machine.
    * @param identifier node identifier
    * @return ComputerSystem100ComputerSystem
-   * @throws ApiException if fails to make API call
    */
   public ComputerSystem100ComputerSystem getSystem(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSystem");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSystem");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -835,21 +1765,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<ComputerSystem100ComputerSystem> localVarReturnType = new GenericType<ComputerSystem100ComputerSystem>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<ComputerSystem100ComputerSystem> returnType = new GenericType<ComputerSystem100ComputerSystem>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -857,25 +1787,24 @@ public class RedfishvApi {
    * retrieve the list of reset types for the specified compute node
    * Retrieve  a list of valid reset types for the system described by identifier
    * @param identifier 
-   * @return RackHDResetAction
-   * @throws ApiException if fails to make API call
+   * @return RackHDResetActionResetAction
    */
-  public RackHDResetAction listResetTypes(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public RackHDResetActionResetAction listResetTypes(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling listResetTypes");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling listResetTypes");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/Actions/ComputerSystem.Reset".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/Actions/ComputerSystem.Reset".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -883,21 +1812,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<RackHDResetAction> localVarReturnType = new GenericType<RackHDResetAction>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<RackHDResetActionResetAction> returnType = new GenericType<RackHDResetActionResetAction>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -906,29 +1835,29 @@ public class RedfishvApi {
    * Perform the reset specified in the post data arguments on the system described by identifier
    * @param identifier 
    * @param payload 
-   * @throws ApiException if fails to make API call
+   * @return void
    */
-  public void doReset(String identifier, RackHDResetAction payload) throws ApiException {
-    Object localVarPostBody = payload;
+  public void doReset(String identifier, RackHDResetActionResetAction payload) throws ApiException {
+    Object postBody = payload;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling doReset");
-    }
-    
-    // verify the required parameter 'payload' is set
-    if (payload == null) {
-      throw new ApiException(400, "Missing the required parameter 'payload' when calling doReset");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling doReset");
+     }
+     
+     // verify the required parameter 'payload' is set
+     if (payload == null) {
+        throw new ApiException(400, "Missing the required parameter 'payload' when calling doReset");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/Actions/ComputerSystem.Reset".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/Actions/ComputerSystem.Reset".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -936,20 +1865,20 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+    apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
     
   }
   
@@ -958,24 +1887,23 @@ public class RedfishvApi {
    * Retrieve  a list of valid boot image types for the system described by identifier
    * @param identifier 
    * @return RackHDBootImageBootImageList
-   * @throws ApiException if fails to make API call
    */
   public RackHDBootImageBootImageList listBootImage(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling listBootImage");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling listBootImage");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/Actions/RackHD.BootImage".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/Actions/RackHD.BootImage".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -983,21 +1911,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<RackHDBootImageBootImageList> localVarReturnType = new GenericType<RackHDBootImageBootImageList>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<RackHDBootImageBootImageList> returnType = new GenericType<RackHDBootImageBootImageList>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1006,29 +1934,29 @@ public class RedfishvApi {
    * Perform the boot image installation specified in the post data arguments on  the system described by identifier
    * @param identifier 
    * @param payload 
-   * @throws ApiException if fails to make API call
+   * @return void
    */
   public void doBootImage(String identifier, RackHDBootImageBootImage payload) throws ApiException {
-    Object localVarPostBody = payload;
+    Object postBody = payload;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling doBootImage");
-    }
-    
-    // verify the required parameter 'payload' is set
-    if (payload == null) {
-      throw new ApiException(400, "Missing the required parameter 'payload' when calling doBootImage");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling doBootImage");
+     }
+     
+     // verify the required parameter 'payload' is set
+     if (payload == null) {
+        throw new ApiException(400, "Missing the required parameter 'payload' when calling doBootImage");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/Actions/RackHD.BootImage".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/Actions/RackHD.BootImage".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1036,20 +1964,121 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+    apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
+    
+  }
+  
+  /**
+   * retrieve the simple storage collection
+   * Defines a collection of ethernet interfaces that are present on the system described by identifier
+   * @param identifier 
+   * @return EthernetInterfaceCollectionEthernetInterfaceCollection
+   */
+  public EthernetInterfaceCollectionEthernetInterfaceCollection unimplemented_1(String identifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling unimplemented_1");
+     }
+     
+    // create path and map variables
+    String path = "/Systems/{identifier}/EthernetInterfaces".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<EthernetInterfaceCollectionEthernetInterfaceCollection> returnType = new GenericType<EthernetInterfaceCollectionEthernetInterfaceCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * Retrieve the ethernet interface by device identifier
+   * Defines an ethernet interface present on the system described by identifier
+   * @param identifier 
+   * @param index 
+   * @return EthernetInterface100EthernetInterface
+   */
+  public EthernetInterface100EthernetInterface unimplemented_2(String identifier, String index) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling unimplemented_2");
+     }
+     
+     // verify the required parameter 'index' is set
+     if (index == null) {
+        throw new ApiException(400, "Missing the required parameter 'index' when calling unimplemented_2");
+     }
+     
+    // create path and map variables
+    String path = "/Systems/{identifier}/EthernetInterfaces/{index}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()))
+      .replaceAll("\\{" + "index" + "\\}", apiClient.escapeString(index.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+    GenericType<EthernetInterface100EthernetInterface> returnType = new GenericType<EthernetInterface100EthernetInterface>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1058,24 +2087,23 @@ public class RedfishvApi {
    * Defines a collection of log services that are available for the system described by identifier
    * @param identifier 
    * @return LogServiceCollectionLogServiceCollection
-   * @throws ApiException if fails to make API call
    */
   public LogServiceCollectionLogServiceCollection listLogService(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling listLogService");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling listLogService");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/LogServices".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/LogServices".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1083,21 +2111,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<LogServiceCollectionLogServiceCollection> localVarReturnType = new GenericType<LogServiceCollectionLogServiceCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<LogServiceCollectionLogServiceCollection> returnType = new GenericType<LogServiceCollectionLogServiceCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1106,24 +2134,23 @@ public class RedfishvApi {
    * Defines a collection of SEL entries for the system described by identifier.
    * @param identifier 
    * @return LogService100LogService
-   * @throws ApiException if fails to make API call
    */
   public LogService100LogService getSelLogService(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSelLogService");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSelLogService");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/LogServices/sel".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/LogServices/sel".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1131,21 +2158,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<LogService100LogService> localVarReturnType = new GenericType<LogService100LogService>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<LogService100LogService> returnType = new GenericType<LogService100LogService>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1154,24 +2181,23 @@ public class RedfishvApi {
    * Defines a collection of entries for the system described by identifier
    * @param identifier 
    * @return LogEntryCollectionLogEntryCollection
-   * @throws ApiException if fails to make API call
    */
   public LogEntryCollectionLogEntryCollection listSelLogServiceEntries(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling listSelLogServiceEntries");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling listSelLogServiceEntries");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/LogServices/sel/Entries".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/LogServices/sel/Entries".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1179,21 +2205,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<LogEntryCollectionLogEntryCollection> localVarReturnType = new GenericType<LogEntryCollectionLogEntryCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<LogEntryCollectionLogEntryCollection> returnType = new GenericType<LogEntryCollectionLogEntryCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1203,30 +2229,29 @@ public class RedfishvApi {
    * @param identifier 
    * @param entryId 
    * @return LogEntry100LogEntry
-   * @throws ApiException if fails to make API call
    */
   public LogEntry100LogEntry getSelLogServiceEntry(String identifier, String entryId) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSelLogServiceEntry");
-    }
-    
-    // verify the required parameter 'entryId' is set
-    if (entryId == null) {
-      throw new ApiException(400, "Missing the required parameter 'entryId' when calling getSelLogServiceEntry");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSelLogServiceEntry");
+     }
+     
+     // verify the required parameter 'entryId' is set
+     if (entryId == null) {
+        throw new ApiException(400, "Missing the required parameter 'entryId' when calling getSelLogServiceEntry");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/LogServices/sel/Entries/{entryId}".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/LogServices/sel/Entries/{entryId}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()))
       .replaceAll("\\{" + "entryId" + "\\}", apiClient.escapeString(entryId.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1234,21 +2259,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<LogEntry100LogEntry> localVarReturnType = new GenericType<LogEntry100LogEntry>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<LogEntry100LogEntry> returnType = new GenericType<LogEntry100LogEntry>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1257,24 +2282,23 @@ public class RedfishvApi {
    * defines a collection of processors contained within a resource.
    * @param identifier 
    * @return ProcessorCollectionProcessorCollection
-   * @throws ApiException if fails to make API call
    */
   public ProcessorCollectionProcessorCollection listSystemProcessors(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling listSystemProcessors");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling listSystemProcessors");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/Processors".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/Processors".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1282,21 +2306,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<ProcessorCollectionProcessorCollection> localVarReturnType = new GenericType<ProcessorCollectionProcessorCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<ProcessorCollectionProcessorCollection> returnType = new GenericType<ProcessorCollectionProcessorCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1306,30 +2330,29 @@ public class RedfishvApi {
    * @param identifier 
    * @param socket 
    * @return Processor100Processor
-   * @throws ApiException if fails to make API call
    */
   public Processor100Processor getSystemProcessor(String identifier, String socket) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSystemProcessor");
-    }
-    
-    // verify the required parameter 'socket' is set
-    if (socket == null) {
-      throw new ApiException(400, "Missing the required parameter 'socket' when calling getSystemProcessor");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSystemProcessor");
+     }
+     
+     // verify the required parameter 'socket' is set
+     if (socket == null) {
+        throw new ApiException(400, "Missing the required parameter 'socket' when calling getSystemProcessor");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/Processors/{socket}".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/Processors/{socket}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()))
       .replaceAll("\\{" + "socket" + "\\}", apiClient.escapeString(socket.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1337,21 +2360,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<Processor100Processor> localVarReturnType = new GenericType<Processor100Processor>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<Processor100Processor> returnType = new GenericType<Processor100Processor>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1360,24 +2383,23 @@ public class RedfishvApi {
    * Defines a collection of simple storage collections that are present on the system described by identifier
    * @param identifier 
    * @return SimpleStorageCollectionSimpleStorageCollection
-   * @throws ApiException if fails to make API call
    */
   public SimpleStorageCollectionSimpleStorageCollection listSimpleStorage(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling listSimpleStorage");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling listSimpleStorage");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/SimpleStorage".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/SimpleStorage".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1385,21 +2407,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<SimpleStorageCollectionSimpleStorageCollection> localVarReturnType = new GenericType<SimpleStorageCollectionSimpleStorageCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<SimpleStorageCollectionSimpleStorageCollection> returnType = new GenericType<SimpleStorageCollectionSimpleStorageCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1409,30 +2431,29 @@ public class RedfishvApi {
    * @param identifier 
    * @param index 
    * @return SimpleStorage100SimpleStorage
-   * @throws ApiException if fails to make API call
    */
   public SimpleStorage100SimpleStorage getSimpleStorage(String identifier, String index) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSimpleStorage");
-    }
-    
-    // verify the required parameter 'index' is set
-    if (index == null) {
-      throw new ApiException(400, "Missing the required parameter 'index' when calling getSimpleStorage");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSimpleStorage");
+     }
+     
+     // verify the required parameter 'index' is set
+     if (index == null) {
+        throw new ApiException(400, "Missing the required parameter 'index' when calling getSimpleStorage");
+     }
+     
     // create path and map variables
-    String localVarPath = "/Systems/{identifier}/SimpleStorage/{index}".replaceAll("\\{format\\}","json")
+    String path = "/Systems/{identifier}/SimpleStorage/{index}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()))
       .replaceAll("\\{" + "index" + "\\}", apiClient.escapeString(index.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1440,21 +2461,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<SimpleStorage100SimpleStorage> localVarReturnType = new GenericType<SimpleStorage100SimpleStorage>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<SimpleStorage100SimpleStorage> returnType = new GenericType<SimpleStorage100SimpleStorage>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1462,18 +2483,17 @@ public class RedfishvApi {
    * retrieve list of all tasks
    * This object represents the root Redfish service.
    * @return TaskService100TaskService
-   * @throws ApiException if fails to make API call
    */
   public TaskService100TaskService taskServiceRoot() throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/TaskService".replaceAll("\\{format\\}","json");
+    String path = "/TaskService".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1481,21 +2501,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<TaskService100TaskService> localVarReturnType = new GenericType<TaskService100TaskService>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<TaskService100TaskService> returnType = new GenericType<TaskService100TaskService>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1504,24 +2524,23 @@ public class RedfishvApi {
    * This object represents the root Redfish service.
    * @param identifier 
    * @return TaskCollectionTaskCollection
-   * @throws ApiException if fails to make API call
    */
   public TaskCollectionTaskCollection getSystemTasks(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSystemTasks");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSystemTasks");
+     }
+     
     // create path and map variables
-    String localVarPath = "/TaskService/Oem/Tasks/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/TaskService/Oem/Tasks/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1529,21 +2548,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<TaskCollectionTaskCollection> localVarReturnType = new GenericType<TaskCollectionTaskCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<TaskCollectionTaskCollection> returnType = new GenericType<TaskCollectionTaskCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1551,18 +2570,17 @@ public class RedfishvApi {
    * retrieve list of all tasks
    * This object represents the root Redfish service.
    * @return TaskCollectionTaskCollection
-   * @throws ApiException if fails to make API call
    */
   public TaskCollectionTaskCollection listTasks() throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/TaskService/Tasks".replaceAll("\\{format\\}","json");
+    String path = "/TaskService/Tasks".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1570,21 +2588,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<TaskCollectionTaskCollection> localVarReturnType = new GenericType<TaskCollectionTaskCollection>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<TaskCollectionTaskCollection> returnType = new GenericType<TaskCollectionTaskCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
@@ -1593,24 +2611,23 @@ public class RedfishvApi {
    * This object represents the root Redfish service.
    * @param identifier 
    * @return Task100Task
-   * @throws ApiException if fails to make API call
    */
   public Task100Task getTask(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getTask");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling getTask");
+     }
+     
     // create path and map variables
-    String localVarPath = "/TaskService/Tasks/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/TaskService/Tasks/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -1618,21 +2635,21 @@ public class RedfishvApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       "application/json"
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     
-    GenericType<Task100Task> localVarReturnType = new GenericType<Task100Task>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<Task100Task> returnType = new GenericType<Task100Task>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   

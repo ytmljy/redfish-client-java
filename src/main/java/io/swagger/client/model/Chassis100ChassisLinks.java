@@ -2,16 +2,13 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.ChassisChassis;
-import io.swagger.client.model.ComputerSystemComputerSystem;
-import io.swagger.client.model.ManagerManager;
-import io.swagger.client.model.Odata400Count;
 import io.swagger.client.model.Odata400IdRef;
 import io.swagger.client.model.ResourceOem;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
 
 
 
@@ -20,36 +17,32 @@ import java.util.List;
  **/
 
 @ApiModel(description = "The links object contains the links to other resources that are related to this resource.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class Chassis100ChassisLinks   {
   
   private Odata400IdRef containsodataNavigationLink = null;
-  private List<ManagerManager> managedBy = new ArrayList<ManagerManager>();
+  private List<Odata400IdRef> managedBy = new ArrayList<Odata400IdRef>();
   private Odata400IdRef poweredByodataNavigationLink = null;
-  private ChassisChassis containedBy = null;
-  private Odata400Count poweredByodataCount = null;
+  private Odata400IdRef containedBy = null;
+  private BigDecimal poweredByodataCount = null;
   private List<Odata400IdRef> cooledBy = new ArrayList<Odata400IdRef>();
-  private Odata400Count managedByodataCount = null;
-  private Odata400Count computerSystemsodataCount = null;
-  private List<ChassisChassis> contains = new ArrayList<ChassisChassis>();
+  private BigDecimal managedByodataCount = null;
+  private BigDecimal computerSystemsodataCount = null;
+  private List<Odata400IdRef> contains = new ArrayList<Odata400IdRef>();
   private List<Odata400IdRef> poweredBy = new ArrayList<Odata400IdRef>();
   private Odata400IdRef cooledByodataNavigationLink = null;
   private Odata400IdRef managedByodataNavigationLink = null;
-  private List<ComputerSystemComputerSystem> computerSystems = new ArrayList<ComputerSystemComputerSystem>();
-  private Odata400Count containsodataCount = null;
-  private Odata400Count cooledByodataCount = null;
+  private List<Odata400IdRef> computerSystems = new ArrayList<Odata400IdRef>();
+  private BigDecimal containsodataCount = null;
+  private BigDecimal cooledByodataCount = null;
   private ResourceOem oem = null;
   private Odata400IdRef computerSystemsodataNavigationLink = null;
 
   
   /**
    **/
-  public Chassis100ChassisLinks containsodataNavigationLink(Odata400IdRef containsodataNavigationLink) {
-    this.containsodataNavigationLink = containsodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Contains@odata.navigationLink")
   public Odata400IdRef getContainsodataNavigationLink() {
     return containsodataNavigationLink;
@@ -62,29 +55,21 @@ public class Chassis100ChassisLinks   {
   /**
    * An array of references to the managers contained in this chassis.
    **/
-  public Chassis100ChassisLinks managedBy(List<ManagerManager> managedBy) {
-    this.managedBy = managedBy;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "An array of references to the managers contained in this chassis.")
+  @ApiModelProperty(value = "An array of references to the managers contained in this chassis.")
   @JsonProperty("ManagedBy")
-  public List<ManagerManager> getManagedBy() {
+  public List<Odata400IdRef> getManagedBy() {
     return managedBy;
   }
-  public void setManagedBy(List<ManagerManager> managedBy) {
+  public void setManagedBy(List<Odata400IdRef> managedBy) {
     this.managedBy = managedBy;
   }
 
   
   /**
    **/
-  public Chassis100ChassisLinks poweredByodataNavigationLink(Odata400IdRef poweredByodataNavigationLink) {
-    this.poweredByodataNavigationLink = poweredByodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("PoweredBy@odata.navigationLink")
   public Odata400IdRef getPoweredByodataNavigationLink() {
     return poweredByodataNavigationLink;
@@ -97,34 +82,26 @@ public class Chassis100ChassisLinks   {
   /**
    * A reference to the chassis that this chassis is contained by.
    **/
-  public Chassis100ChassisLinks containedBy(ChassisChassis containedBy) {
-    this.containedBy = containedBy;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "A reference to the chassis that this chassis is contained by.")
+  @ApiModelProperty(value = "A reference to the chassis that this chassis is contained by.")
   @JsonProperty("ContainedBy")
-  public ChassisChassis getContainedBy() {
+  public Odata400IdRef getContainedBy() {
     return containedBy;
   }
-  public void setContainedBy(ChassisChassis containedBy) {
+  public void setContainedBy(Odata400IdRef containedBy) {
     this.containedBy = containedBy;
   }
 
   
   /**
    **/
-  public Chassis100ChassisLinks poweredByodataCount(Odata400Count poweredByodataCount) {
-    this.poweredByodataCount = poweredByodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("PoweredBy@odata.count")
-  public Odata400Count getPoweredByodataCount() {
+  public BigDecimal getPoweredByodataCount() {
     return poweredByodataCount;
   }
-  public void setPoweredByodataCount(Odata400Count poweredByodataCount) {
+  public void setPoweredByodataCount(BigDecimal poweredByodataCount) {
     this.poweredByodataCount = poweredByodataCount;
   }
 
@@ -132,12 +109,8 @@ public class Chassis100ChassisLinks   {
   /**
    * An array of ID[s] of resources that cool this chassis. Normally the ID will be a chassis or a specific set of fans.
    **/
-  public Chassis100ChassisLinks cooledBy(List<Odata400IdRef> cooledBy) {
-    this.cooledBy = cooledBy;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "An array of ID[s] of resources that cool this chassis. Normally the ID will be a chassis or a specific set of fans.")
+  @ApiModelProperty(value = "An array of ID[s] of resources that cool this chassis. Normally the ID will be a chassis or a specific set of fans.")
   @JsonProperty("CooledBy")
   public List<Odata400IdRef> getCooledBy() {
     return cooledBy;
@@ -149,34 +122,26 @@ public class Chassis100ChassisLinks   {
   
   /**
    **/
-  public Chassis100ChassisLinks managedByodataCount(Odata400Count managedByodataCount) {
-    this.managedByodataCount = managedByodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("ManagedBy@odata.count")
-  public Odata400Count getManagedByodataCount() {
+  public BigDecimal getManagedByodataCount() {
     return managedByodataCount;
   }
-  public void setManagedByodataCount(Odata400Count managedByodataCount) {
+  public void setManagedByodataCount(BigDecimal managedByodataCount) {
     this.managedByodataCount = managedByodataCount;
   }
 
   
   /**
    **/
-  public Chassis100ChassisLinks computerSystemsodataCount(Odata400Count computerSystemsodataCount) {
-    this.computerSystemsodataCount = computerSystemsodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("ComputerSystems@odata.count")
-  public Odata400Count getComputerSystemsodataCount() {
+  public BigDecimal getComputerSystemsodataCount() {
     return computerSystemsodataCount;
   }
-  public void setComputerSystemsodataCount(Odata400Count computerSystemsodataCount) {
+  public void setComputerSystemsodataCount(BigDecimal computerSystemsodataCount) {
     this.computerSystemsodataCount = computerSystemsodataCount;
   }
 
@@ -184,17 +149,13 @@ public class Chassis100ChassisLinks   {
   /**
    * An array of references to any other chassis that this chassis has in it.
    **/
-  public Chassis100ChassisLinks contains(List<ChassisChassis> contains) {
-    this.contains = contains;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "An array of references to any other chassis that this chassis has in it.")
+  @ApiModelProperty(value = "An array of references to any other chassis that this chassis has in it.")
   @JsonProperty("Contains")
-  public List<ChassisChassis> getContains() {
+  public List<Odata400IdRef> getContains() {
     return contains;
   }
-  public void setContains(List<ChassisChassis> contains) {
+  public void setContains(List<Odata400IdRef> contains) {
     this.contains = contains;
   }
 
@@ -202,12 +163,8 @@ public class Chassis100ChassisLinks   {
   /**
    * An array of ID[s] of resources that power this chassis. Normally the ID will be a chassis or a specific set of powerSupplies
    **/
-  public Chassis100ChassisLinks poweredBy(List<Odata400IdRef> poweredBy) {
-    this.poweredBy = poweredBy;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "An array of ID[s] of resources that power this chassis. Normally the ID will be a chassis or a specific set of powerSupplies")
+  @ApiModelProperty(value = "An array of ID[s] of resources that power this chassis. Normally the ID will be a chassis or a specific set of powerSupplies")
   @JsonProperty("PoweredBy")
   public List<Odata400IdRef> getPoweredBy() {
     return poweredBy;
@@ -219,12 +176,8 @@ public class Chassis100ChassisLinks   {
   
   /**
    **/
-  public Chassis100ChassisLinks cooledByodataNavigationLink(Odata400IdRef cooledByodataNavigationLink) {
-    this.cooledByodataNavigationLink = cooledByodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("CooledBy@odata.navigationLink")
   public Odata400IdRef getCooledByodataNavigationLink() {
     return cooledByodataNavigationLink;
@@ -236,12 +189,8 @@ public class Chassis100ChassisLinks   {
   
   /**
    **/
-  public Chassis100ChassisLinks managedByodataNavigationLink(Odata400IdRef managedByodataNavigationLink) {
-    this.managedByodataNavigationLink = managedByodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("ManagedBy@odata.navigationLink")
   public Odata400IdRef getManagedByodataNavigationLink() {
     return managedByodataNavigationLink;
@@ -254,51 +203,39 @@ public class Chassis100ChassisLinks   {
   /**
    * An array of references to the computer systems contained in this chassis.  This will only reference ComputerSystems that are directly and wholly contained in this chassis.
    **/
-  public Chassis100ChassisLinks computerSystems(List<ComputerSystemComputerSystem> computerSystems) {
-    this.computerSystems = computerSystems;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "An array of references to the computer systems contained in this chassis.  This will only reference ComputerSystems that are directly and wholly contained in this chassis.")
+  @ApiModelProperty(value = "An array of references to the computer systems contained in this chassis.  This will only reference ComputerSystems that are directly and wholly contained in this chassis.")
   @JsonProperty("ComputerSystems")
-  public List<ComputerSystemComputerSystem> getComputerSystems() {
+  public List<Odata400IdRef> getComputerSystems() {
     return computerSystems;
   }
-  public void setComputerSystems(List<ComputerSystemComputerSystem> computerSystems) {
+  public void setComputerSystems(List<Odata400IdRef> computerSystems) {
     this.computerSystems = computerSystems;
   }
 
   
   /**
    **/
-  public Chassis100ChassisLinks containsodataCount(Odata400Count containsodataCount) {
-    this.containsodataCount = containsodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Contains@odata.count")
-  public Odata400Count getContainsodataCount() {
+  public BigDecimal getContainsodataCount() {
     return containsodataCount;
   }
-  public void setContainsodataCount(Odata400Count containsodataCount) {
+  public void setContainsodataCount(BigDecimal containsodataCount) {
     this.containsodataCount = containsodataCount;
   }
 
   
   /**
    **/
-  public Chassis100ChassisLinks cooledByodataCount(Odata400Count cooledByodataCount) {
-    this.cooledByodataCount = cooledByodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("CooledBy@odata.count")
-  public Odata400Count getCooledByodataCount() {
+  public BigDecimal getCooledByodataCount() {
     return cooledByodataCount;
   }
-  public void setCooledByodataCount(Odata400Count cooledByodataCount) {
+  public void setCooledByodataCount(BigDecimal cooledByodataCount) {
     this.cooledByodataCount = cooledByodataCount;
   }
 
@@ -306,12 +243,8 @@ public class Chassis100ChassisLinks   {
   /**
    * Oem extension object.
    **/
-  public Chassis100ChassisLinks oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Oem extension object.")
+  @ApiModelProperty(value = "Oem extension object.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -323,12 +256,8 @@ public class Chassis100ChassisLinks   {
   
   /**
    **/
-  public Chassis100ChassisLinks computerSystemsodataNavigationLink(Odata400IdRef computerSystemsodataNavigationLink) {
-    this.computerSystemsodataNavigationLink = computerSystemsodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("ComputerSystems@odata.navigationLink")
   public Odata400IdRef getComputerSystemsodataNavigationLink() {
     return computerSystemsodataNavigationLink;
@@ -340,7 +269,7 @@ public class Chassis100ChassisLinks   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -348,23 +277,23 @@ public class Chassis100ChassisLinks   {
       return false;
     }
     Chassis100ChassisLinks chassis100ChassisLinks = (Chassis100ChassisLinks) o;
-    return Objects.equals(this.containsodataNavigationLink, chassis100ChassisLinks.containsodataNavigationLink) &&
-        Objects.equals(this.managedBy, chassis100ChassisLinks.managedBy) &&
-        Objects.equals(this.poweredByodataNavigationLink, chassis100ChassisLinks.poweredByodataNavigationLink) &&
-        Objects.equals(this.containedBy, chassis100ChassisLinks.containedBy) &&
-        Objects.equals(this.poweredByodataCount, chassis100ChassisLinks.poweredByodataCount) &&
-        Objects.equals(this.cooledBy, chassis100ChassisLinks.cooledBy) &&
-        Objects.equals(this.managedByodataCount, chassis100ChassisLinks.managedByodataCount) &&
-        Objects.equals(this.computerSystemsodataCount, chassis100ChassisLinks.computerSystemsodataCount) &&
-        Objects.equals(this.contains, chassis100ChassisLinks.contains) &&
-        Objects.equals(this.poweredBy, chassis100ChassisLinks.poweredBy) &&
-        Objects.equals(this.cooledByodataNavigationLink, chassis100ChassisLinks.cooledByodataNavigationLink) &&
-        Objects.equals(this.managedByodataNavigationLink, chassis100ChassisLinks.managedByodataNavigationLink) &&
-        Objects.equals(this.computerSystems, chassis100ChassisLinks.computerSystems) &&
-        Objects.equals(this.containsodataCount, chassis100ChassisLinks.containsodataCount) &&
-        Objects.equals(this.cooledByodataCount, chassis100ChassisLinks.cooledByodataCount) &&
-        Objects.equals(this.oem, chassis100ChassisLinks.oem) &&
-        Objects.equals(this.computerSystemsodataNavigationLink, chassis100ChassisLinks.computerSystemsodataNavigationLink);
+    return Objects.equals(containsodataNavigationLink, chassis100ChassisLinks.containsodataNavigationLink) &&
+        Objects.equals(managedBy, chassis100ChassisLinks.managedBy) &&
+        Objects.equals(poweredByodataNavigationLink, chassis100ChassisLinks.poweredByodataNavigationLink) &&
+        Objects.equals(containedBy, chassis100ChassisLinks.containedBy) &&
+        Objects.equals(poweredByodataCount, chassis100ChassisLinks.poweredByodataCount) &&
+        Objects.equals(cooledBy, chassis100ChassisLinks.cooledBy) &&
+        Objects.equals(managedByodataCount, chassis100ChassisLinks.managedByodataCount) &&
+        Objects.equals(computerSystemsodataCount, chassis100ChassisLinks.computerSystemsodataCount) &&
+        Objects.equals(contains, chassis100ChassisLinks.contains) &&
+        Objects.equals(poweredBy, chassis100ChassisLinks.poweredBy) &&
+        Objects.equals(cooledByodataNavigationLink, chassis100ChassisLinks.cooledByodataNavigationLink) &&
+        Objects.equals(managedByodataNavigationLink, chassis100ChassisLinks.managedByodataNavigationLink) &&
+        Objects.equals(computerSystems, chassis100ChassisLinks.computerSystems) &&
+        Objects.equals(containsodataCount, chassis100ChassisLinks.containsodataCount) &&
+        Objects.equals(cooledByodataCount, chassis100ChassisLinks.cooledByodataCount) &&
+        Objects.equals(oem, chassis100ChassisLinks.oem) &&
+        Objects.equals(computerSystemsodataNavigationLink, chassis100ChassisLinks.computerSystemsodataNavigationLink);
   }
 
   @Override
@@ -402,7 +331,7 @@ public class Chassis100ChassisLinks   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

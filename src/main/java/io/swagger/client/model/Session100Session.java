@@ -2,14 +2,9 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Id;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
 
 
@@ -19,116 +14,97 @@ import io.swagger.client.model.ResourceOem;
  **/
 
 @ApiModel(description = "This is the base type for resources and referenceable members.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class Session100Session   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private ResourceDescription description = null;
-  private ResourceId id = null;
-  private ResourceName name = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+  private String description = null;
+  private String id = null;
+  private String name = null;
   private ResourceOem oem = null;
+  private String password = null;
+  private String userName = null;
 
   
   /**
    **/
-  public Session100Session odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public Session100Session odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public Session100Session odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public Session100Session description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public Session100Session id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
   
   /**
+   * The name of the resource or array element.
    **/
-  public Session100Session name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -136,12 +112,8 @@ public class Session100Session   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public Session100Session oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -151,9 +123,36 @@ public class Session100Session   {
   }
 
   
+  /**
+   * This property is used in a POST to specify a password when creating a new session.  This property is null on a GET.
+   **/
+  
+  @ApiModelProperty(value = "This property is used in a POST to specify a password when creating a new session.  This property is null on a GET.")
+  @JsonProperty("Password")
+  public String getPassword() {
+    return password;
+  }
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  
+  /**
+   **/
+  
+  @ApiModelProperty(value = "")
+  @JsonProperty("UserName")
+  public String getUserName() {
+    return userName;
+  }
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
+
+  
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -161,18 +160,20 @@ public class Session100Session   {
       return false;
     }
     Session100Session session100Session = (Session100Session) o;
-    return Objects.equals(this.odataContext, session100Session.odataContext) &&
-        Objects.equals(this.odataId, session100Session.odataId) &&
-        Objects.equals(this.odataType, session100Session.odataType) &&
-        Objects.equals(this.description, session100Session.description) &&
-        Objects.equals(this.id, session100Session.id) &&
-        Objects.equals(this.name, session100Session.name) &&
-        Objects.equals(this.oem, session100Session.oem);
+    return Objects.equals(odataContext, session100Session.odataContext) &&
+        Objects.equals(odataId, session100Session.odataId) &&
+        Objects.equals(odataType, session100Session.odataType) &&
+        Objects.equals(description, session100Session.description) &&
+        Objects.equals(id, session100Session.id) &&
+        Objects.equals(name, session100Session.name) &&
+        Objects.equals(oem, session100Session.oem) &&
+        Objects.equals(password, session100Session.password) &&
+        Objects.equals(userName, session100Session.userName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(odataContext, odataId, odataType, description, id, name, oem);
+    return Objects.hash(odataContext, odataId, odataType, description, id, name, oem, password, userName);
   }
 
   @Override
@@ -187,6 +188,8 @@ public class Session100Session   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    oem: ").append(toIndentedString(oem)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -195,7 +198,7 @@ public class Session100Session   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

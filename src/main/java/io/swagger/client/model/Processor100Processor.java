@@ -2,20 +2,13 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Id;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.Processor100InstructionSet;
-import io.swagger.client.model.Processor100ProcessorArchitecture;
 import io.swagger.client.model.Processor100ProcessorId;
-import io.swagger.client.model.Processor100ProcessorType;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
 import io.swagger.client.model.ResourceStatus;
+import java.math.BigDecimal;
 
 
 
@@ -24,104 +17,162 @@ import io.swagger.client.model.ResourceStatus;
  **/
 
 @ApiModel(description = "This is the schema definition for the Processor resource.  It represents the properties of a processor attached to a System.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class Processor100Processor   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private ResourceDescription description = null;
-  private ResourceId id = null;
-  private Processor100InstructionSet instructionSet = null;
-  private ResourceName name = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+  private String description = null;
+  private String id = null;
+
+
+  public enum InstructionSetEnum {
+    X86("x86"),
+    X86_64("x86-64"),
+    IA_64("IA-64"),
+    ARM_A32("ARM-A32"),
+    ARM_A64("ARM-A64"),
+    MIPS32("MIPS32"),
+    MIPS64("MIPS64"),
+    OEM("OEM");
+
+    private String value;
+
+    InstructionSetEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private InstructionSetEnum instructionSet = null;
+  private String manufacturer = null;
+  private BigDecimal maxSpeedMHz = null;
+  private String model = null;
+  private String name = null;
   private ResourceOem oem = null;
-  private Processor100ProcessorArchitecture processorArchitecture = null;
+
+
+  public enum ProcessorArchitectureEnum {
+    X86("x86"),
+    IA_64("IA-64"),
+    ARM("ARM"),
+    MIPS("MIPS"),
+    OEM("OEM");
+
+    private String value;
+
+    ProcessorArchitectureEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private ProcessorArchitectureEnum processorArchitecture = null;
   private Processor100ProcessorId processorId = null;
-  private Processor100ProcessorType processorType = null;
+
+
+  public enum ProcessorTypeEnum {
+    CPU("CPU"),
+    GPU("GPU"),
+    FPGA("FPGA"),
+    DSP("DSP"),
+    ACCELERATOR("Accelerator"),
+    OEM("OEM");
+
+    private String value;
+
+    ProcessorTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private ProcessorTypeEnum processorType = null;
+  private String socket = null;
   private ResourceStatus status = null;
+  private BigDecimal totalCores = null;
+  private BigDecimal totalThreads = null;
 
   
   /**
    **/
-  public Processor100Processor odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public Processor100Processor odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public Processor100Processor odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public Processor100Processor description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public Processor100Processor id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -129,34 +180,69 @@ public class Processor100Processor   {
   /**
    * The instruction set of the processor
    **/
-  public Processor100Processor instructionSet(Processor100InstructionSet instructionSet) {
-    this.instructionSet = instructionSet;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The instruction set of the processor")
+  @ApiModelProperty(value = "The instruction set of the processor")
   @JsonProperty("InstructionSet")
-  public Processor100InstructionSet getInstructionSet() {
+  public InstructionSetEnum getInstructionSet() {
     return instructionSet;
   }
-  public void setInstructionSet(Processor100InstructionSet instructionSet) {
+  public void setInstructionSet(InstructionSetEnum instructionSet) {
     this.instructionSet = instructionSet;
   }
 
   
   /**
+   * The processor manufacturer
    **/
-  public Processor100Processor name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The processor manufacturer")
+  @JsonProperty("Manufacturer")
+  public String getManufacturer() {
+    return manufacturer;
+  }
+  public void setManufacturer(String manufacturer) {
+    this.manufacturer = manufacturer;
+  }
+
+  
+  /**
+   * The maximum clock speed of the processor
+   **/
+  
+  @ApiModelProperty(value = "The maximum clock speed of the processor")
+  @JsonProperty("MaxSpeedMHz")
+  public BigDecimal getMaxSpeedMHz() {
+    return maxSpeedMHz;
+  }
+  public void setMaxSpeedMHz(BigDecimal maxSpeedMHz) {
+    this.maxSpeedMHz = maxSpeedMHz;
+  }
+
+  
+  /**
+   * The product model number of this device
+   **/
+  
+  @ApiModelProperty(value = "The product model number of this device")
+  @JsonProperty("Model")
+  public String getModel() {
+    return model;
+  }
+  public void setModel(String model) {
+    this.model = model;
+  }
+
+  
+  /**
+   * The name of the resource or array element.
+   **/
+  
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -164,12 +250,8 @@ public class Processor100Processor   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public Processor100Processor oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -182,17 +264,13 @@ public class Processor100Processor   {
   /**
    * The architecture of the processor
    **/
-  public Processor100Processor processorArchitecture(Processor100ProcessorArchitecture processorArchitecture) {
-    this.processorArchitecture = processorArchitecture;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The architecture of the processor")
+  @ApiModelProperty(value = "The architecture of the processor")
   @JsonProperty("ProcessorArchitecture")
-  public Processor100ProcessorArchitecture getProcessorArchitecture() {
+  public ProcessorArchitectureEnum getProcessorArchitecture() {
     return processorArchitecture;
   }
-  public void setProcessorArchitecture(Processor100ProcessorArchitecture processorArchitecture) {
+  public void setProcessorArchitecture(ProcessorArchitectureEnum processorArchitecture) {
     this.processorArchitecture = processorArchitecture;
   }
 
@@ -200,12 +278,8 @@ public class Processor100Processor   {
   /**
    * Identification information for this processor.
    **/
-  public Processor100Processor processorId(Processor100ProcessorId processorId) {
-    this.processorId = processorId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Identification information for this processor.")
+  @ApiModelProperty(value = "Identification information for this processor.")
   @JsonProperty("ProcessorId")
   public Processor100ProcessorId getProcessorId() {
     return processorId;
@@ -218,29 +292,35 @@ public class Processor100Processor   {
   /**
    * The type of processor
    **/
-  public Processor100Processor processorType(Processor100ProcessorType processorType) {
-    this.processorType = processorType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The type of processor")
+  @ApiModelProperty(value = "The type of processor")
   @JsonProperty("ProcessorType")
-  public Processor100ProcessorType getProcessorType() {
+  public ProcessorTypeEnum getProcessorType() {
     return processorType;
   }
-  public void setProcessorType(Processor100ProcessorType processorType) {
+  public void setProcessorType(ProcessorTypeEnum processorType) {
     this.processorType = processorType;
   }
 
   
   /**
+   * The socket or location of the processor
    **/
-  public Processor100Processor status(ResourceStatus status) {
-    this.status = status;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The socket or location of the processor")
+  @JsonProperty("Socket")
+  public String getSocket() {
+    return socket;
+  }
+  public void setSocket(String socket) {
+    this.socket = socket;
+  }
+
+  
+  /**
+   **/
+  
+  @ApiModelProperty(value = "")
   @JsonProperty("Status")
   public ResourceStatus getStatus() {
     return status;
@@ -250,9 +330,37 @@ public class Processor100Processor   {
   }
 
   
+  /**
+   * The total number of cores contained in this processor
+   **/
+  
+  @ApiModelProperty(value = "The total number of cores contained in this processor")
+  @JsonProperty("TotalCores")
+  public BigDecimal getTotalCores() {
+    return totalCores;
+  }
+  public void setTotalCores(BigDecimal totalCores) {
+    this.totalCores = totalCores;
+  }
+
+  
+  /**
+   * The total number of execution threads supported by this processor
+   **/
+  
+  @ApiModelProperty(value = "The total number of execution threads supported by this processor")
+  @JsonProperty("TotalThreads")
+  public BigDecimal getTotalThreads() {
+    return totalThreads;
+  }
+  public void setTotalThreads(BigDecimal totalThreads) {
+    this.totalThreads = totalThreads;
+  }
+
+  
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -260,23 +368,29 @@ public class Processor100Processor   {
       return false;
     }
     Processor100Processor processor100Processor = (Processor100Processor) o;
-    return Objects.equals(this.odataContext, processor100Processor.odataContext) &&
-        Objects.equals(this.odataId, processor100Processor.odataId) &&
-        Objects.equals(this.odataType, processor100Processor.odataType) &&
-        Objects.equals(this.description, processor100Processor.description) &&
-        Objects.equals(this.id, processor100Processor.id) &&
-        Objects.equals(this.instructionSet, processor100Processor.instructionSet) &&
-        Objects.equals(this.name, processor100Processor.name) &&
-        Objects.equals(this.oem, processor100Processor.oem) &&
-        Objects.equals(this.processorArchitecture, processor100Processor.processorArchitecture) &&
-        Objects.equals(this.processorId, processor100Processor.processorId) &&
-        Objects.equals(this.processorType, processor100Processor.processorType) &&
-        Objects.equals(this.status, processor100Processor.status);
+    return Objects.equals(odataContext, processor100Processor.odataContext) &&
+        Objects.equals(odataId, processor100Processor.odataId) &&
+        Objects.equals(odataType, processor100Processor.odataType) &&
+        Objects.equals(description, processor100Processor.description) &&
+        Objects.equals(id, processor100Processor.id) &&
+        Objects.equals(instructionSet, processor100Processor.instructionSet) &&
+        Objects.equals(manufacturer, processor100Processor.manufacturer) &&
+        Objects.equals(maxSpeedMHz, processor100Processor.maxSpeedMHz) &&
+        Objects.equals(model, processor100Processor.model) &&
+        Objects.equals(name, processor100Processor.name) &&
+        Objects.equals(oem, processor100Processor.oem) &&
+        Objects.equals(processorArchitecture, processor100Processor.processorArchitecture) &&
+        Objects.equals(processorId, processor100Processor.processorId) &&
+        Objects.equals(processorType, processor100Processor.processorType) &&
+        Objects.equals(socket, processor100Processor.socket) &&
+        Objects.equals(status, processor100Processor.status) &&
+        Objects.equals(totalCores, processor100Processor.totalCores) &&
+        Objects.equals(totalThreads, processor100Processor.totalThreads);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(odataContext, odataId, odataType, description, id, instructionSet, name, oem, processorArchitecture, processorId, processorType, status);
+    return Objects.hash(odataContext, odataId, odataType, description, id, instructionSet, manufacturer, maxSpeedMHz, model, name, oem, processorArchitecture, processorId, processorType, socket, status, totalCores, totalThreads);
   }
 
   @Override
@@ -290,12 +404,18 @@ public class Processor100Processor   {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    instructionSet: ").append(toIndentedString(instructionSet)).append("\n");
+    sb.append("    manufacturer: ").append(toIndentedString(manufacturer)).append("\n");
+    sb.append("    maxSpeedMHz: ").append(toIndentedString(maxSpeedMHz)).append("\n");
+    sb.append("    model: ").append(toIndentedString(model)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    oem: ").append(toIndentedString(oem)).append("\n");
     sb.append("    processorArchitecture: ").append(toIndentedString(processorArchitecture)).append("\n");
     sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
     sb.append("    processorType: ").append(toIndentedString(processorType)).append("\n");
+    sb.append("    socket: ").append(toIndentedString(socket)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    totalCores: ").append(toIndentedString(totalCores)).append("\n");
+    sb.append("    totalThreads: ").append(toIndentedString(totalThreads)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -304,7 +424,7 @@ public class Processor100Processor   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

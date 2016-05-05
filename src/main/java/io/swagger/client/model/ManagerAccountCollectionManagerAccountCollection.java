@@ -2,102 +2,81 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.ManagerAccountManagerAccount;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Count;
-import io.swagger.client.model.Odata400Id;
 import io.swagger.client.model.Odata400IdRef;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
 
 
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class ManagerAccountCollectionManagerAccountCollection   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private ResourceDescription description = null;
-  private List<ManagerAccountManagerAccount> members = new ArrayList<ManagerAccountManagerAccount>();
-  private Odata400Count membersodataCount = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+  private String description = null;
+  private List<Odata400IdRef> members = new ArrayList<Odata400IdRef>();
+  private BigDecimal membersodataCount = null;
   private Odata400IdRef membersodataNavigationLink = null;
-  private ResourceName name = null;
+  private String name = null;
   private ResourceOem oem = null;
 
   
   /**
    **/
-  public ManagerAccountCollectionManagerAccountCollection odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public ManagerAccountCollectionManagerAccountCollection odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public ManagerAccountCollectionManagerAccountCollection odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public ManagerAccountCollectionManagerAccountCollection description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
@@ -105,46 +84,34 @@ public class ManagerAccountCollectionManagerAccountCollection   {
   /**
    * Contains the members of this collection.
    **/
-  public ManagerAccountCollectionManagerAccountCollection members(List<ManagerAccountManagerAccount> members) {
-    this.members = members;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Contains the members of this collection.")
+  @ApiModelProperty(value = "Contains the members of this collection.")
   @JsonProperty("Members")
-  public List<ManagerAccountManagerAccount> getMembers() {
+  public List<Odata400IdRef> getMembers() {
     return members;
   }
-  public void setMembers(List<ManagerAccountManagerAccount> members) {
+  public void setMembers(List<Odata400IdRef> members) {
     this.members = members;
   }
 
   
   /**
    **/
-  public ManagerAccountCollectionManagerAccountCollection membersodataCount(Odata400Count membersodataCount) {
-    this.membersodataCount = membersodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Members@odata.count")
-  public Odata400Count getMembersodataCount() {
+  public BigDecimal getMembersodataCount() {
     return membersodataCount;
   }
-  public void setMembersodataCount(Odata400Count membersodataCount) {
+  public void setMembersodataCount(BigDecimal membersodataCount) {
     this.membersodataCount = membersodataCount;
   }
 
   
   /**
    **/
-  public ManagerAccountCollectionManagerAccountCollection membersodataNavigationLink(Odata400IdRef membersodataNavigationLink) {
-    this.membersodataNavigationLink = membersodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Members@odata.navigationLink")
   public Odata400IdRef getMembersodataNavigationLink() {
     return membersodataNavigationLink;
@@ -155,18 +122,15 @@ public class ManagerAccountCollectionManagerAccountCollection   {
 
   
   /**
+   * The name of the resource or array element.
    **/
-  public ManagerAccountCollectionManagerAccountCollection name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -174,12 +138,8 @@ public class ManagerAccountCollectionManagerAccountCollection   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public ManagerAccountCollectionManagerAccountCollection oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -191,7 +151,7 @@ public class ManagerAccountCollectionManagerAccountCollection   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -199,15 +159,15 @@ public class ManagerAccountCollectionManagerAccountCollection   {
       return false;
     }
     ManagerAccountCollectionManagerAccountCollection managerAccountCollectionManagerAccountCollection = (ManagerAccountCollectionManagerAccountCollection) o;
-    return Objects.equals(this.odataContext, managerAccountCollectionManagerAccountCollection.odataContext) &&
-        Objects.equals(this.odataId, managerAccountCollectionManagerAccountCollection.odataId) &&
-        Objects.equals(this.odataType, managerAccountCollectionManagerAccountCollection.odataType) &&
-        Objects.equals(this.description, managerAccountCollectionManagerAccountCollection.description) &&
-        Objects.equals(this.members, managerAccountCollectionManagerAccountCollection.members) &&
-        Objects.equals(this.membersodataCount, managerAccountCollectionManagerAccountCollection.membersodataCount) &&
-        Objects.equals(this.membersodataNavigationLink, managerAccountCollectionManagerAccountCollection.membersodataNavigationLink) &&
-        Objects.equals(this.name, managerAccountCollectionManagerAccountCollection.name) &&
-        Objects.equals(this.oem, managerAccountCollectionManagerAccountCollection.oem);
+    return Objects.equals(odataContext, managerAccountCollectionManagerAccountCollection.odataContext) &&
+        Objects.equals(odataId, managerAccountCollectionManagerAccountCollection.odataId) &&
+        Objects.equals(odataType, managerAccountCollectionManagerAccountCollection.odataType) &&
+        Objects.equals(description, managerAccountCollectionManagerAccountCollection.description) &&
+        Objects.equals(members, managerAccountCollectionManagerAccountCollection.members) &&
+        Objects.equals(membersodataCount, managerAccountCollectionManagerAccountCollection.membersodataCount) &&
+        Objects.equals(membersodataNavigationLink, managerAccountCollectionManagerAccountCollection.membersodataNavigationLink) &&
+        Objects.equals(name, managerAccountCollectionManagerAccountCollection.name) &&
+        Objects.equals(oem, managerAccountCollectionManagerAccountCollection.oem);
   }
 
   @Override
@@ -237,7 +197,7 @@ public class ManagerAccountCollectionManagerAccountCollection   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

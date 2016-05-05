@@ -2,102 +2,81 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Count;
-import io.swagger.client.model.Odata400Id;
 import io.swagger.client.model.Odata400IdRef;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
-import io.swagger.client.model.RoleRole;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
 
 
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class RoleCollectionRoleCollection   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private ResourceDescription description = null;
-  private List<RoleRole> members = new ArrayList<RoleRole>();
-  private Odata400Count membersodataCount = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+  private String description = null;
+  private List<Odata400IdRef> members = new ArrayList<Odata400IdRef>();
+  private BigDecimal membersodataCount = null;
   private Odata400IdRef membersodataNavigationLink = null;
-  private ResourceName name = null;
+  private String name = null;
   private ResourceOem oem = null;
 
   
   /**
    **/
-  public RoleCollectionRoleCollection odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public RoleCollectionRoleCollection odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public RoleCollectionRoleCollection odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public RoleCollectionRoleCollection description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
@@ -105,46 +84,34 @@ public class RoleCollectionRoleCollection   {
   /**
    * Contains the members of this collection.
    **/
-  public RoleCollectionRoleCollection members(List<RoleRole> members) {
-    this.members = members;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Contains the members of this collection.")
+  @ApiModelProperty(value = "Contains the members of this collection.")
   @JsonProperty("Members")
-  public List<RoleRole> getMembers() {
+  public List<Odata400IdRef> getMembers() {
     return members;
   }
-  public void setMembers(List<RoleRole> members) {
+  public void setMembers(List<Odata400IdRef> members) {
     this.members = members;
   }
 
   
   /**
    **/
-  public RoleCollectionRoleCollection membersodataCount(Odata400Count membersodataCount) {
-    this.membersodataCount = membersodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Members@odata.count")
-  public Odata400Count getMembersodataCount() {
+  public BigDecimal getMembersodataCount() {
     return membersodataCount;
   }
-  public void setMembersodataCount(Odata400Count membersodataCount) {
+  public void setMembersodataCount(BigDecimal membersodataCount) {
     this.membersodataCount = membersodataCount;
   }
 
   
   /**
    **/
-  public RoleCollectionRoleCollection membersodataNavigationLink(Odata400IdRef membersodataNavigationLink) {
-    this.membersodataNavigationLink = membersodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Members@odata.navigationLink")
   public Odata400IdRef getMembersodataNavigationLink() {
     return membersodataNavigationLink;
@@ -155,18 +122,15 @@ public class RoleCollectionRoleCollection   {
 
   
   /**
+   * The name of the resource or array element.
    **/
-  public RoleCollectionRoleCollection name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -174,12 +138,8 @@ public class RoleCollectionRoleCollection   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public RoleCollectionRoleCollection oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -191,7 +151,7 @@ public class RoleCollectionRoleCollection   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -199,15 +159,15 @@ public class RoleCollectionRoleCollection   {
       return false;
     }
     RoleCollectionRoleCollection roleCollectionRoleCollection = (RoleCollectionRoleCollection) o;
-    return Objects.equals(this.odataContext, roleCollectionRoleCollection.odataContext) &&
-        Objects.equals(this.odataId, roleCollectionRoleCollection.odataId) &&
-        Objects.equals(this.odataType, roleCollectionRoleCollection.odataType) &&
-        Objects.equals(this.description, roleCollectionRoleCollection.description) &&
-        Objects.equals(this.members, roleCollectionRoleCollection.members) &&
-        Objects.equals(this.membersodataCount, roleCollectionRoleCollection.membersodataCount) &&
-        Objects.equals(this.membersodataNavigationLink, roleCollectionRoleCollection.membersodataNavigationLink) &&
-        Objects.equals(this.name, roleCollectionRoleCollection.name) &&
-        Objects.equals(this.oem, roleCollectionRoleCollection.oem);
+    return Objects.equals(odataContext, roleCollectionRoleCollection.odataContext) &&
+        Objects.equals(odataId, roleCollectionRoleCollection.odataId) &&
+        Objects.equals(odataType, roleCollectionRoleCollection.odataType) &&
+        Objects.equals(description, roleCollectionRoleCollection.description) &&
+        Objects.equals(members, roleCollectionRoleCollection.members) &&
+        Objects.equals(membersodataCount, roleCollectionRoleCollection.membersodataCount) &&
+        Objects.equals(membersodataNavigationLink, roleCollectionRoleCollection.membersodataNavigationLink) &&
+        Objects.equals(name, roleCollectionRoleCollection.name) &&
+        Objects.equals(oem, roleCollectionRoleCollection.oem);
   }
 
   @Override
@@ -237,7 +197,7 @@ public class RoleCollectionRoleCollection   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

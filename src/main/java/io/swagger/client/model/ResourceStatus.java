@@ -2,39 +2,98 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.ResourceHealth;
 import io.swagger.client.model.ResourceOem;
-import io.swagger.client.model.ResourceState;
 
 
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class ResourceStatus   {
   
-  private ResourceHealth health = null;
-  private ResourceHealth healthRollup = null;
+
+
+  public enum HealthEnum {
+    OK("OK"),
+    WARNING("Warning"),
+    CRITICAL("Critical");
+
+    private String value;
+
+    HealthEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private HealthEnum health = null;
+
+
+  public enum HealthRollupEnum {
+    OK("OK"),
+    WARNING("Warning"),
+    CRITICAL("Critical");
+
+    private String value;
+
+    HealthRollupEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private HealthRollupEnum healthRollup = null;
   private ResourceOem oem = null;
-  private ResourceState state = null;
+
+
+  public enum StateEnum {
+    ENABLED("Enabled"),
+    DISABLED("Disabled"),
+    STANDBYOFFLINE("StandbyOffline"),
+    STANDBYSPARE("StandbySpare"),
+    INTEST("InTest"),
+    STARTING("Starting"),
+    ABSENT("Absent");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private StateEnum state = null;
 
   
   /**
    * This represents the health state of this resource in the absence of its dependent resources.
    **/
-  public ResourceStatus health(ResourceHealth health) {
-    this.health = health;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This represents the health state of this resource in the absence of its dependent resources.")
+  @ApiModelProperty(value = "This represents the health state of this resource in the absence of its dependent resources.")
   @JsonProperty("Health")
-  public ResourceHealth getHealth() {
+  public HealthEnum getHealth() {
     return health;
   }
-  public void setHealth(ResourceHealth health) {
+  public void setHealth(HealthEnum health) {
     this.health = health;
   }
 
@@ -42,29 +101,21 @@ public class ResourceStatus   {
   /**
    * This represents the overall health state from the view of this resource.
    **/
-  public ResourceStatus healthRollup(ResourceHealth healthRollup) {
-    this.healthRollup = healthRollup;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This represents the overall health state from the view of this resource.")
+  @ApiModelProperty(value = "This represents the overall health state from the view of this resource.")
   @JsonProperty("HealthRollup")
-  public ResourceHealth getHealthRollup() {
+  public HealthRollupEnum getHealthRollup() {
     return healthRollup;
   }
-  public void setHealthRollup(ResourceHealth healthRollup) {
+  public void setHealthRollup(HealthRollupEnum healthRollup) {
     this.healthRollup = healthRollup;
   }
 
   
   /**
    **/
-  public ResourceStatus oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -77,24 +128,20 @@ public class ResourceStatus   {
   /**
    * This indicates the known state of the resource, such as if it is enabled.
    **/
-  public ResourceStatus state(ResourceState state) {
-    this.state = state;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This indicates the known state of the resource, such as if it is enabled.")
+  @ApiModelProperty(value = "This indicates the known state of the resource, such as if it is enabled.")
   @JsonProperty("State")
-  public ResourceState getState() {
+  public StateEnum getState() {
     return state;
   }
-  public void setState(ResourceState state) {
+  public void setState(StateEnum state) {
     this.state = state;
   }
 
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -102,10 +149,10 @@ public class ResourceStatus   {
       return false;
     }
     ResourceStatus resourceStatus = (ResourceStatus) o;
-    return Objects.equals(this.health, resourceStatus.health) &&
-        Objects.equals(this.healthRollup, resourceStatus.healthRollup) &&
-        Objects.equals(this.oem, resourceStatus.oem) &&
-        Objects.equals(this.state, resourceStatus.state);
+    return Objects.equals(health, resourceStatus.health) &&
+        Objects.equals(healthRollup, resourceStatus.healthRollup) &&
+        Objects.equals(oem, resourceStatus.oem) &&
+        Objects.equals(state, resourceStatus.state);
   }
 
   @Override
@@ -130,7 +177,7 @@ public class ResourceStatus   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

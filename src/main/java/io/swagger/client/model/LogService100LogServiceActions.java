@@ -2,6 +2,7 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.LogService100ClearLog;
@@ -13,7 +14,7 @@ import io.swagger.client.model.LogService100ClearLog;
  **/
 
 @ApiModel(description = "The Actions object contains the available custom actions on this resource.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class LogService100LogServiceActions   {
   
   private LogService100ClearLog logServiceClearLog = null;
@@ -22,12 +23,8 @@ public class LogService100LogServiceActions   {
   
   /**
    **/
-  public LogService100LogServiceActions logServiceClearLog(LogService100ClearLog logServiceClearLog) {
-    this.logServiceClearLog = logServiceClearLog;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("#LogService.ClearLog")
   public LogService100ClearLog getLogServiceClearLog() {
     return logServiceClearLog;
@@ -39,12 +36,8 @@ public class LogService100LogServiceActions   {
   
   /**
    **/
-  public LogService100LogServiceActions oem(Object oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Oem")
   public Object getOem() {
     return oem;
@@ -56,7 +49,7 @@ public class LogService100LogServiceActions   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -64,8 +57,8 @@ public class LogService100LogServiceActions   {
       return false;
     }
     LogService100LogServiceActions logService100LogServiceActions = (LogService100LogServiceActions) o;
-    return Objects.equals(this.logServiceClearLog, logService100LogServiceActions.logServiceClearLog) &&
-        Objects.equals(this.oem, logService100LogServiceActions.oem);
+    return Objects.equals(logServiceClearLog, logService100LogServiceActions.logServiceClearLog) &&
+        Objects.equals(oem, logService100LogServiceActions.oem);
   }
 
   @Override
@@ -88,7 +81,7 @@ public class LogService100LogServiceActions   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

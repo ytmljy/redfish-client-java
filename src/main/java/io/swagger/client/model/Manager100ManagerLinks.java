@@ -2,15 +2,13 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.ChassisChassis;
-import io.swagger.client.model.ComputerSystemComputerSystem;
-import io.swagger.client.model.Odata400Count;
 import io.swagger.client.model.Odata400IdRef;
 import io.swagger.client.model.ResourceOem;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
 
 
 
@@ -19,31 +17,27 @@ import java.util.List;
  **/
 
 @ApiModel(description = "This object contains the links to other resources that are related to this resource.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class Manager100ManagerLinks   {
   
-  private Odata400Count managerForServersodataCount = null;
-  private List<ComputerSystemComputerSystem> managerForServers = new ArrayList<ComputerSystemComputerSystem>();
+  private BigDecimal managerForServersodataCount = null;
+  private List<Odata400IdRef> managerForServers = new ArrayList<Odata400IdRef>();
   private Odata400IdRef managerForChassisodataNavigationLink = null;
   private ResourceOem oem = null;
-  private List<ChassisChassis> managerForChassis = new ArrayList<ChassisChassis>();
-  private Odata400Count managerForChassisodataCount = null;
+  private List<Odata400IdRef> managerForChassis = new ArrayList<Odata400IdRef>();
+  private BigDecimal managerForChassisodataCount = null;
   private Odata400IdRef managerForServersodataNavigationLink = null;
 
   
   /**
    **/
-  public Manager100ManagerLinks managerForServersodataCount(Odata400Count managerForServersodataCount) {
-    this.managerForServersodataCount = managerForServersodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("ManagerForServers@odata.count")
-  public Odata400Count getManagerForServersodataCount() {
+  public BigDecimal getManagerForServersodataCount() {
     return managerForServersodataCount;
   }
-  public void setManagerForServersodataCount(Odata400Count managerForServersodataCount) {
+  public void setManagerForServersodataCount(BigDecimal managerForServersodataCount) {
     this.managerForServersodataCount = managerForServersodataCount;
   }
 
@@ -51,29 +45,21 @@ public class Manager100ManagerLinks   {
   /**
    * This property is an array of references to the systems that this manager has control over.
    **/
-  public Manager100ManagerLinks managerForServers(List<ComputerSystemComputerSystem> managerForServers) {
-    this.managerForServers = managerForServers;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This property is an array of references to the systems that this manager has control over.")
+  @ApiModelProperty(value = "This property is an array of references to the systems that this manager has control over.")
   @JsonProperty("ManagerForServers")
-  public List<ComputerSystemComputerSystem> getManagerForServers() {
+  public List<Odata400IdRef> getManagerForServers() {
     return managerForServers;
   }
-  public void setManagerForServers(List<ComputerSystemComputerSystem> managerForServers) {
+  public void setManagerForServers(List<Odata400IdRef> managerForServers) {
     this.managerForServers = managerForServers;
   }
 
   
   /**
    **/
-  public Manager100ManagerLinks managerForChassisodataNavigationLink(Odata400IdRef managerForChassisodataNavigationLink) {
-    this.managerForChassisodataNavigationLink = managerForChassisodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("ManagerForChassis@odata.navigationLink")
   public Odata400IdRef getManagerForChassisodataNavigationLink() {
     return managerForChassisodataNavigationLink;
@@ -86,12 +72,8 @@ public class Manager100ManagerLinks   {
   /**
    * Oem extension object.
    **/
-  public Manager100ManagerLinks oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Oem extension object.")
+  @ApiModelProperty(value = "Oem extension object.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -104,46 +86,34 @@ public class Manager100ManagerLinks   {
   /**
    * This property is an array of references to the chasis that this manager has control over.
    **/
-  public Manager100ManagerLinks managerForChassis(List<ChassisChassis> managerForChassis) {
-    this.managerForChassis = managerForChassis;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This property is an array of references to the chasis that this manager has control over.")
+  @ApiModelProperty(value = "This property is an array of references to the chasis that this manager has control over.")
   @JsonProperty("ManagerForChassis")
-  public List<ChassisChassis> getManagerForChassis() {
+  public List<Odata400IdRef> getManagerForChassis() {
     return managerForChassis;
   }
-  public void setManagerForChassis(List<ChassisChassis> managerForChassis) {
+  public void setManagerForChassis(List<Odata400IdRef> managerForChassis) {
     this.managerForChassis = managerForChassis;
   }
 
   
   /**
    **/
-  public Manager100ManagerLinks managerForChassisodataCount(Odata400Count managerForChassisodataCount) {
-    this.managerForChassisodataCount = managerForChassisodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("ManagerForChassis@odata.count")
-  public Odata400Count getManagerForChassisodataCount() {
+  public BigDecimal getManagerForChassisodataCount() {
     return managerForChassisodataCount;
   }
-  public void setManagerForChassisodataCount(Odata400Count managerForChassisodataCount) {
+  public void setManagerForChassisodataCount(BigDecimal managerForChassisodataCount) {
     this.managerForChassisodataCount = managerForChassisodataCount;
   }
 
   
   /**
    **/
-  public Manager100ManagerLinks managerForServersodataNavigationLink(Odata400IdRef managerForServersodataNavigationLink) {
-    this.managerForServersodataNavigationLink = managerForServersodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("ManagerForServers@odata.navigationLink")
   public Odata400IdRef getManagerForServersodataNavigationLink() {
     return managerForServersodataNavigationLink;
@@ -155,7 +125,7 @@ public class Manager100ManagerLinks   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -163,13 +133,13 @@ public class Manager100ManagerLinks   {
       return false;
     }
     Manager100ManagerLinks manager100ManagerLinks = (Manager100ManagerLinks) o;
-    return Objects.equals(this.managerForServersodataCount, manager100ManagerLinks.managerForServersodataCount) &&
-        Objects.equals(this.managerForServers, manager100ManagerLinks.managerForServers) &&
-        Objects.equals(this.managerForChassisodataNavigationLink, manager100ManagerLinks.managerForChassisodataNavigationLink) &&
-        Objects.equals(this.oem, manager100ManagerLinks.oem) &&
-        Objects.equals(this.managerForChassis, manager100ManagerLinks.managerForChassis) &&
-        Objects.equals(this.managerForChassisodataCount, manager100ManagerLinks.managerForChassisodataCount) &&
-        Objects.equals(this.managerForServersodataNavigationLink, manager100ManagerLinks.managerForServersodataNavigationLink);
+    return Objects.equals(managerForServersodataCount, manager100ManagerLinks.managerForServersodataCount) &&
+        Objects.equals(managerForServers, manager100ManagerLinks.managerForServers) &&
+        Objects.equals(managerForChassisodataNavigationLink, manager100ManagerLinks.managerForChassisodataNavigationLink) &&
+        Objects.equals(oem, manager100ManagerLinks.oem) &&
+        Objects.equals(managerForChassis, manager100ManagerLinks.managerForChassis) &&
+        Objects.equals(managerForChassisodataCount, manager100ManagerLinks.managerForChassisodataCount) &&
+        Objects.equals(managerForServersodataNavigationLink, manager100ManagerLinks.managerForServersodataNavigationLink);
   }
 
   @Override
@@ -197,7 +167,7 @@ public class Manager100ManagerLinks   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

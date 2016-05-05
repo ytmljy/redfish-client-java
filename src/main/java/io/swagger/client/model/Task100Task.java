@@ -2,21 +2,13 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.Message100Message;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Id;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceHealth;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
-import io.swagger.client.model.Task100TaskState;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Date;
-import java.util.List;
 
 
 
@@ -25,111 +17,148 @@ import java.util.List;
  **/
 
 @ApiModel(description = "This is the schema definition for a Task resource.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class Task100Task   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private ResourceDescription description = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+  private String description = null;
   private Date endTime = null;
-  private ResourceId id = null;
+  private String id = null;
   private List<Message100Message> messages = new ArrayList<Message100Message>();
-  private ResourceName name = null;
+  private String name = null;
   private ResourceOem oem = null;
   private Date startTime = null;
-  private Task100TaskState taskState = null;
-  private ResourceHealth taskStatus = null;
+
+
+  public enum TaskStateEnum {
+    NEW("New"),
+    STARTING("Starting"),
+    RUNNING("Running"),
+    SUSPENDED("Suspended"),
+    INTERRUPTED("Interrupted"),
+    PENDING("Pending"),
+    STOPPING("Stopping"),
+    COMPLETED("Completed"),
+    KILLED("Killed"),
+    EXCEPTION("Exception"),
+    SERVICE("Service");
+
+    private String value;
+
+    TaskStateEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private TaskStateEnum taskState = null;
+
+
+  public enum TaskStatusEnum {
+    OK("OK"),
+    WARNING("Warning"),
+    CRITICAL("Critical");
+
+    private String value;
+
+    TaskStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private TaskStatusEnum taskStatus = null;
 
   
   /**
    **/
-  public Task100Task odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public Task100Task odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public Task100Task odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public Task100Task description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
   
-  @ApiModelProperty(example = "null", value = "The date-time stamp that the task was last completed.")
+  /**
+   * The date-time stamp that the task was last completed.
+   **/
+  
+  @ApiModelProperty(value = "The date-time stamp that the task was last completed.")
   @JsonProperty("EndTime")
   public Date getEndTime() {
     return endTime;
   }
+  public void setEndTime(Date endTime) {
+    this.endTime = endTime;
+  }
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public Task100Task id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -137,12 +166,8 @@ public class Task100Task   {
   /**
    * This is an array of messages associated with the task.
    **/
-  public Task100Task messages(List<Message100Message> messages) {
-    this.messages = messages;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is an array of messages associated with the task.")
+  @ApiModelProperty(value = "This is an array of messages associated with the task.")
   @JsonProperty("Messages")
   public List<Message100Message> getMessages() {
     return messages;
@@ -153,18 +178,15 @@ public class Task100Task   {
 
   
   /**
+   * The name of the resource or array element.
    **/
-  public Task100Task name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -172,12 +194,8 @@ public class Task100Task   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public Task100Task oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -187,27 +205,30 @@ public class Task100Task   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The date-time stamp that the task was last started.")
+  /**
+   * The date-time stamp that the task was last started.
+   **/
+  
+  @ApiModelProperty(value = "The date-time stamp that the task was last started.")
   @JsonProperty("StartTime")
   public Date getStartTime() {
     return startTime;
+  }
+  public void setStartTime(Date startTime) {
+    this.startTime = startTime;
   }
 
   
   /**
    * The state of the task.
    **/
-  public Task100Task taskState(Task100TaskState taskState) {
-    this.taskState = taskState;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The state of the task.")
+  @ApiModelProperty(value = "The state of the task.")
   @JsonProperty("TaskState")
-  public Task100TaskState getTaskState() {
+  public TaskStateEnum getTaskState() {
     return taskState;
   }
-  public void setTaskState(Task100TaskState taskState) {
+  public void setTaskState(TaskStateEnum taskState) {
     this.taskState = taskState;
   }
 
@@ -215,24 +236,20 @@ public class Task100Task   {
   /**
    * This is the completion status of the task.
    **/
-  public Task100Task taskStatus(ResourceHealth taskStatus) {
-    this.taskStatus = taskStatus;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the completion status of the task.")
+  @ApiModelProperty(value = "This is the completion status of the task.")
   @JsonProperty("TaskStatus")
-  public ResourceHealth getTaskStatus() {
+  public TaskStatusEnum getTaskStatus() {
     return taskStatus;
   }
-  public void setTaskStatus(ResourceHealth taskStatus) {
+  public void setTaskStatus(TaskStatusEnum taskStatus) {
     this.taskStatus = taskStatus;
   }
 
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -240,18 +257,18 @@ public class Task100Task   {
       return false;
     }
     Task100Task task100Task = (Task100Task) o;
-    return Objects.equals(this.odataContext, task100Task.odataContext) &&
-        Objects.equals(this.odataId, task100Task.odataId) &&
-        Objects.equals(this.odataType, task100Task.odataType) &&
-        Objects.equals(this.description, task100Task.description) &&
-        Objects.equals(this.endTime, task100Task.endTime) &&
-        Objects.equals(this.id, task100Task.id) &&
-        Objects.equals(this.messages, task100Task.messages) &&
-        Objects.equals(this.name, task100Task.name) &&
-        Objects.equals(this.oem, task100Task.oem) &&
-        Objects.equals(this.startTime, task100Task.startTime) &&
-        Objects.equals(this.taskState, task100Task.taskState) &&
-        Objects.equals(this.taskStatus, task100Task.taskStatus);
+    return Objects.equals(odataContext, task100Task.odataContext) &&
+        Objects.equals(odataId, task100Task.odataId) &&
+        Objects.equals(odataType, task100Task.odataType) &&
+        Objects.equals(description, task100Task.description) &&
+        Objects.equals(endTime, task100Task.endTime) &&
+        Objects.equals(id, task100Task.id) &&
+        Objects.equals(messages, task100Task.messages) &&
+        Objects.equals(name, task100Task.name) &&
+        Objects.equals(oem, task100Task.oem) &&
+        Objects.equals(startTime, task100Task.startTime) &&
+        Objects.equals(taskState, task100Task.taskState) &&
+        Objects.equals(taskStatus, task100Task.taskStatus);
   }
 
   @Override
@@ -284,7 +301,7 @@ public class Task100Task   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -2,19 +2,13 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Id;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
 import io.swagger.client.model.ResourceStatus;
 import io.swagger.client.model.SimpleStorage100Device;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 
@@ -23,84 +17,70 @@ import java.util.List;
  **/
 
 @ApiModel(description = "This is the schema definition for the Simple Storage resource.  It represents the properties of a storage controller and its directly-attached devices.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class SimpleStorage100SimpleStorage   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private ResourceDescription description = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+  private String description = null;
   private List<SimpleStorage100Device> devices = new ArrayList<SimpleStorage100Device>();
-  private ResourceId id = null;
-  private ResourceName name = null;
+  private String id = null;
+  private String name = null;
   private ResourceOem oem = null;
   private ResourceStatus status = null;
+  private String uefiDevicePath = null;
 
   
   /**
    **/
-  public SimpleStorage100SimpleStorage odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public SimpleStorage100SimpleStorage odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public SimpleStorage100SimpleStorage odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public SimpleStorage100SimpleStorage description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
@@ -108,12 +88,8 @@ public class SimpleStorage100SimpleStorage   {
   /**
    * The storage devices associated with this resource
    **/
-  public SimpleStorage100SimpleStorage devices(List<SimpleStorage100Device> devices) {
-    this.devices = devices;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The storage devices associated with this resource")
+  @ApiModelProperty(value = "The storage devices associated with this resource")
   @JsonProperty("Devices")
   public List<SimpleStorage100Device> getDevices() {
     return devices;
@@ -124,35 +100,29 @@ public class SimpleStorage100SimpleStorage   {
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public SimpleStorage100SimpleStorage id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
   
   /**
+   * The name of the resource or array element.
    **/
-  public SimpleStorage100SimpleStorage name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -160,12 +130,8 @@ public class SimpleStorage100SimpleStorage   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public SimpleStorage100SimpleStorage oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -177,12 +143,8 @@ public class SimpleStorage100SimpleStorage   {
   
   /**
    **/
-  public SimpleStorage100SimpleStorage status(ResourceStatus status) {
-    this.status = status;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Status")
   public ResourceStatus getStatus() {
     return status;
@@ -192,9 +154,23 @@ public class SimpleStorage100SimpleStorage   {
   }
 
   
+  /**
+   * The UEFI device path used to access this storage controller.
+   **/
+  
+  @ApiModelProperty(value = "The UEFI device path used to access this storage controller.")
+  @JsonProperty("UefiDevicePath")
+  public String getUefiDevicePath() {
+    return uefiDevicePath;
+  }
+  public void setUefiDevicePath(String uefiDevicePath) {
+    this.uefiDevicePath = uefiDevicePath;
+  }
+
+  
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -202,20 +178,21 @@ public class SimpleStorage100SimpleStorage   {
       return false;
     }
     SimpleStorage100SimpleStorage simpleStorage100SimpleStorage = (SimpleStorage100SimpleStorage) o;
-    return Objects.equals(this.odataContext, simpleStorage100SimpleStorage.odataContext) &&
-        Objects.equals(this.odataId, simpleStorage100SimpleStorage.odataId) &&
-        Objects.equals(this.odataType, simpleStorage100SimpleStorage.odataType) &&
-        Objects.equals(this.description, simpleStorage100SimpleStorage.description) &&
-        Objects.equals(this.devices, simpleStorage100SimpleStorage.devices) &&
-        Objects.equals(this.id, simpleStorage100SimpleStorage.id) &&
-        Objects.equals(this.name, simpleStorage100SimpleStorage.name) &&
-        Objects.equals(this.oem, simpleStorage100SimpleStorage.oem) &&
-        Objects.equals(this.status, simpleStorage100SimpleStorage.status);
+    return Objects.equals(odataContext, simpleStorage100SimpleStorage.odataContext) &&
+        Objects.equals(odataId, simpleStorage100SimpleStorage.odataId) &&
+        Objects.equals(odataType, simpleStorage100SimpleStorage.odataType) &&
+        Objects.equals(description, simpleStorage100SimpleStorage.description) &&
+        Objects.equals(devices, simpleStorage100SimpleStorage.devices) &&
+        Objects.equals(id, simpleStorage100SimpleStorage.id) &&
+        Objects.equals(name, simpleStorage100SimpleStorage.name) &&
+        Objects.equals(oem, simpleStorage100SimpleStorage.oem) &&
+        Objects.equals(status, simpleStorage100SimpleStorage.status) &&
+        Objects.equals(uefiDevicePath, simpleStorage100SimpleStorage.uefiDevicePath);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(odataContext, odataId, odataType, description, devices, id, name, oem, status);
+    return Objects.hash(odataContext, odataId, odataType, description, devices, id, name, oem, status, uefiDevicePath);
   }
 
   @Override
@@ -232,6 +209,7 @@ public class SimpleStorage100SimpleStorage   {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    oem: ").append(toIndentedString(oem)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    uefiDevicePath: ").append(toIndentedString(uefiDevicePath)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -240,7 +218,7 @@ public class SimpleStorage100SimpleStorage   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

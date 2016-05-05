@@ -2,28 +2,19 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.ComputerSystem100Boot;
 import io.swagger.client.model.ComputerSystem100ComputerSystemActions;
 import io.swagger.client.model.ComputerSystem100ComputerSystemLinks;
-import io.swagger.client.model.ComputerSystem100IndicatorLED;
 import io.swagger.client.model.ComputerSystem100MemorySummary;
-import io.swagger.client.model.ComputerSystem100PowerState;
 import io.swagger.client.model.ComputerSystem100ProcessorSummary;
-import io.swagger.client.model.ComputerSystem100SystemType;
 import io.swagger.client.model.EthernetInterfaceCollectionEthernetInterfaceCollection;
 import io.swagger.client.model.LogServiceCollectionLogServiceCollection;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Id;
-import io.swagger.client.model.Odata400Type;
 import io.swagger.client.model.ProcessorCollectionProcessorCollection;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
 import io.swagger.client.model.ResourceStatus;
-import io.swagger.client.model.ResourceUUID;
 import io.swagger.client.model.SimpleStorageCollectionSimpleStorageCollection;
 
 
@@ -33,91 +24,147 @@ import io.swagger.client.model.SimpleStorageCollectionSimpleStorageCollection;
  **/
 
 @ApiModel(description = "This schema defines a computer system and its respective properties.  A computer system represents a machine (physical or virtual) and the local resources such as memory, cpu and other devices that can be accessed from that machine.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class ComputerSystem100ComputerSystem   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
   private ComputerSystem100ComputerSystemActions actions = null;
+  private String assetTag = null;
+  private String biosVersion = null;
   private ComputerSystem100Boot boot = null;
-  private ResourceDescription description = null;
+  private String description = null;
   private EthernetInterfaceCollectionEthernetInterfaceCollection ethernetInterfaces = null;
-  private ResourceId id = null;
-  private ComputerSystem100IndicatorLED indicatorLED = null;
+  private String hostName = null;
+  private String id = null;
+
+
+  public enum IndicatorLEDEnum {
+    UNKNOWN("Unknown"),
+    LIT("Lit"),
+    BLINKING("Blinking"),
+    OFF("Off");
+
+    private String value;
+
+    IndicatorLEDEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private IndicatorLEDEnum indicatorLED = null;
   private ComputerSystem100ComputerSystemLinks links = null;
   private LogServiceCollectionLogServiceCollection logServices = null;
+  private String manufacturer = null;
   private ComputerSystem100MemorySummary memorySummary = null;
-  private ResourceName name = null;
+  private String model = null;
+  private String name = null;
   private ResourceOem oem = null;
-  private ComputerSystem100PowerState powerState = null;
+  private String partNumber = null;
+
+
+  public enum PowerStateEnum {
+    ON("On"),
+    OFF("Off"),
+    UNKNOWN("Unknown"),
+    RESET("Reset");
+
+    private String value;
+
+    PowerStateEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private PowerStateEnum powerState = null;
   private ComputerSystem100ProcessorSummary processorSummary = null;
   private ProcessorCollectionProcessorCollection processors = null;
+  private String SKU = null;
+  private String serialNumber = null;
   private SimpleStorageCollectionSimpleStorageCollection simpleStorage = null;
   private ResourceStatus status = null;
-  private ComputerSystem100SystemType systemType = null;
-  private ResourceUUID UUID = null;
+
+
+  public enum SystemTypeEnum {
+    PHYSICAL("Physical"),
+    VIRTUAL("Virtual"),
+    OS("OS"),
+    PHYSICALLYPARTITIONED("PhysicallyPartitioned"),
+    VIRTUALLYPARTITIONED("VirtuallyPartitioned");
+
+    private String value;
+
+    SystemTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private SystemTypeEnum systemType = null;
+  private String UUID = null;
 
   
   /**
    **/
-  public ComputerSystem100ComputerSystem odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public ComputerSystem100ComputerSystem odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public ComputerSystem100ComputerSystem odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
   
   /**
    **/
-  public ComputerSystem100ComputerSystem actions(ComputerSystem100ComputerSystemActions actions) {
-    this.actions = actions;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Actions")
   public ComputerSystem100ComputerSystemActions getActions() {
     return actions;
@@ -128,14 +175,38 @@ public class ComputerSystem100ComputerSystem   {
 
   
   /**
+   * The user definable tag that can be used to track this computer system for inventory or other client purposes
+   **/
+  
+  @ApiModelProperty(value = "The user definable tag that can be used to track this computer system for inventory or other client purposes")
+  @JsonProperty("AssetTag")
+  public String getAssetTag() {
+    return assetTag;
+  }
+  public void setAssetTag(String assetTag) {
+    this.assetTag = assetTag;
+  }
+
+  
+  /**
+   * The version of the system BIOS or primary system firmware.
+   **/
+  
+  @ApiModelProperty(value = "The version of the system BIOS or primary system firmware.")
+  @JsonProperty("BiosVersion")
+  public String getBiosVersion() {
+    return biosVersion;
+  }
+  public void setBiosVersion(String biosVersion) {
+    this.biosVersion = biosVersion;
+  }
+
+  
+  /**
    * Information about the boot settings for this system
    **/
-  public ComputerSystem100ComputerSystem boot(ComputerSystem100Boot boot) {
-    this.boot = boot;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Information about the boot settings for this system")
+  @ApiModelProperty(value = "Information about the boot settings for this system")
   @JsonProperty("Boot")
   public ComputerSystem100Boot getBoot() {
     return boot;
@@ -146,18 +217,15 @@ public class ComputerSystem100ComputerSystem   {
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public ComputerSystem100ComputerSystem description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
@@ -165,12 +233,8 @@ public class ComputerSystem100ComputerSystem   {
   /**
    * A reference to the collection of Ethernet interfaces associated with this system
    **/
-  public ComputerSystem100ComputerSystem ethernetInterfaces(EthernetInterfaceCollectionEthernetInterfaceCollection ethernetInterfaces) {
-    this.ethernetInterfaces = ethernetInterfaces;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "A reference to the collection of Ethernet interfaces associated with this system")
+  @ApiModelProperty(value = "A reference to the collection of Ethernet interfaces associated with this system")
   @JsonProperty("EthernetInterfaces")
   public EthernetInterfaceCollectionEthernetInterfaceCollection getEthernetInterfaces() {
     return ethernetInterfaces;
@@ -181,18 +245,29 @@ public class ComputerSystem100ComputerSystem   {
 
   
   /**
+   * The DNS Host Name, without any domain information
    **/
-  public ComputerSystem100ComputerSystem id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The DNS Host Name, without any domain information")
+  @JsonProperty("HostName")
+  public String getHostName() {
+    return hostName;
+  }
+  public void setHostName(String hostName) {
+    this.hostName = hostName;
+  }
+
+  
+  /**
+   * Uniquely identifies the resource within the collection of like resources.
+   **/
+  
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -200,29 +275,21 @@ public class ComputerSystem100ComputerSystem   {
   /**
    * The state of the indicator LED, used to identify the system
    **/
-  public ComputerSystem100ComputerSystem indicatorLED(ComputerSystem100IndicatorLED indicatorLED) {
-    this.indicatorLED = indicatorLED;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The state of the indicator LED, used to identify the system")
+  @ApiModelProperty(value = "The state of the indicator LED, used to identify the system")
   @JsonProperty("IndicatorLED")
-  public ComputerSystem100IndicatorLED getIndicatorLED() {
+  public IndicatorLEDEnum getIndicatorLED() {
     return indicatorLED;
   }
-  public void setIndicatorLED(ComputerSystem100IndicatorLED indicatorLED) {
+  public void setIndicatorLED(IndicatorLEDEnum indicatorLED) {
     this.indicatorLED = indicatorLED;
   }
 
   
   /**
    **/
-  public ComputerSystem100ComputerSystem links(ComputerSystem100ComputerSystemLinks links) {
-    this.links = links;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Links")
   public ComputerSystem100ComputerSystemLinks getLinks() {
     return links;
@@ -235,12 +302,8 @@ public class ComputerSystem100ComputerSystem   {
   /**
    * A reference to the collection of Log Services associated with this system
    **/
-  public ComputerSystem100ComputerSystem logServices(LogServiceCollectionLogServiceCollection logServices) {
-    this.logServices = logServices;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "A reference to the collection of Log Services associated with this system")
+  @ApiModelProperty(value = "A reference to the collection of Log Services associated with this system")
   @JsonProperty("LogServices")
   public LogServiceCollectionLogServiceCollection getLogServices() {
     return logServices;
@@ -251,14 +314,24 @@ public class ComputerSystem100ComputerSystem   {
 
   
   /**
+   * The manufacturer or OEM of this system.
+   **/
+  
+  @ApiModelProperty(value = "The manufacturer or OEM of this system.")
+  @JsonProperty("Manufacturer")
+  public String getManufacturer() {
+    return manufacturer;
+  }
+  public void setManufacturer(String manufacturer) {
+    this.manufacturer = manufacturer;
+  }
+
+  
+  /**
    * This object describes the central memory of the system in general detail.
    **/
-  public ComputerSystem100ComputerSystem memorySummary(ComputerSystem100MemorySummary memorySummary) {
-    this.memorySummary = memorySummary;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This object describes the central memory of the system in general detail.")
+  @ApiModelProperty(value = "This object describes the central memory of the system in general detail.")
   @JsonProperty("MemorySummary")
   public ComputerSystem100MemorySummary getMemorySummary() {
     return memorySummary;
@@ -269,18 +342,29 @@ public class ComputerSystem100ComputerSystem   {
 
   
   /**
+   * The model number for this system
    **/
-  public ComputerSystem100ComputerSystem name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The model number for this system")
+  @JsonProperty("Model")
+  public String getModel() {
+    return model;
+  }
+  public void setModel(String model) {
+    this.model = model;
+  }
+
+  
+  /**
+   * The name of the resource or array element.
+   **/
+  
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -288,12 +372,8 @@ public class ComputerSystem100ComputerSystem   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public ComputerSystem100ComputerSystem oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -304,19 +384,29 @@ public class ComputerSystem100ComputerSystem   {
 
   
   /**
+   * The part number for this system
+   **/
+  
+  @ApiModelProperty(value = "The part number for this system")
+  @JsonProperty("PartNumber")
+  public String getPartNumber() {
+    return partNumber;
+  }
+  public void setPartNumber(String partNumber) {
+    this.partNumber = partNumber;
+  }
+
+  
+  /**
    * This is the current power state of the system
    **/
-  public ComputerSystem100ComputerSystem powerState(ComputerSystem100PowerState powerState) {
-    this.powerState = powerState;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the current power state of the system")
+  @ApiModelProperty(value = "This is the current power state of the system")
   @JsonProperty("PowerState")
-  public ComputerSystem100PowerState getPowerState() {
+  public PowerStateEnum getPowerState() {
     return powerState;
   }
-  public void setPowerState(ComputerSystem100PowerState powerState) {
+  public void setPowerState(PowerStateEnum powerState) {
     this.powerState = powerState;
   }
 
@@ -324,12 +414,8 @@ public class ComputerSystem100ComputerSystem   {
   /**
    * This object describes the central processors of the system in general detail.
    **/
-  public ComputerSystem100ComputerSystem processorSummary(ComputerSystem100ProcessorSummary processorSummary) {
-    this.processorSummary = processorSummary;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This object describes the central processors of the system in general detail.")
+  @ApiModelProperty(value = "This object describes the central processors of the system in general detail.")
   @JsonProperty("ProcessorSummary")
   public ComputerSystem100ProcessorSummary getProcessorSummary() {
     return processorSummary;
@@ -342,12 +428,8 @@ public class ComputerSystem100ComputerSystem   {
   /**
    * A reference to the collection of Processors associated with this system
    **/
-  public ComputerSystem100ComputerSystem processors(ProcessorCollectionProcessorCollection processors) {
-    this.processors = processors;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "A reference to the collection of Processors associated with this system")
+  @ApiModelProperty(value = "A reference to the collection of Processors associated with this system")
   @JsonProperty("Processors")
   public ProcessorCollectionProcessorCollection getProcessors() {
     return processors;
@@ -358,14 +440,38 @@ public class ComputerSystem100ComputerSystem   {
 
   
   /**
+   * The manufacturer SKU for this system
+   **/
+  
+  @ApiModelProperty(value = "The manufacturer SKU for this system")
+  @JsonProperty("SKU")
+  public String getSKU() {
+    return SKU;
+  }
+  public void setSKU(String SKU) {
+    this.SKU = SKU;
+  }
+
+  
+  /**
+   * The serial number for this system
+   **/
+  
+  @ApiModelProperty(value = "The serial number for this system")
+  @JsonProperty("SerialNumber")
+  public String getSerialNumber() {
+    return serialNumber;
+  }
+  public void setSerialNumber(String serialNumber) {
+    this.serialNumber = serialNumber;
+  }
+
+  
+  /**
    * A reference to the collection of storage devices associated with this system
    **/
-  public ComputerSystem100ComputerSystem simpleStorage(SimpleStorageCollectionSimpleStorageCollection simpleStorage) {
-    this.simpleStorage = simpleStorage;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "A reference to the collection of storage devices associated with this system")
+  @ApiModelProperty(value = "A reference to the collection of storage devices associated with this system")
   @JsonProperty("SimpleStorage")
   public SimpleStorageCollectionSimpleStorageCollection getSimpleStorage() {
     return simpleStorage;
@@ -377,12 +483,8 @@ public class ComputerSystem100ComputerSystem   {
   
   /**
    **/
-  public ComputerSystem100ComputerSystem status(ResourceStatus status) {
-    this.status = status;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Status")
   public ResourceStatus getStatus() {
     return status;
@@ -395,17 +497,13 @@ public class ComputerSystem100ComputerSystem   {
   /**
    * The type of computer system represented by this resource.
    **/
-  public ComputerSystem100ComputerSystem systemType(ComputerSystem100SystemType systemType) {
-    this.systemType = systemType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The type of computer system represented by this resource.")
+  @ApiModelProperty(value = "The type of computer system represented by this resource.")
   @JsonProperty("SystemType")
-  public ComputerSystem100SystemType getSystemType() {
+  public SystemTypeEnum getSystemType() {
     return systemType;
   }
-  public void setSystemType(ComputerSystem100SystemType systemType) {
+  public void setSystemType(SystemTypeEnum systemType) {
     this.systemType = systemType;
   }
 
@@ -413,24 +511,20 @@ public class ComputerSystem100ComputerSystem   {
   /**
    * The universal unique identifier (UUID) for this system
    **/
-  public ComputerSystem100ComputerSystem UUID(ResourceUUID UUID) {
-    this.UUID = UUID;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The universal unique identifier (UUID) for this system")
+  @ApiModelProperty(value = "The universal unique identifier (UUID) for this system")
   @JsonProperty("UUID")
-  public ResourceUUID getUUID() {
+  public String getUUID() {
     return UUID;
   }
-  public void setUUID(ResourceUUID UUID) {
+  public void setUUID(String UUID) {
     this.UUID = UUID;
   }
 
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -438,32 +532,40 @@ public class ComputerSystem100ComputerSystem   {
       return false;
     }
     ComputerSystem100ComputerSystem computerSystem100ComputerSystem = (ComputerSystem100ComputerSystem) o;
-    return Objects.equals(this.odataContext, computerSystem100ComputerSystem.odataContext) &&
-        Objects.equals(this.odataId, computerSystem100ComputerSystem.odataId) &&
-        Objects.equals(this.odataType, computerSystem100ComputerSystem.odataType) &&
-        Objects.equals(this.actions, computerSystem100ComputerSystem.actions) &&
-        Objects.equals(this.boot, computerSystem100ComputerSystem.boot) &&
-        Objects.equals(this.description, computerSystem100ComputerSystem.description) &&
-        Objects.equals(this.ethernetInterfaces, computerSystem100ComputerSystem.ethernetInterfaces) &&
-        Objects.equals(this.id, computerSystem100ComputerSystem.id) &&
-        Objects.equals(this.indicatorLED, computerSystem100ComputerSystem.indicatorLED) &&
-        Objects.equals(this.links, computerSystem100ComputerSystem.links) &&
-        Objects.equals(this.logServices, computerSystem100ComputerSystem.logServices) &&
-        Objects.equals(this.memorySummary, computerSystem100ComputerSystem.memorySummary) &&
-        Objects.equals(this.name, computerSystem100ComputerSystem.name) &&
-        Objects.equals(this.oem, computerSystem100ComputerSystem.oem) &&
-        Objects.equals(this.powerState, computerSystem100ComputerSystem.powerState) &&
-        Objects.equals(this.processorSummary, computerSystem100ComputerSystem.processorSummary) &&
-        Objects.equals(this.processors, computerSystem100ComputerSystem.processors) &&
-        Objects.equals(this.simpleStorage, computerSystem100ComputerSystem.simpleStorage) &&
-        Objects.equals(this.status, computerSystem100ComputerSystem.status) &&
-        Objects.equals(this.systemType, computerSystem100ComputerSystem.systemType) &&
-        Objects.equals(this.UUID, computerSystem100ComputerSystem.UUID);
+    return Objects.equals(odataContext, computerSystem100ComputerSystem.odataContext) &&
+        Objects.equals(odataId, computerSystem100ComputerSystem.odataId) &&
+        Objects.equals(odataType, computerSystem100ComputerSystem.odataType) &&
+        Objects.equals(actions, computerSystem100ComputerSystem.actions) &&
+        Objects.equals(assetTag, computerSystem100ComputerSystem.assetTag) &&
+        Objects.equals(biosVersion, computerSystem100ComputerSystem.biosVersion) &&
+        Objects.equals(boot, computerSystem100ComputerSystem.boot) &&
+        Objects.equals(description, computerSystem100ComputerSystem.description) &&
+        Objects.equals(ethernetInterfaces, computerSystem100ComputerSystem.ethernetInterfaces) &&
+        Objects.equals(hostName, computerSystem100ComputerSystem.hostName) &&
+        Objects.equals(id, computerSystem100ComputerSystem.id) &&
+        Objects.equals(indicatorLED, computerSystem100ComputerSystem.indicatorLED) &&
+        Objects.equals(links, computerSystem100ComputerSystem.links) &&
+        Objects.equals(logServices, computerSystem100ComputerSystem.logServices) &&
+        Objects.equals(manufacturer, computerSystem100ComputerSystem.manufacturer) &&
+        Objects.equals(memorySummary, computerSystem100ComputerSystem.memorySummary) &&
+        Objects.equals(model, computerSystem100ComputerSystem.model) &&
+        Objects.equals(name, computerSystem100ComputerSystem.name) &&
+        Objects.equals(oem, computerSystem100ComputerSystem.oem) &&
+        Objects.equals(partNumber, computerSystem100ComputerSystem.partNumber) &&
+        Objects.equals(powerState, computerSystem100ComputerSystem.powerState) &&
+        Objects.equals(processorSummary, computerSystem100ComputerSystem.processorSummary) &&
+        Objects.equals(processors, computerSystem100ComputerSystem.processors) &&
+        Objects.equals(SKU, computerSystem100ComputerSystem.SKU) &&
+        Objects.equals(serialNumber, computerSystem100ComputerSystem.serialNumber) &&
+        Objects.equals(simpleStorage, computerSystem100ComputerSystem.simpleStorage) &&
+        Objects.equals(status, computerSystem100ComputerSystem.status) &&
+        Objects.equals(systemType, computerSystem100ComputerSystem.systemType) &&
+        Objects.equals(UUID, computerSystem100ComputerSystem.UUID);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(odataContext, odataId, odataType, actions, boot, description, ethernetInterfaces, id, indicatorLED, links, logServices, memorySummary, name, oem, powerState, processorSummary, processors, simpleStorage, status, systemType, UUID);
+    return Objects.hash(odataContext, odataId, odataType, actions, assetTag, biosVersion, boot, description, ethernetInterfaces, hostName, id, indicatorLED, links, logServices, manufacturer, memorySummary, model, name, oem, partNumber, powerState, processorSummary, processors, SKU, serialNumber, simpleStorage, status, systemType, UUID);
   }
 
   @Override
@@ -475,19 +577,27 @@ public class ComputerSystem100ComputerSystem   {
     sb.append("    odataId: ").append(toIndentedString(odataId)).append("\n");
     sb.append("    odataType: ").append(toIndentedString(odataType)).append("\n");
     sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+    sb.append("    assetTag: ").append(toIndentedString(assetTag)).append("\n");
+    sb.append("    biosVersion: ").append(toIndentedString(biosVersion)).append("\n");
     sb.append("    boot: ").append(toIndentedString(boot)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    ethernetInterfaces: ").append(toIndentedString(ethernetInterfaces)).append("\n");
+    sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    indicatorLED: ").append(toIndentedString(indicatorLED)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    logServices: ").append(toIndentedString(logServices)).append("\n");
+    sb.append("    manufacturer: ").append(toIndentedString(manufacturer)).append("\n");
     sb.append("    memorySummary: ").append(toIndentedString(memorySummary)).append("\n");
+    sb.append("    model: ").append(toIndentedString(model)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    oem: ").append(toIndentedString(oem)).append("\n");
+    sb.append("    partNumber: ").append(toIndentedString(partNumber)).append("\n");
     sb.append("    powerState: ").append(toIndentedString(powerState)).append("\n");
     sb.append("    processorSummary: ").append(toIndentedString(processorSummary)).append("\n");
     sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
+    sb.append("    SKU: ").append(toIndentedString(SKU)).append("\n");
+    sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
     sb.append("    simpleStorage: ").append(toIndentedString(simpleStorage)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    systemType: ").append(toIndentedString(systemType)).append("\n");
@@ -500,7 +610,7 @@ public class ComputerSystem100ComputerSystem   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

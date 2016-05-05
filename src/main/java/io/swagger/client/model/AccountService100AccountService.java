@@ -2,15 +2,10 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.ManagerAccountCollectionManagerAccountCollection;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Id;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
 import io.swagger.client.model.ResourceStatus;
 import io.swagger.client.model.RoleCollectionRoleCollection;
@@ -23,72 +18,63 @@ import java.math.BigDecimal;
  **/
 
 @ApiModel(description = "This is the schema definition for the Account Service.  It represents the properties for the service itself and has links to the actual list of accounts.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class AccountService100AccountService   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
   private BigDecimal accountLockoutCounterResetAfter = null;
+  private BigDecimal accountLockoutDuration = null;
+  private BigDecimal accountLockoutThreshold = null;
   private ManagerAccountCollectionManagerAccountCollection accounts = null;
   private BigDecimal authFailureLoggingThreshold = null;
-  private ResourceDescription description = null;
-  private ResourceId id = null;
+  private String description = null;
+  private String id = null;
   private BigDecimal maxPasswordLength = null;
   private BigDecimal minPasswordLength = null;
-  private ResourceName name = null;
+  private String name = null;
   private ResourceOem oem = null;
   private RoleCollectionRoleCollection roles = null;
+  private Boolean serviceEnabled = null;
   private ResourceStatus status = null;
 
   
   /**
    **/
-  public AccountService100AccountService odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public AccountService100AccountService odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public AccountService100AccountService odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
@@ -97,12 +83,8 @@ public class AccountService100AccountService   {
    * The interval of time since the last failed login attempt at which point the lockout threshold counter for the account is reset to zero. Must be less than or equal to AccountLockoutDuration
    * minimum: 0.0
    **/
-  public AccountService100AccountService accountLockoutCounterResetAfter(BigDecimal accountLockoutCounterResetAfter) {
-    this.accountLockoutCounterResetAfter = accountLockoutCounterResetAfter;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The interval of time since the last failed login attempt at which point the lockout threshold counter for the account is reset to zero. Must be less than or equal to AccountLockoutDuration")
+  @ApiModelProperty(value = "The interval of time since the last failed login attempt at which point the lockout threshold counter for the account is reset to zero. Must be less than or equal to AccountLockoutDuration")
   @JsonProperty("AccountLockoutCounterResetAfter")
   public BigDecimal getAccountLockoutCounterResetAfter() {
     return accountLockoutCounterResetAfter;
@@ -113,14 +95,40 @@ public class AccountService100AccountService   {
 
   
   /**
+   * The time an account is locked after the account lockout threshold is met. Must be >= AccountLockoutResetAfter. If set to 0, no lockout will occur.
+   * minimum: 0.0
+   **/
+  
+  @ApiModelProperty(value = "The time an account is locked after the account lockout threshold is met. Must be >= AccountLockoutResetAfter. If set to 0, no lockout will occur.")
+  @JsonProperty("AccountLockoutDuration")
+  public BigDecimal getAccountLockoutDuration() {
+    return accountLockoutDuration;
+  }
+  public void setAccountLockoutDuration(BigDecimal accountLockoutDuration) {
+    this.accountLockoutDuration = accountLockoutDuration;
+  }
+
+  
+  /**
+   * The number of failed login attempts before a user account is locked for a specified duration. (0=never locked)
+   * minimum: 0.0
+   **/
+  
+  @ApiModelProperty(value = "The number of failed login attempts before a user account is locked for a specified duration. (0=never locked)")
+  @JsonProperty("AccountLockoutThreshold")
+  public BigDecimal getAccountLockoutThreshold() {
+    return accountLockoutThreshold;
+  }
+  public void setAccountLockoutThreshold(BigDecimal accountLockoutThreshold) {
+    this.accountLockoutThreshold = accountLockoutThreshold;
+  }
+
+  
+  /**
    * Link to a collection of Manager Accounts
    **/
-  public AccountService100AccountService accounts(ManagerAccountCollectionManagerAccountCollection accounts) {
-    this.accounts = accounts;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Link to a collection of Manager Accounts")
+  @ApiModelProperty(value = "Link to a collection of Manager Accounts")
   @JsonProperty("Accounts")
   public ManagerAccountCollectionManagerAccountCollection getAccounts() {
     return accounts;
@@ -134,12 +142,8 @@ public class AccountService100AccountService   {
    * This is the number of authorization failures that need to occur before the failure attempt is logged to the manager log.
    * minimum: 0.0
    **/
-  public AccountService100AccountService authFailureLoggingThreshold(BigDecimal authFailureLoggingThreshold) {
-    this.authFailureLoggingThreshold = authFailureLoggingThreshold;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the number of authorization failures that need to occur before the failure attempt is logged to the manager log.")
+  @ApiModelProperty(value = "This is the number of authorization failures that need to occur before the failure attempt is logged to the manager log.")
   @JsonProperty("AuthFailureLoggingThreshold")
   public BigDecimal getAuthFailureLoggingThreshold() {
     return authFailureLoggingThreshold;
@@ -150,66 +154,73 @@ public class AccountService100AccountService   {
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public AccountService100AccountService description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public AccountService100AccountService id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
   
-  @ApiModelProperty(example = "null", value = "This is the maximum password length for this service.")
+  /**
+   * This is the maximum password length for this service.
+   * minimum: 0.0
+   **/
+  
+  @ApiModelProperty(value = "This is the maximum password length for this service.")
   @JsonProperty("MaxPasswordLength")
   public BigDecimal getMaxPasswordLength() {
     return maxPasswordLength;
   }
-
-  
-  @ApiModelProperty(example = "null", value = "This is the minimum password length for this service.")
-  @JsonProperty("MinPasswordLength")
-  public BigDecimal getMinPasswordLength() {
-    return minPasswordLength;
+  public void setMaxPasswordLength(BigDecimal maxPasswordLength) {
+    this.maxPasswordLength = maxPasswordLength;
   }
 
   
   /**
+   * This is the minimum password length for this service.
+   * minimum: 0.0
    **/
-  public AccountService100AccountService name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "This is the minimum password length for this service.")
+  @JsonProperty("MinPasswordLength")
+  public BigDecimal getMinPasswordLength() {
+    return minPasswordLength;
+  }
+  public void setMinPasswordLength(BigDecimal minPasswordLength) {
+    this.minPasswordLength = minPasswordLength;
+  }
+
+  
+  /**
+   * The name of the resource or array element.
+   **/
+  
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -217,12 +228,8 @@ public class AccountService100AccountService   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public AccountService100AccountService oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -235,12 +242,8 @@ public class AccountService100AccountService   {
   /**
    * Link to a collection of Roles
    **/
-  public AccountService100AccountService roles(RoleCollectionRoleCollection roles) {
-    this.roles = roles;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Link to a collection of Roles")
+  @ApiModelProperty(value = "Link to a collection of Roles")
   @JsonProperty("Roles")
   public RoleCollectionRoleCollection getRoles() {
     return roles;
@@ -251,13 +254,23 @@ public class AccountService100AccountService   {
 
   
   /**
+   * This indicates whether this service is enabled.
    **/
-  public AccountService100AccountService status(ResourceStatus status) {
-    this.status = status;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "This indicates whether this service is enabled.")
+  @JsonProperty("ServiceEnabled")
+  public Boolean getServiceEnabled() {
+    return serviceEnabled;
+  }
+  public void setServiceEnabled(Boolean serviceEnabled) {
+    this.serviceEnabled = serviceEnabled;
+  }
+
+  
+  /**
+   **/
+  
+  @ApiModelProperty(value = "")
   @JsonProperty("Status")
   public ResourceStatus getStatus() {
     return status;
@@ -269,7 +282,7 @@ public class AccountService100AccountService   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -277,25 +290,28 @@ public class AccountService100AccountService   {
       return false;
     }
     AccountService100AccountService accountService100AccountService = (AccountService100AccountService) o;
-    return Objects.equals(this.odataContext, accountService100AccountService.odataContext) &&
-        Objects.equals(this.odataId, accountService100AccountService.odataId) &&
-        Objects.equals(this.odataType, accountService100AccountService.odataType) &&
-        Objects.equals(this.accountLockoutCounterResetAfter, accountService100AccountService.accountLockoutCounterResetAfter) &&
-        Objects.equals(this.accounts, accountService100AccountService.accounts) &&
-        Objects.equals(this.authFailureLoggingThreshold, accountService100AccountService.authFailureLoggingThreshold) &&
-        Objects.equals(this.description, accountService100AccountService.description) &&
-        Objects.equals(this.id, accountService100AccountService.id) &&
-        Objects.equals(this.maxPasswordLength, accountService100AccountService.maxPasswordLength) &&
-        Objects.equals(this.minPasswordLength, accountService100AccountService.minPasswordLength) &&
-        Objects.equals(this.name, accountService100AccountService.name) &&
-        Objects.equals(this.oem, accountService100AccountService.oem) &&
-        Objects.equals(this.roles, accountService100AccountService.roles) &&
-        Objects.equals(this.status, accountService100AccountService.status);
+    return Objects.equals(odataContext, accountService100AccountService.odataContext) &&
+        Objects.equals(odataId, accountService100AccountService.odataId) &&
+        Objects.equals(odataType, accountService100AccountService.odataType) &&
+        Objects.equals(accountLockoutCounterResetAfter, accountService100AccountService.accountLockoutCounterResetAfter) &&
+        Objects.equals(accountLockoutDuration, accountService100AccountService.accountLockoutDuration) &&
+        Objects.equals(accountLockoutThreshold, accountService100AccountService.accountLockoutThreshold) &&
+        Objects.equals(accounts, accountService100AccountService.accounts) &&
+        Objects.equals(authFailureLoggingThreshold, accountService100AccountService.authFailureLoggingThreshold) &&
+        Objects.equals(description, accountService100AccountService.description) &&
+        Objects.equals(id, accountService100AccountService.id) &&
+        Objects.equals(maxPasswordLength, accountService100AccountService.maxPasswordLength) &&
+        Objects.equals(minPasswordLength, accountService100AccountService.minPasswordLength) &&
+        Objects.equals(name, accountService100AccountService.name) &&
+        Objects.equals(oem, accountService100AccountService.oem) &&
+        Objects.equals(roles, accountService100AccountService.roles) &&
+        Objects.equals(serviceEnabled, accountService100AccountService.serviceEnabled) &&
+        Objects.equals(status, accountService100AccountService.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(odataContext, odataId, odataType, accountLockoutCounterResetAfter, accounts, authFailureLoggingThreshold, description, id, maxPasswordLength, minPasswordLength, name, oem, roles, status);
+    return Objects.hash(odataContext, odataId, odataType, accountLockoutCounterResetAfter, accountLockoutDuration, accountLockoutThreshold, accounts, authFailureLoggingThreshold, description, id, maxPasswordLength, minPasswordLength, name, oem, roles, serviceEnabled, status);
   }
 
   @Override
@@ -307,6 +323,8 @@ public class AccountService100AccountService   {
     sb.append("    odataId: ").append(toIndentedString(odataId)).append("\n");
     sb.append("    odataType: ").append(toIndentedString(odataType)).append("\n");
     sb.append("    accountLockoutCounterResetAfter: ").append(toIndentedString(accountLockoutCounterResetAfter)).append("\n");
+    sb.append("    accountLockoutDuration: ").append(toIndentedString(accountLockoutDuration)).append("\n");
+    sb.append("    accountLockoutThreshold: ").append(toIndentedString(accountLockoutThreshold)).append("\n");
     sb.append("    accounts: ").append(toIndentedString(accounts)).append("\n");
     sb.append("    authFailureLoggingThreshold: ").append(toIndentedString(authFailureLoggingThreshold)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -316,6 +334,7 @@ public class AccountService100AccountService   {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    oem: ").append(toIndentedString(oem)).append("\n");
     sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
+    sb.append("    serviceEnabled: ").append(toIndentedString(serviceEnabled)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -325,7 +344,7 @@ public class AccountService100AccountService   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -2,6 +2,7 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.RackHDBootImageNetworkAddress;
@@ -10,7 +11,7 @@ import io.swagger.client.model.RackHDBootImageNetworkAddress;
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class RackHDBootImageNetworkDevice   {
   
   private String device = null;
@@ -19,14 +20,9 @@ public class RackHDBootImageNetworkDevice   {
 
   
   /**
-   * The name of the network device.
    **/
-  public RackHDBootImageNetworkDevice device(String device) {
-    this.device = device;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", required = true, value = "The name of the network device.")
+  @ApiModelProperty(value = "")
   @JsonProperty("device")
   public String getDevice() {
     return device;
@@ -37,14 +33,9 @@ public class RackHDBootImageNetworkDevice   {
 
   
   /**
-   * This the ipv4 parameter of the network device.
    **/
-  public RackHDBootImageNetworkDevice ipv4(RackHDBootImageNetworkAddress ipv4) {
-    this.ipv4 = ipv4;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This the ipv4 parameter of the network device.")
+  @ApiModelProperty(value = "")
   @JsonProperty("ipv4")
   public RackHDBootImageNetworkAddress getIpv4() {
     return ipv4;
@@ -55,14 +46,9 @@ public class RackHDBootImageNetworkDevice   {
 
   
   /**
-   * This is the ipv6 parameter of the network device.
    **/
-  public RackHDBootImageNetworkDevice ipv6(RackHDBootImageNetworkAddress ipv6) {
-    this.ipv6 = ipv6;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the ipv6 parameter of the network device.")
+  @ApiModelProperty(value = "")
   @JsonProperty("ipv6")
   public RackHDBootImageNetworkAddress getIpv6() {
     return ipv6;
@@ -74,7 +60,7 @@ public class RackHDBootImageNetworkDevice   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -82,9 +68,9 @@ public class RackHDBootImageNetworkDevice   {
       return false;
     }
     RackHDBootImageNetworkDevice rackHDBootImageNetworkDevice = (RackHDBootImageNetworkDevice) o;
-    return Objects.equals(this.device, rackHDBootImageNetworkDevice.device) &&
-        Objects.equals(this.ipv4, rackHDBootImageNetworkDevice.ipv4) &&
-        Objects.equals(this.ipv6, rackHDBootImageNetworkDevice.ipv6);
+    return Objects.equals(device, rackHDBootImageNetworkDevice.device) &&
+        Objects.equals(ipv4, rackHDBootImageNetworkDevice.ipv4) &&
+        Objects.equals(ipv6, rackHDBootImageNetworkDevice.ipv6);
   }
 
   @Override
@@ -108,7 +94,7 @@ public class RackHDBootImageNetworkDevice   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

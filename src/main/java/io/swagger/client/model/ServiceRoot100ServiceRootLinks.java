@@ -2,6 +2,7 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.ResourceOem;
@@ -14,7 +15,7 @@ import io.swagger.client.model.SessionCollectionSessionCollection;
  **/
 
 @ApiModel(description = "The links object contains the links to other resources that are related to this resource.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class ServiceRoot100ServiceRootLinks   {
   
   private SessionCollectionSessionCollection sessions = null;
@@ -24,12 +25,8 @@ public class ServiceRoot100ServiceRootLinks   {
   /**
    * Link to a collection of Sessions
    **/
-  public ServiceRoot100ServiceRootLinks sessions(SessionCollectionSessionCollection sessions) {
-    this.sessions = sessions;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Link to a collection of Sessions")
+  @ApiModelProperty(value = "Link to a collection of Sessions")
   @JsonProperty("Sessions")
   public SessionCollectionSessionCollection getSessions() {
     return sessions;
@@ -42,12 +39,8 @@ public class ServiceRoot100ServiceRootLinks   {
   /**
    * Oem extension object.
    **/
-  public ServiceRoot100ServiceRootLinks oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Oem extension object.")
+  @ApiModelProperty(value = "Oem extension object.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -59,7 +52,7 @@ public class ServiceRoot100ServiceRootLinks   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -67,8 +60,8 @@ public class ServiceRoot100ServiceRootLinks   {
       return false;
     }
     ServiceRoot100ServiceRootLinks serviceRoot100ServiceRootLinks = (ServiceRoot100ServiceRootLinks) o;
-    return Objects.equals(this.sessions, serviceRoot100ServiceRootLinks.sessions) &&
-        Objects.equals(this.oem, serviceRoot100ServiceRootLinks.oem);
+    return Objects.equals(sessions, serviceRoot100ServiceRootLinks.sessions) &&
+        Objects.equals(oem, serviceRoot100ServiceRootLinks.oem);
   }
 
   @Override
@@ -91,7 +84,7 @@ public class ServiceRoot100ServiceRootLinks   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -2,6 +2,7 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.ComputerSystem100Reset;
@@ -13,7 +14,7 @@ import io.swagger.client.model.ComputerSystem100Reset;
  **/
 
 @ApiModel(description = "The Actions object contains the available custom actions on this resource.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class ComputerSystem100ComputerSystemActions   {
   
   private Object oem = null;
@@ -22,12 +23,8 @@ public class ComputerSystem100ComputerSystemActions   {
   
   /**
    **/
-  public ComputerSystem100ComputerSystemActions oem(Object oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Oem")
   public Object getOem() {
     return oem;
@@ -39,12 +36,8 @@ public class ComputerSystem100ComputerSystemActions   {
   
   /**
    **/
-  public ComputerSystem100ComputerSystemActions computerSystemReset(ComputerSystem100Reset computerSystemReset) {
-    this.computerSystemReset = computerSystemReset;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("#ComputerSystem.Reset")
   public ComputerSystem100Reset getComputerSystemReset() {
     return computerSystemReset;
@@ -56,7 +49,7 @@ public class ComputerSystem100ComputerSystemActions   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -64,8 +57,8 @@ public class ComputerSystem100ComputerSystemActions   {
       return false;
     }
     ComputerSystem100ComputerSystemActions computerSystem100ComputerSystemActions = (ComputerSystem100ComputerSystemActions) o;
-    return Objects.equals(this.oem, computerSystem100ComputerSystemActions.oem) &&
-        Objects.equals(this.computerSystemReset, computerSystem100ComputerSystemActions.computerSystemReset);
+    return Objects.equals(oem, computerSystem100ComputerSystemActions.oem) &&
+        Objects.equals(computerSystemReset, computerSystem100ComputerSystemActions.computerSystemReset);
   }
 
   @Override
@@ -88,7 +81,7 @@ public class ComputerSystem100ComputerSystemActions   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

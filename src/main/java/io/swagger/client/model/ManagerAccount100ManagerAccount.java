@@ -2,15 +2,10 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.ManagerAccount100ManagerAccountLinks;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Id;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
 
 
@@ -20,87 +15,73 @@ import io.swagger.client.model.ResourceOem;
  **/
 
 @ApiModel(description = "This schema defines a user account to be used in conjunction with a manager.  This will affect the Redfish service connection if this manager is responsible for the Redfish service.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class ManagerAccount100ManagerAccount   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private ResourceDescription description = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+  private String description = null;
   private Boolean enabled = null;
-  private ResourceId id = null;
+  private String id = null;
   private ManagerAccount100ManagerAccountLinks links = null;
   private Boolean locked = null;
-  private ResourceName name = null;
+  private String name = null;
   private ResourceOem oem = null;
+  private String password = null;
   private String roleId = null;
   private String userName = null;
 
   
   /**
    **/
-  public ManagerAccount100ManagerAccount odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public ManagerAccount100ManagerAccount odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public ManagerAccount100ManagerAccount odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
   
   /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
    **/
-  public ManagerAccount100ManagerAccount description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
@@ -108,12 +89,8 @@ public class ManagerAccount100ManagerAccount   {
   /**
    * This property is used by a User Administrator to disable an account w/o having to delet the user information.  When set to true, the user can login.  When set to false, the account is administratively disabled and the user cannot login.
    **/
-  public ManagerAccount100ManagerAccount enabled(Boolean enabled) {
-    this.enabled = enabled;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This property is used by a User Administrator to disable an account w/o having to delet the user information.  When set to true, the user can login.  When set to false, the account is administratively disabled and the user cannot login.")
+  @ApiModelProperty(value = "This property is used by a User Administrator to disable an account w/o having to delet the user information.  When set to true, the user can login.  When set to false, the account is administratively disabled and the user cannot login.")
   @JsonProperty("Enabled")
   public Boolean getEnabled() {
     return enabled;
@@ -124,30 +101,23 @@ public class ManagerAccount100ManagerAccount   {
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public ManagerAccount100ManagerAccount id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
   
   /**
    **/
-  public ManagerAccount100ManagerAccount links(ManagerAccount100ManagerAccountLinks links) {
-    this.links = links;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Links")
   public ManagerAccount100ManagerAccountLinks getLinks() {
     return links;
@@ -160,12 +130,8 @@ public class ManagerAccount100ManagerAccount   {
   /**
    * This property indicates that the account has been auto-locked by the account service because the lockout threshold has been exceeded.  When set to true, the account is locked. A user admin can write the property to false to manually unlock, or the account service will unlock it once the lockout duration period has passed.
    **/
-  public ManagerAccount100ManagerAccount locked(Boolean locked) {
-    this.locked = locked;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This property indicates that the account has been auto-locked by the account service because the lockout threshold has been exceeded.  When set to true, the account is locked. A user admin can write the property to false to manually unlock, or the account service will unlock it once the lockout duration period has passed.")
+  @ApiModelProperty(value = "This property indicates that the account has been auto-locked by the account service because the lockout threshold has been exceeded.  When set to true, the account is locked. A user admin can write the property to false to manually unlock, or the account service will unlock it once the lockout duration period has passed.")
   @JsonProperty("Locked")
   public Boolean getLocked() {
     return locked;
@@ -176,18 +142,15 @@ public class ManagerAccount100ManagerAccount   {
 
   
   /**
+   * The name of the resource or array element.
    **/
-  public ManagerAccount100ManagerAccount name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -195,12 +158,8 @@ public class ManagerAccount100ManagerAccount   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public ManagerAccount100ManagerAccount oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -211,14 +170,24 @@ public class ManagerAccount100ManagerAccount   {
 
   
   /**
+   * This property is used with a PATCH or PUT to write the password for the account.  This property is null on a GET.
+   **/
+  
+  @ApiModelProperty(value = "This property is used with a PATCH or PUT to write the password for the account.  This property is null on a GET.")
+  @JsonProperty("Password")
+  public String getPassword() {
+    return password;
+  }
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  
+  /**
    * This property contains the Role for this account.
    **/
-  public ManagerAccount100ManagerAccount roleId(String roleId) {
-    this.roleId = roleId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This property contains the Role for this account.")
+  @ApiModelProperty(value = "This property contains the Role for this account.")
   @JsonProperty("RoleId")
   public String getRoleId() {
     return roleId;
@@ -231,12 +200,8 @@ public class ManagerAccount100ManagerAccount   {
   /**
    * This property contains the user name for the account.
    **/
-  public ManagerAccount100ManagerAccount userName(String userName) {
-    this.userName = userName;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This property contains the user name for the account.")
+  @ApiModelProperty(value = "This property contains the user name for the account.")
   @JsonProperty("UserName")
   public String getUserName() {
     return userName;
@@ -248,7 +213,7 @@ public class ManagerAccount100ManagerAccount   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -256,23 +221,24 @@ public class ManagerAccount100ManagerAccount   {
       return false;
     }
     ManagerAccount100ManagerAccount managerAccount100ManagerAccount = (ManagerAccount100ManagerAccount) o;
-    return Objects.equals(this.odataContext, managerAccount100ManagerAccount.odataContext) &&
-        Objects.equals(this.odataId, managerAccount100ManagerAccount.odataId) &&
-        Objects.equals(this.odataType, managerAccount100ManagerAccount.odataType) &&
-        Objects.equals(this.description, managerAccount100ManagerAccount.description) &&
-        Objects.equals(this.enabled, managerAccount100ManagerAccount.enabled) &&
-        Objects.equals(this.id, managerAccount100ManagerAccount.id) &&
-        Objects.equals(this.links, managerAccount100ManagerAccount.links) &&
-        Objects.equals(this.locked, managerAccount100ManagerAccount.locked) &&
-        Objects.equals(this.name, managerAccount100ManagerAccount.name) &&
-        Objects.equals(this.oem, managerAccount100ManagerAccount.oem) &&
-        Objects.equals(this.roleId, managerAccount100ManagerAccount.roleId) &&
-        Objects.equals(this.userName, managerAccount100ManagerAccount.userName);
+    return Objects.equals(odataContext, managerAccount100ManagerAccount.odataContext) &&
+        Objects.equals(odataId, managerAccount100ManagerAccount.odataId) &&
+        Objects.equals(odataType, managerAccount100ManagerAccount.odataType) &&
+        Objects.equals(description, managerAccount100ManagerAccount.description) &&
+        Objects.equals(enabled, managerAccount100ManagerAccount.enabled) &&
+        Objects.equals(id, managerAccount100ManagerAccount.id) &&
+        Objects.equals(links, managerAccount100ManagerAccount.links) &&
+        Objects.equals(locked, managerAccount100ManagerAccount.locked) &&
+        Objects.equals(name, managerAccount100ManagerAccount.name) &&
+        Objects.equals(oem, managerAccount100ManagerAccount.oem) &&
+        Objects.equals(password, managerAccount100ManagerAccount.password) &&
+        Objects.equals(roleId, managerAccount100ManagerAccount.roleId) &&
+        Objects.equals(userName, managerAccount100ManagerAccount.userName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(odataContext, odataId, odataType, description, enabled, id, links, locked, name, oem, roleId, userName);
+    return Objects.hash(odataContext, odataId, odataType, description, enabled, id, links, locked, name, oem, password, roleId, userName);
   }
 
   @Override
@@ -290,6 +256,7 @@ public class ManagerAccount100ManagerAccount   {
     sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    oem: ").append(toIndentedString(oem)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("}");
@@ -300,7 +267,7 @@ public class ManagerAccount100ManagerAccount   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

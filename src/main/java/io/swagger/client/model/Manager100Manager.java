@@ -2,6 +2,7 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.EthernetInterfaceCollectionEthernetInterfaceCollection;
@@ -10,25 +11,16 @@ import io.swagger.client.model.Manager100CommandShell;
 import io.swagger.client.model.Manager100GraphicalConsole;
 import io.swagger.client.model.Manager100ManagerActions;
 import io.swagger.client.model.Manager100ManagerLinks;
-import io.swagger.client.model.Manager100ManagerType;
 import io.swagger.client.model.Manager100SerialConsole;
 import io.swagger.client.model.ManagerNetworkProtocol100ManagerNetworkProtocol;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Count;
-import io.swagger.client.model.Odata400Id;
 import io.swagger.client.model.Odata400IdRef;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.RedundancyRedundancy;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
 import io.swagger.client.model.ResourceStatus;
-import io.swagger.client.model.ResourceUUID;
 import io.swagger.client.model.SerialInterfaceCollectionSerialInterfaceCollection;
 import io.swagger.client.model.VirtualMediaCollectionVirtualMediaCollection;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
+import java.util.Date;
 
 
 
@@ -37,94 +29,104 @@ import java.util.List;
  **/
 
 @ApiModel(description = "This is the schema definition for a Manager.  Examples of managers are BMCs, Enclosure Managers, Management Controllers and other subsystems assigned managability functions.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class Manager100Manager   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
   private Manager100ManagerActions actions = null;
   private Manager100CommandShell commandShell = null;
-  private ResourceDescription description = null;
+  private Date dateTime = null;
+  private String dateTimeLocalOffset = null;
+  private String description = null;
   private EthernetInterfaceCollectionEthernetInterfaceCollection ethernetInterfaces = null;
+  private String firmwareVersion = null;
   private Manager100GraphicalConsole graphicalConsole = null;
-  private ResourceId id = null;
+  private String id = null;
   private Manager100ManagerLinks links = null;
   private LogServiceCollectionLogServiceCollection logServices = null;
-  private Manager100ManagerType managerType = null;
-  private ResourceName name = null;
+
+
+  public enum ManagerTypeEnum {
+    MANAGEMENTCONTROLLER("ManagementController"),
+    ENCLOSUREMANAGER("EnclosureManager"),
+    BMC("BMC"),
+    RACKMANAGER("RackManager"),
+    AUXILIARYCONTROLLER("AuxiliaryController");
+
+    private String value;
+
+    ManagerTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private ManagerTypeEnum managerType = null;
+  private String model = null;
+  private String name = null;
   private ManagerNetworkProtocol100ManagerNetworkProtocol networkProtocol = null;
   private ResourceOem oem = null;
-  private List<RedundancyRedundancy> redundancy = new ArrayList<RedundancyRedundancy>();
-  private Odata400Count redundancyodataCount = null;
+  private List<Odata400IdRef> redundancy = new ArrayList<Odata400IdRef>();
+  private BigDecimal redundancyodataCount = null;
   private Odata400IdRef redundancyodataNavigationLink = null;
   private Manager100SerialConsole serialConsole = null;
   private SerialInterfaceCollectionSerialInterfaceCollection serialInterfaces = null;
-  private ResourceUUID serviceEntryPointUUID = null;
+  private String serviceEntryPointUUID = null;
   private ResourceStatus status = null;
-  private ResourceUUID UUID = null;
+  private String UUID = null;
   private VirtualMediaCollectionVirtualMediaCollection virtualMedia = null;
 
   
   /**
    **/
-  public Manager100Manager odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public Manager100Manager odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public Manager100Manager odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
   
   /**
    **/
-  public Manager100Manager actions(Manager100ManagerActions actions) {
-    this.actions = actions;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Actions")
   public Manager100ManagerActions getActions() {
     return actions;
@@ -137,12 +139,8 @@ public class Manager100Manager   {
   /**
    * Information about the Command Shell service provided by this manager.
    **/
-  public Manager100Manager commandShell(Manager100CommandShell commandShell) {
-    this.commandShell = commandShell;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Information about the Command Shell service provided by this manager.")
+  @ApiModelProperty(value = "Information about the Command Shell service provided by this manager.")
   @JsonProperty("CommandShell")
   public Manager100CommandShell getCommandShell() {
     return commandShell;
@@ -153,18 +151,43 @@ public class Manager100Manager   {
 
   
   /**
+   * The current DateTime (with offset) for the manager, used to set or read time.
    **/
-  public Manager100Manager description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The current DateTime (with offset) for the manager, used to set or read time.")
+  @JsonProperty("DateTime")
+  public Date getDateTime() {
+    return dateTime;
+  }
+  public void setDateTime(Date dateTime) {
+    this.dateTime = dateTime;
+  }
+
+  
+  /**
+   * The time offset from UTC that the DateTime property is set to in format: +06:00 .
+   **/
+  
+  @ApiModelProperty(value = "The time offset from UTC that the DateTime property is set to in format: +06:00 .")
+  @JsonProperty("DateTimeLocalOffset")
+  public String getDateTimeLocalOffset() {
+    return dateTimeLocalOffset;
+  }
+  public void setDateTimeLocalOffset(String dateTimeLocalOffset) {
+    this.dateTimeLocalOffset = dateTimeLocalOffset;
+  }
+
+  
+  /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
+   **/
+  
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
@@ -172,12 +195,8 @@ public class Manager100Manager   {
   /**
    * This is a reference to a collection of NICs that this manager uses for network communication.  It is here that clients will find NIC configuration options and settings.
    **/
-  public Manager100Manager ethernetInterfaces(EthernetInterfaceCollectionEthernetInterfaceCollection ethernetInterfaces) {
-    this.ethernetInterfaces = ethernetInterfaces;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a reference to a collection of NICs that this manager uses for network communication.  It is here that clients will find NIC configuration options and settings.")
+  @ApiModelProperty(value = "This is a reference to a collection of NICs that this manager uses for network communication.  It is here that clients will find NIC configuration options and settings.")
   @JsonProperty("EthernetInterfaces")
   public EthernetInterfaceCollectionEthernetInterfaceCollection getEthernetInterfaces() {
     return ethernetInterfaces;
@@ -188,14 +207,24 @@ public class Manager100Manager   {
 
   
   /**
+   * The firmware version of this Manager
+   **/
+  
+  @ApiModelProperty(value = "The firmware version of this Manager")
+  @JsonProperty("FirmwareVersion")
+  public String getFirmwareVersion() {
+    return firmwareVersion;
+  }
+  public void setFirmwareVersion(String firmwareVersion) {
+    this.firmwareVersion = firmwareVersion;
+  }
+
+  
+  /**
    * The value of this property shall contain the information about the Graphical Console (KVM-IP) service of this manager.
    **/
-  public Manager100Manager graphicalConsole(Manager100GraphicalConsole graphicalConsole) {
-    this.graphicalConsole = graphicalConsole;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The value of this property shall contain the information about the Graphical Console (KVM-IP) service of this manager.")
+  @ApiModelProperty(value = "The value of this property shall contain the information about the Graphical Console (KVM-IP) service of this manager.")
   @JsonProperty("GraphicalConsole")
   public Manager100GraphicalConsole getGraphicalConsole() {
     return graphicalConsole;
@@ -206,30 +235,23 @@ public class Manager100Manager   {
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public Manager100Manager id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
   
   /**
    **/
-  public Manager100Manager links(Manager100ManagerLinks links) {
-    this.links = links;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Links")
   public Manager100ManagerLinks getLinks() {
     return links;
@@ -242,12 +264,8 @@ public class Manager100Manager   {
   /**
    * This is a reference to a collection of Logs used by the manager.
    **/
-  public Manager100Manager logServices(LogServiceCollectionLogServiceCollection logServices) {
-    this.logServices = logServices;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a reference to a collection of Logs used by the manager.")
+  @ApiModelProperty(value = "This is a reference to a collection of Logs used by the manager.")
   @JsonProperty("LogServices")
   public LogServiceCollectionLogServiceCollection getLogServices() {
     return logServices;
@@ -260,34 +278,41 @@ public class Manager100Manager   {
   /**
    * This property represents the type of manager that this resource represents.
    **/
-  public Manager100Manager managerType(Manager100ManagerType managerType) {
-    this.managerType = managerType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This property represents the type of manager that this resource represents.")
+  @ApiModelProperty(value = "This property represents the type of manager that this resource represents.")
   @JsonProperty("ManagerType")
-  public Manager100ManagerType getManagerType() {
+  public ManagerTypeEnum getManagerType() {
     return managerType;
   }
-  public void setManagerType(Manager100ManagerType managerType) {
+  public void setManagerType(ManagerTypeEnum managerType) {
     this.managerType = managerType;
   }
 
   
   /**
+   * The model information of this Manager as defined by the manufacturer
    **/
-  public Manager100Manager name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The model information of this Manager as defined by the manufacturer")
+  @JsonProperty("Model")
+  public String getModel() {
+    return model;
+  }
+  public void setModel(String model) {
+    this.model = model;
+  }
+
+  
+  /**
+   * The name of the resource or array element.
+   **/
+  
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -295,12 +320,8 @@ public class Manager100Manager   {
   /**
    * This is a reference to the network services and their settings that the manager controls.  It is here that clients will find network configuration options as well as network services.
    **/
-  public Manager100Manager networkProtocol(ManagerNetworkProtocol100ManagerNetworkProtocol networkProtocol) {
-    this.networkProtocol = networkProtocol;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a reference to the network services and their settings that the manager controls.  It is here that clients will find network configuration options as well as network services.")
+  @ApiModelProperty(value = "This is a reference to the network services and their settings that the manager controls.  It is here that clients will find network configuration options as well as network services.")
   @JsonProperty("NetworkProtocol")
   public ManagerNetworkProtocol100ManagerNetworkProtocol getNetworkProtocol() {
     return networkProtocol;
@@ -313,12 +334,8 @@ public class Manager100Manager   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public Manager100Manager oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -331,46 +348,34 @@ public class Manager100Manager   {
   /**
    * Redundancy information for the managers of this system
    **/
-  public Manager100Manager redundancy(List<RedundancyRedundancy> redundancy) {
-    this.redundancy = redundancy;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Redundancy information for the managers of this system")
+  @ApiModelProperty(value = "Redundancy information for the managers of this system")
   @JsonProperty("Redundancy")
-  public List<RedundancyRedundancy> getRedundancy() {
+  public List<Odata400IdRef> getRedundancy() {
     return redundancy;
   }
-  public void setRedundancy(List<RedundancyRedundancy> redundancy) {
+  public void setRedundancy(List<Odata400IdRef> redundancy) {
     this.redundancy = redundancy;
   }
 
   
   /**
    **/
-  public Manager100Manager redundancyodataCount(Odata400Count redundancyodataCount) {
-    this.redundancyodataCount = redundancyodataCount;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Redundancy@odata.count")
-  public Odata400Count getRedundancyodataCount() {
+  public BigDecimal getRedundancyodataCount() {
     return redundancyodataCount;
   }
-  public void setRedundancyodataCount(Odata400Count redundancyodataCount) {
+  public void setRedundancyodataCount(BigDecimal redundancyodataCount) {
     this.redundancyodataCount = redundancyodataCount;
   }
 
   
   /**
    **/
-  public Manager100Manager redundancyodataNavigationLink(Odata400IdRef redundancyodataNavigationLink) {
-    this.redundancyodataNavigationLink = redundancyodataNavigationLink;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Redundancy@odata.navigationLink")
   public Odata400IdRef getRedundancyodataNavigationLink() {
     return redundancyodataNavigationLink;
@@ -383,12 +388,8 @@ public class Manager100Manager   {
   /**
    * Information about the Serial Console service provided by this manager.
    **/
-  public Manager100Manager serialConsole(Manager100SerialConsole serialConsole) {
-    this.serialConsole = serialConsole;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Information about the Serial Console service provided by this manager.")
+  @ApiModelProperty(value = "Information about the Serial Console service provided by this manager.")
   @JsonProperty("SerialConsole")
   public Manager100SerialConsole getSerialConsole() {
     return serialConsole;
@@ -401,12 +402,8 @@ public class Manager100Manager   {
   /**
    * This is a reference to a collection of serial interfaces that this manager uses for serial and console communication.  It is here that clients will find serial configuration options and settings.
    **/
-  public Manager100Manager serialInterfaces(SerialInterfaceCollectionSerialInterfaceCollection serialInterfaces) {
-    this.serialInterfaces = serialInterfaces;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a reference to a collection of serial interfaces that this manager uses for serial and console communication.  It is here that clients will find serial configuration options and settings.")
+  @ApiModelProperty(value = "This is a reference to a collection of serial interfaces that this manager uses for serial and console communication.  It is here that clients will find serial configuration options and settings.")
   @JsonProperty("SerialInterfaces")
   public SerialInterfaceCollectionSerialInterfaceCollection getSerialInterfaces() {
     return serialInterfaces;
@@ -419,29 +416,21 @@ public class Manager100Manager   {
   /**
    * The UUID of the Redfish Service Entry Point provided by this manager
    **/
-  public Manager100Manager serviceEntryPointUUID(ResourceUUID serviceEntryPointUUID) {
-    this.serviceEntryPointUUID = serviceEntryPointUUID;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The UUID of the Redfish Service Entry Point provided by this manager")
+  @ApiModelProperty(value = "The UUID of the Redfish Service Entry Point provided by this manager")
   @JsonProperty("ServiceEntryPointUUID")
-  public ResourceUUID getServiceEntryPointUUID() {
+  public String getServiceEntryPointUUID() {
     return serviceEntryPointUUID;
   }
-  public void setServiceEntryPointUUID(ResourceUUID serviceEntryPointUUID) {
+  public void setServiceEntryPointUUID(String serviceEntryPointUUID) {
     this.serviceEntryPointUUID = serviceEntryPointUUID;
   }
 
   
   /**
    **/
-  public Manager100Manager status(ResourceStatus status) {
-    this.status = status;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("Status")
   public ResourceStatus getStatus() {
     return status;
@@ -454,17 +443,13 @@ public class Manager100Manager   {
   /**
    * The Universal Unique Identifier (UUID) for this Manager
    **/
-  public Manager100Manager UUID(ResourceUUID UUID) {
-    this.UUID = UUID;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "The Universal Unique Identifier (UUID) for this Manager")
+  @ApiModelProperty(value = "The Universal Unique Identifier (UUID) for this Manager")
   @JsonProperty("UUID")
-  public ResourceUUID getUUID() {
+  public String getUUID() {
     return UUID;
   }
-  public void setUUID(ResourceUUID UUID) {
+  public void setUUID(String UUID) {
     this.UUID = UUID;
   }
 
@@ -472,12 +457,8 @@ public class Manager100Manager   {
   /**
    * This is a reference to the Virtual Media services for this particular manager.
    **/
-  public Manager100Manager virtualMedia(VirtualMediaCollectionVirtualMediaCollection virtualMedia) {
-    this.virtualMedia = virtualMedia;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is a reference to the Virtual Media services for this particular manager.")
+  @ApiModelProperty(value = "This is a reference to the Virtual Media services for this particular manager.")
   @JsonProperty("VirtualMedia")
   public VirtualMediaCollectionVirtualMediaCollection getVirtualMedia() {
     return virtualMedia;
@@ -489,7 +470,7 @@ public class Manager100Manager   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -497,35 +478,39 @@ public class Manager100Manager   {
       return false;
     }
     Manager100Manager manager100Manager = (Manager100Manager) o;
-    return Objects.equals(this.odataContext, manager100Manager.odataContext) &&
-        Objects.equals(this.odataId, manager100Manager.odataId) &&
-        Objects.equals(this.odataType, manager100Manager.odataType) &&
-        Objects.equals(this.actions, manager100Manager.actions) &&
-        Objects.equals(this.commandShell, manager100Manager.commandShell) &&
-        Objects.equals(this.description, manager100Manager.description) &&
-        Objects.equals(this.ethernetInterfaces, manager100Manager.ethernetInterfaces) &&
-        Objects.equals(this.graphicalConsole, manager100Manager.graphicalConsole) &&
-        Objects.equals(this.id, manager100Manager.id) &&
-        Objects.equals(this.links, manager100Manager.links) &&
-        Objects.equals(this.logServices, manager100Manager.logServices) &&
-        Objects.equals(this.managerType, manager100Manager.managerType) &&
-        Objects.equals(this.name, manager100Manager.name) &&
-        Objects.equals(this.networkProtocol, manager100Manager.networkProtocol) &&
-        Objects.equals(this.oem, manager100Manager.oem) &&
-        Objects.equals(this.redundancy, manager100Manager.redundancy) &&
-        Objects.equals(this.redundancyodataCount, manager100Manager.redundancyodataCount) &&
-        Objects.equals(this.redundancyodataNavigationLink, manager100Manager.redundancyodataNavigationLink) &&
-        Objects.equals(this.serialConsole, manager100Manager.serialConsole) &&
-        Objects.equals(this.serialInterfaces, manager100Manager.serialInterfaces) &&
-        Objects.equals(this.serviceEntryPointUUID, manager100Manager.serviceEntryPointUUID) &&
-        Objects.equals(this.status, manager100Manager.status) &&
-        Objects.equals(this.UUID, manager100Manager.UUID) &&
-        Objects.equals(this.virtualMedia, manager100Manager.virtualMedia);
+    return Objects.equals(odataContext, manager100Manager.odataContext) &&
+        Objects.equals(odataId, manager100Manager.odataId) &&
+        Objects.equals(odataType, manager100Manager.odataType) &&
+        Objects.equals(actions, manager100Manager.actions) &&
+        Objects.equals(commandShell, manager100Manager.commandShell) &&
+        Objects.equals(dateTime, manager100Manager.dateTime) &&
+        Objects.equals(dateTimeLocalOffset, manager100Manager.dateTimeLocalOffset) &&
+        Objects.equals(description, manager100Manager.description) &&
+        Objects.equals(ethernetInterfaces, manager100Manager.ethernetInterfaces) &&
+        Objects.equals(firmwareVersion, manager100Manager.firmwareVersion) &&
+        Objects.equals(graphicalConsole, manager100Manager.graphicalConsole) &&
+        Objects.equals(id, manager100Manager.id) &&
+        Objects.equals(links, manager100Manager.links) &&
+        Objects.equals(logServices, manager100Manager.logServices) &&
+        Objects.equals(managerType, manager100Manager.managerType) &&
+        Objects.equals(model, manager100Manager.model) &&
+        Objects.equals(name, manager100Manager.name) &&
+        Objects.equals(networkProtocol, manager100Manager.networkProtocol) &&
+        Objects.equals(oem, manager100Manager.oem) &&
+        Objects.equals(redundancy, manager100Manager.redundancy) &&
+        Objects.equals(redundancyodataCount, manager100Manager.redundancyodataCount) &&
+        Objects.equals(redundancyodataNavigationLink, manager100Manager.redundancyodataNavigationLink) &&
+        Objects.equals(serialConsole, manager100Manager.serialConsole) &&
+        Objects.equals(serialInterfaces, manager100Manager.serialInterfaces) &&
+        Objects.equals(serviceEntryPointUUID, manager100Manager.serviceEntryPointUUID) &&
+        Objects.equals(status, manager100Manager.status) &&
+        Objects.equals(UUID, manager100Manager.UUID) &&
+        Objects.equals(virtualMedia, manager100Manager.virtualMedia);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(odataContext, odataId, odataType, actions, commandShell, description, ethernetInterfaces, graphicalConsole, id, links, logServices, managerType, name, networkProtocol, oem, redundancy, redundancyodataCount, redundancyodataNavigationLink, serialConsole, serialInterfaces, serviceEntryPointUUID, status, UUID, virtualMedia);
+    return Objects.hash(odataContext, odataId, odataType, actions, commandShell, dateTime, dateTimeLocalOffset, description, ethernetInterfaces, firmwareVersion, graphicalConsole, id, links, logServices, managerType, model, name, networkProtocol, oem, redundancy, redundancyodataCount, redundancyodataNavigationLink, serialConsole, serialInterfaces, serviceEntryPointUUID, status, UUID, virtualMedia);
   }
 
   @Override
@@ -538,13 +523,17 @@ public class Manager100Manager   {
     sb.append("    odataType: ").append(toIndentedString(odataType)).append("\n");
     sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
     sb.append("    commandShell: ").append(toIndentedString(commandShell)).append("\n");
+    sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
+    sb.append("    dateTimeLocalOffset: ").append(toIndentedString(dateTimeLocalOffset)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    ethernetInterfaces: ").append(toIndentedString(ethernetInterfaces)).append("\n");
+    sb.append("    firmwareVersion: ").append(toIndentedString(firmwareVersion)).append("\n");
     sb.append("    graphicalConsole: ").append(toIndentedString(graphicalConsole)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    logServices: ").append(toIndentedString(logServices)).append("\n");
     sb.append("    managerType: ").append(toIndentedString(managerType)).append("\n");
+    sb.append("    model: ").append(toIndentedString(model)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    networkProtocol: ").append(toIndentedString(networkProtocol)).append("\n");
     sb.append("    oem: ").append(toIndentedString(oem)).append("\n");
@@ -565,7 +554,7 @@ public class Manager100Manager   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

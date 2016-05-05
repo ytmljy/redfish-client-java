@@ -2,18 +2,13 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Odata400Context;
-import io.swagger.client.model.Odata400Id;
-import io.swagger.client.model.Odata400Type;
-import io.swagger.client.model.ResourceDescription;
-import io.swagger.client.model.ResourceId;
-import io.swagger.client.model.ResourceName;
 import io.swagger.client.model.ResourceOem;
 import io.swagger.client.model.ResourceStatus;
 import io.swagger.client.model.TaskCollectionTaskCollection;
-import io.swagger.client.model.TaskService100OverWritePolicy;
+import java.util.Date;
 
 
 
@@ -22,69 +17,78 @@ import io.swagger.client.model.TaskService100OverWritePolicy;
  **/
 
 @ApiModel(description = "This is the schema definition for the Task Service.  It represents the properties for the service itself and has links to the actual list of tasks.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-03T14:43:19.261-05:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class TaskService100TaskService   {
   
-  private Odata400Context odataContext = null;
-  private Odata400Id odataId = null;
-  private Odata400Type odataType = null;
-  private TaskService100OverWritePolicy completedTaskOverWritePolicy = null;
-  private ResourceDescription description = null;
-  private ResourceId id = null;
+  private String odataContext = null;
+  private String odataId = null;
+  private String odataType = null;
+
+
+  public enum CompletedTaskOverWritePolicyEnum {
+    MANUAL("Manual"),
+    OLDEST("Oldest");
+
+    private String value;
+
+    CompletedTaskOverWritePolicyEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private CompletedTaskOverWritePolicyEnum completedTaskOverWritePolicy = null;
+  private Date dateTime = null;
+  private String description = null;
+  private String id = null;
   private Boolean lifeCycleEventOnTaskStateChange = null;
-  private ResourceName name = null;
+  private String name = null;
   private ResourceOem oem = null;
+  private Boolean serviceEnabled = null;
   private ResourceStatus status = null;
   private TaskCollectionTaskCollection tasks = null;
 
   
   /**
    **/
-  public TaskService100TaskService odataContext(Odata400Context odataContext) {
-    this.odataContext = odataContext;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.context")
-  public Odata400Context getOdataContext() {
+  public String getOdataContext() {
     return odataContext;
   }
-  public void setOdataContext(Odata400Context odataContext) {
+  public void setOdataContext(String odataContext) {
     this.odataContext = odataContext;
   }
 
   
   /**
    **/
-  public TaskService100TaskService odataId(Odata400Id odataId) {
-    this.odataId = odataId;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.id")
-  public Odata400Id getOdataId() {
+  public String getOdataId() {
     return odataId;
   }
-  public void setOdataId(Odata400Id odataId) {
+  public void setOdataId(String odataId) {
     this.odataId = odataId;
   }
 
   
   /**
    **/
-  public TaskService100TaskService odataType(Odata400Type odataType) {
-    this.odataType = odataType;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("@odata.type")
-  public Odata400Type getOdataType() {
+  public String getOdataType() {
     return odataType;
   }
-  public void setOdataType(Odata400Type odataType) {
+  public void setOdataType(String odataType) {
     this.odataType = odataType;
   }
 
@@ -92,75 +96,83 @@ public class TaskService100TaskService   {
   /**
    * Overwrite policy of completed tasks
    **/
-  public TaskService100TaskService completedTaskOverWritePolicy(TaskService100OverWritePolicy completedTaskOverWritePolicy) {
-    this.completedTaskOverWritePolicy = completedTaskOverWritePolicy;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "Overwrite policy of completed tasks")
+  @ApiModelProperty(value = "Overwrite policy of completed tasks")
   @JsonProperty("CompletedTaskOverWritePolicy")
-  public TaskService100OverWritePolicy getCompletedTaskOverWritePolicy() {
+  public CompletedTaskOverWritePolicyEnum getCompletedTaskOverWritePolicy() {
     return completedTaskOverWritePolicy;
   }
-  public void setCompletedTaskOverWritePolicy(TaskService100OverWritePolicy completedTaskOverWritePolicy) {
+  public void setCompletedTaskOverWritePolicy(CompletedTaskOverWritePolicyEnum completedTaskOverWritePolicy) {
     this.completedTaskOverWritePolicy = completedTaskOverWritePolicy;
   }
 
   
   /**
+   * The current DateTime (with offset) setting that the task service is using.
    **/
-  public TaskService100TaskService description(ResourceDescription description) {
-    this.description = description;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The current DateTime (with offset) setting that the task service is using.")
+  @JsonProperty("DateTime")
+  public Date getDateTime() {
+    return dateTime;
+  }
+  public void setDateTime(Date dateTime) {
+    this.dateTime = dateTime;
+  }
+
+  
+  /**
+   * Provides a description of this resource and is used for commonality  in the schema definitions.
+   **/
+  
+  @ApiModelProperty(value = "Provides a description of this resource and is used for commonality  in the schema definitions.")
   @JsonProperty("Description")
-  public ResourceDescription getDescription() {
+  public String getDescription() {
     return description;
   }
-  public void setDescription(ResourceDescription description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
   
   /**
+   * Uniquely identifies the resource within the collection of like resources.
    **/
-  public TaskService100TaskService id(ResourceId id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "Uniquely identifies the resource within the collection of like resources.")
   @JsonProperty("Id")
-  public ResourceId getId() {
+  public String getId() {
     return id;
   }
-  public void setId(ResourceId id) {
+  public void setId(String id) {
     this.id = id;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Send an Event upon Task State Change.")
+  /**
+   * Send an Event upon Task State Change.
+   **/
+  
+  @ApiModelProperty(value = "Send an Event upon Task State Change.")
   @JsonProperty("LifeCycleEventOnTaskStateChange")
   public Boolean getLifeCycleEventOnTaskStateChange() {
     return lifeCycleEventOnTaskStateChange;
   }
+  public void setLifeCycleEventOnTaskStateChange(Boolean lifeCycleEventOnTaskStateChange) {
+    this.lifeCycleEventOnTaskStateChange = lifeCycleEventOnTaskStateChange;
+  }
 
   
   /**
+   * The name of the resource or array element.
    **/
-  public TaskService100TaskService name(ResourceName name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "The name of the resource or array element.")
   @JsonProperty("Name")
-  public ResourceName getName() {
+  public String getName() {
     return name;
   }
-  public void setName(ResourceName name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -168,12 +180,8 @@ public class TaskService100TaskService   {
   /**
    * This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.
    **/
-  public TaskService100TaskService oem(ResourceOem oem) {
-    this.oem = oem;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
+  @ApiModelProperty(value = "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.")
   @JsonProperty("Oem")
   public ResourceOem getOem() {
     return oem;
@@ -184,13 +192,23 @@ public class TaskService100TaskService   {
 
   
   /**
+   * This indicates whether this service is enabled.
    **/
-  public TaskService100TaskService status(ResourceStatus status) {
-    this.status = status;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "This indicates whether this service is enabled.")
+  @JsonProperty("ServiceEnabled")
+  public Boolean getServiceEnabled() {
+    return serviceEnabled;
+  }
+  public void setServiceEnabled(Boolean serviceEnabled) {
+    this.serviceEnabled = serviceEnabled;
+  }
+
+  
+  /**
+   **/
+  
+  @ApiModelProperty(value = "")
   @JsonProperty("Status")
   public ResourceStatus getStatus() {
     return status;
@@ -203,12 +221,8 @@ public class TaskService100TaskService   {
   /**
    * References to the Tasks collection.
    **/
-  public TaskService100TaskService tasks(TaskCollectionTaskCollection tasks) {
-    this.tasks = tasks;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "References to the Tasks collection.")
+  @ApiModelProperty(value = "References to the Tasks collection.")
   @JsonProperty("Tasks")
   public TaskCollectionTaskCollection getTasks() {
     return tasks;
@@ -220,7 +234,7 @@ public class TaskService100TaskService   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -228,22 +242,24 @@ public class TaskService100TaskService   {
       return false;
     }
     TaskService100TaskService taskService100TaskService = (TaskService100TaskService) o;
-    return Objects.equals(this.odataContext, taskService100TaskService.odataContext) &&
-        Objects.equals(this.odataId, taskService100TaskService.odataId) &&
-        Objects.equals(this.odataType, taskService100TaskService.odataType) &&
-        Objects.equals(this.completedTaskOverWritePolicy, taskService100TaskService.completedTaskOverWritePolicy) &&
-        Objects.equals(this.description, taskService100TaskService.description) &&
-        Objects.equals(this.id, taskService100TaskService.id) &&
-        Objects.equals(this.lifeCycleEventOnTaskStateChange, taskService100TaskService.lifeCycleEventOnTaskStateChange) &&
-        Objects.equals(this.name, taskService100TaskService.name) &&
-        Objects.equals(this.oem, taskService100TaskService.oem) &&
-        Objects.equals(this.status, taskService100TaskService.status) &&
-        Objects.equals(this.tasks, taskService100TaskService.tasks);
+    return Objects.equals(odataContext, taskService100TaskService.odataContext) &&
+        Objects.equals(odataId, taskService100TaskService.odataId) &&
+        Objects.equals(odataType, taskService100TaskService.odataType) &&
+        Objects.equals(completedTaskOverWritePolicy, taskService100TaskService.completedTaskOverWritePolicy) &&
+        Objects.equals(dateTime, taskService100TaskService.dateTime) &&
+        Objects.equals(description, taskService100TaskService.description) &&
+        Objects.equals(id, taskService100TaskService.id) &&
+        Objects.equals(lifeCycleEventOnTaskStateChange, taskService100TaskService.lifeCycleEventOnTaskStateChange) &&
+        Objects.equals(name, taskService100TaskService.name) &&
+        Objects.equals(oem, taskService100TaskService.oem) &&
+        Objects.equals(serviceEnabled, taskService100TaskService.serviceEnabled) &&
+        Objects.equals(status, taskService100TaskService.status) &&
+        Objects.equals(tasks, taskService100TaskService.tasks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(odataContext, odataId, odataType, completedTaskOverWritePolicy, description, id, lifeCycleEventOnTaskStateChange, name, oem, status, tasks);
+    return Objects.hash(odataContext, odataId, odataType, completedTaskOverWritePolicy, dateTime, description, id, lifeCycleEventOnTaskStateChange, name, oem, serviceEnabled, status, tasks);
   }
 
   @Override
@@ -255,11 +271,13 @@ public class TaskService100TaskService   {
     sb.append("    odataId: ").append(toIndentedString(odataId)).append("\n");
     sb.append("    odataType: ").append(toIndentedString(odataType)).append("\n");
     sb.append("    completedTaskOverWritePolicy: ").append(toIndentedString(completedTaskOverWritePolicy)).append("\n");
+    sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    lifeCycleEventOnTaskStateChange: ").append(toIndentedString(lifeCycleEventOnTaskStateChange)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    oem: ").append(toIndentedString(oem)).append("\n");
+    sb.append("    serviceEnabled: ").append(toIndentedString(serviceEnabled)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
     sb.append("}");
@@ -270,7 +288,7 @@ public class TaskService100TaskService   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
