@@ -29,10 +29,10 @@ public class Processor100Processor   {
 
   public enum InstructionSetEnum {
     X86("x86"),
-    X86_64("x86-64"),
-    IA_64("IA-64"),
-    ARM_A32("ARM-A32"),
-    ARM_A64("ARM-A64"),
+    X86_64("x86_64"),
+    IA_64("IA_64"),
+    ARM_A32("ARM_A32"),
+    ARM_A64("ARM_A64"),
     MIPS32("MIPS32"),
     MIPS64("MIPS64"),
     OEM("OEM");

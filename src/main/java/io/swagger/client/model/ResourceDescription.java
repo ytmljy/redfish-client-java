@@ -1,5 +1,7 @@
 package io.swagger.client.model;
 
+import io.swagger.annotations.ApiModel;
+
 import java.util.Objects;
 
 
