@@ -18,6 +18,7 @@ import com.sun.jersey.multipart.file.FileDataBodyPart;
 import javax.ws.rs.core.Response.Status.Family;
 import javax.ws.rs.core.MediaType;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
@@ -40,6 +41,8 @@ import io.swagger.client.auth.Authentication;
 import io.swagger.client.auth.HttpBasicAuth;
 import io.swagger.client.auth.ApiKeyAuth;
 import io.swagger.client.auth.OAuth;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:18:34.727-04:00")
 public class ApiClient {
@@ -502,6 +505,19 @@ public class ApiClient {
     statusCode = response.getStatusInfo().getStatusCode();
     responseHeaders = response.getHeaders();
 
+    System.out.println(response);
+/*
+    if( response.getEntityInputStream() != null ) {
+      try {
+        byte[] responseData = IOUtils.readFully(response.getEntityInputStream(), response.getLength());
+        System.out.println("======================================================================================");
+        System.out.println(new String(responseData));
+        System.out.println("======================================================================================");
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
+*/
     if(response.getStatusInfo() == ClientResponse.Status.NO_CONTENT) {
       return null;
     } else if (response.getStatusInfo().getFamily() == Family.SUCCESSFUL) {
