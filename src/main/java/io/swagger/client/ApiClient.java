@@ -505,7 +505,7 @@ public class ApiClient {
     statusCode = response.getStatusInfo().getStatusCode();
     responseHeaders = response.getHeaders();
 
-    System.out.println(response);
+//    System.out.println(response);
 /*
     if( response.getEntityInputStream() != null ) {
       try {

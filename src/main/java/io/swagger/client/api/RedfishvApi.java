@@ -7,50 +7,7 @@ import io.swagger.client.ApiClient;
 import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 
-import io.swagger.client.model.ServiceRoot100ServiceRoot;
-import io.swagger.client.model.ErrorResponse;
-import io.swagger.client.model.AccountService100AccountService;
-import io.swagger.client.model.ManagerAccountCollectionManagerAccountCollection;
-import io.swagger.client.model.ManagerAccount100ManagerAccount;
-import io.swagger.client.model.RoleCollectionRoleCollection;
-import io.swagger.client.model.Role100Role;
-import io.swagger.client.model.ChassisCollectionChassisCollection;
-import io.swagger.client.model.Chassis100Chassis;
-import io.swagger.client.model.Power100Power;
-import io.swagger.client.model.Thermal100Thermal;
-import io.swagger.client.model.EventService100EventService;
-import io.swagger.client.model.Body;
-import io.swagger.client.model.EventDestinationCollectionEventDestinationCollection;
-import io.swagger.client.model.EventDestination100EventDestination;
-import io.swagger.client.model.ManagerCollectionManagerCollection;
-import io.swagger.client.model.Manager100Manager;
-import io.swagger.client.model.EthernetInterfaceCollectionEthernetInterfaceCollection;
-import io.swagger.client.model.EthernetInterface100EthernetInterface;
-import io.swagger.client.model.SerialInterface100SerialInterface;
-import io.swagger.client.model.VirtualMedia100VirtualMedia;
-import io.swagger.client.model.MessageRegistryFileCollectionMessageRegistryFileCollection;
-import io.swagger.client.model.MessageRegistryFile100MessageRegistryFile;
-import io.swagger.client.model.JsonSchemaFile100JsonSchemaFile;
-import io.swagger.client.model.JsonSchemaFileCollectionJsonSchemaFileCollection;
-import io.swagger.client.model.SessionService100SessionService;
-import io.swagger.client.model.SessionCollectionSessionCollection;
-import io.swagger.client.model.Session100Session;
-import io.swagger.client.model.ComputerSystemCollectionComputerSystemCollection;
-import io.swagger.client.model.ComputerSystem100ComputerSystem;
-import io.swagger.client.model.RackHDResetActionResetAction;
-import io.swagger.client.model.RackHDBootImageBootImageList;
-import io.swagger.client.model.RackHDBootImageBootImage;
-import io.swagger.client.model.LogServiceCollectionLogServiceCollection;
-import io.swagger.client.model.LogService100LogService;
-import io.swagger.client.model.LogEntryCollectionLogEntryCollection;
-import io.swagger.client.model.LogEntry100LogEntry;
-import io.swagger.client.model.ProcessorCollectionProcessorCollection;
-import io.swagger.client.model.Processor100Processor;
-import io.swagger.client.model.SimpleStorageCollectionSimpleStorageCollection;
-import io.swagger.client.model.SimpleStorage100SimpleStorage;
-import io.swagger.client.model.TaskService100TaskService;
-import io.swagger.client.model.TaskCollectionTaskCollection;
-import io.swagger.client.model.Task100Task;
+import io.swagger.client.model.*;
 
 import java.util.*;
 
@@ -2354,12 +2311,6 @@ public class RedfishvApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, Object> formParams = new HashMap<String, Object>();
 
-    
-
-    
-
-    
-
     final String[] accepts = {
       "application/json"
     };
@@ -2376,6 +2327,54 @@ public class RedfishvApi {
     GenericType<Processor100Processor> returnType = new GenericType<Processor100Processor>() {};
     return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
+  }
+
+  /**
+   * retrieve a specified processor metrics for the specified system identifier
+   * This represents the properties of a processor attached to a System.
+   * @param identifier
+   * @param socket
+   * @return Processor100Processor
+   */
+  public Processor100ProcessorMetrics getSystemProcessorMetrics(String identifier, String socket) throws ApiException {
+    Object postBody = null;
+
+    // verify the required parameter 'identifier' is set
+    if (identifier == null) {
+      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSystemProcessor");
+    }
+
+    // verify the required parameter 'socket' is set
+    if (socket == null) {
+      throw new ApiException(400, "Missing the required parameter 'socket' when calling getSystemProcessor");
+    }
+
+    // create path and map variables
+    String path = "/Systems/{identifier}/Processors/{socket}/ProcessorMetrics".replaceAll("\\{format\\}","json")
+            .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()))
+            .replaceAll("\\{" + "socket" + "\\}", apiClient.escapeString(socket.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    final String[] accepts = {
+            "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+            "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+
+    GenericType<Processor100ProcessorMetrics> returnType = new GenericType<Processor100ProcessorMetrics>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+
   }
   
   /**

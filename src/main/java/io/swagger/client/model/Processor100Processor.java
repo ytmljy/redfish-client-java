@@ -29,10 +29,10 @@ public class Processor100Processor   {
 
   public enum InstructionSetEnum {
     X86("x86"),
-    X86_64("x86_64"),
-    IA_64("IA_64"),
-    ARM_A32("ARM_A32"),
-    ARM_A64("ARM_A64"),
+    X86_64("x86-64"),
+    IA_64("IA-64"),
+    ARM_A32("ARM-A32"),
+    ARM_A64("ARM-A64"),
     MIPS32("MIPS32"),
     MIPS64("MIPS64"),
     OEM("OEM");
@@ -108,6 +108,7 @@ public class Processor100Processor   {
   private ResourceStatus status = null;
   private BigDecimal totalCores = null;
   private BigDecimal totalThreads = null;
+  private Odata400IdRef metrics = null;
 
   
   /**
@@ -357,6 +358,14 @@ public class Processor100Processor   {
     this.totalThreads = totalThreads;
   }
 
+  @ApiModelProperty(value = "The metrics of processor")
+  @JsonProperty("Metrics")
+  public Odata400IdRef getMetrics() {
+    return metrics;
+  }
+  public void setMetrics(Odata400IdRef metrics) {
+    this.metrics = metrics;
+  }
   
 
   @Override
@@ -385,7 +394,10 @@ public class Processor100Processor   {
         Objects.equals(socket, processor100Processor.socket) &&
         Objects.equals(status, processor100Processor.status) &&
         Objects.equals(totalCores, processor100Processor.totalCores) &&
-        Objects.equals(totalThreads, processor100Processor.totalThreads);
+        Objects.equals(totalThreads, processor100Processor.totalThreads) &&
+            Objects.equals(metrics, processor100Processor.metrics)
+            ;
+
   }
 
   @Override
@@ -416,6 +428,7 @@ public class Processor100Processor   {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    totalCores: ").append(toIndentedString(totalCores)).append("\n");
     sb.append("    totalThreads: ").append(toIndentedString(totalThreads)).append("\n");
+    sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
     sb.append("}");
     return sb.toString();
   }
