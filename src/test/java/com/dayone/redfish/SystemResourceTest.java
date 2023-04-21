@@ -14,11 +14,11 @@ import java.util.Map;
 public class SystemResourceTest {
 
     /*
-        Description : cpu, memory, disk ino
+        Description : cpu, memory, disk info
         URL         : /redfish/v1/System/{SystemId}
         데이터       : 응답 데이터 중 ProcessorSummary 참조
      */
-    @Test
+//    @Test
     public void testGetSystemnfo() throws Exception {
         ApiClient apiClient = new ApiClient();
 
@@ -63,8 +63,6 @@ public class SystemResourceTest {
                 log.info("simpleStorageList({}) : ({})", j, simpleStorage100SimpleStorage);
             }
         }
-
-
     }
 
     /*
@@ -72,7 +70,7 @@ public class SystemResourceTest {
         URL         : /redfish/v1/System/{SystemId}/Processor/{ProcessorID}/ProcessorMetrics
         데이터       : 응답 데이터 중 KernelPercent, UserPercent 참조
      */
-//    @Test
+    @Test
     public void testGetCPUMetric() throws Exception {
         ApiClient apiClient = new ApiClient();
 
@@ -110,8 +108,19 @@ public class SystemResourceTest {
                     log.info("processor100ProcessorMetrics ID[{}]:{}", j, processor100ProcessorMetrics);
                 }
             }
+
+            MemoryCollectionMemoryCollection memoryCollection = redfishvApi.listSystemMemorys(systemId);
+            List<Odata400IdRef> memoryMembers = memoryCollection.getMembers();
+            for( int j=0; j<memoryMembers.size(); j++ ) {
+                String memoryOId = memoryMembers.get(j).getOdataId();
+                String memoryId = memoryOId.substring(memoryOId.lastIndexOf("/")+1);
+                Memory100Memory memory100Memory = redfishvApi.getSystemMemory(systemId, memoryId);
+                log.info("Memory100Memory ID[{}]:{}", j, memory100Memory.getMetrics());
+                if( memory100Memory.getMetrics() != null ) {
+                    Memory100MemoryMetrics memory100MemoryMetrics = redfishvApi.getSystemMemoryMetrics(systemId, memoryId);
+                    log.info("memory100MemoryMetrics ID[{}]:{}", j, memory100MemoryMetrics);
+                }
+            }
         }
     }
-
-
 }

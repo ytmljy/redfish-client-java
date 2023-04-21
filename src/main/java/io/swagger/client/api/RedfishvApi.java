@@ -2280,6 +2280,45 @@ public class RedfishvApi {
     return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
+
+  /**
+   * retrieve the memory collection for the specified system identifier
+   * defines a collection of processors contained within a resource.
+   * @param identifier
+   * @return ProcessorCollectionProcessorCollection
+   */
+  public MemoryCollectionMemoryCollection listSystemMemorys(String identifier) throws ApiException {
+    Object postBody = null;
+
+    // verify the required parameter 'identifier' is set
+    if (identifier == null) {
+      throw new ApiException(400, "Missing the required parameter 'identifier' when calling listSystemProcessors");
+    }
+
+    // create path and map variables
+    String path = "/Systems/{identifier}/Memory".replaceAll("\\{format\\}","json")
+            .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    final String[] accepts = {
+            "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+            "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+    GenericType<MemoryCollectionMemoryCollection> returnType = new GenericType<MemoryCollectionMemoryCollection>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+
+  }
   
   /**
    * retrieve a specified processor for the specified system identifier
@@ -2330,6 +2369,53 @@ public class RedfishvApi {
   }
 
   /**
+   * retrieve a specified memory for the specified system identifier
+   * This represents the properties of a memory attached to a System.
+   * @param identifier
+   * @param socket
+   * @return Processor100Processor
+   */
+  public Memory100Memory getSystemMemory(String identifier, String id) throws ApiException {
+    Object postBody = null;
+
+    // verify the required parameter 'identifier' is set
+    if (identifier == null) {
+      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSystemProcessor");
+    }
+
+    // verify the required parameter 'socket' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'socket' when calling getSystemProcessor");
+    }
+
+    // create path and map variables
+    String path = "/Systems/{identifier}/Memory/{id}".replaceAll("\\{format\\}","json")
+            .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()))
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    final String[] accepts = {
+            "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+            "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    GenericType<Memory100Memory> returnType = new GenericType<Memory100Memory>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+
+  }
+
+  /**
    * retrieve a specified processor metrics for the specified system identifier
    * This represents the properties of a processor attached to a System.
    * @param identifier
@@ -2373,6 +2459,54 @@ public class RedfishvApi {
 
 
     GenericType<Processor100ProcessorMetrics> returnType = new GenericType<Processor100ProcessorMetrics>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+
+  }
+
+  /**
+   * retrieve a specified memory metrics for the specified system identifier
+   * This represents the properties of a processor attached to a System.
+   * @param identifier
+   * @param socket
+   * @return Memory100Memory
+   */
+  public Memory100MemoryMetrics getSystemMemoryMetrics(String identifier, String id) throws ApiException {
+    Object postBody = null;
+
+    // verify the required parameter 'identifier' is set
+    if (identifier == null) {
+      throw new ApiException(400, "Missing the required parameter 'identifier' when calling getSystemMemory");
+    }
+
+    // verify the required parameter 'socket' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'socket' when calling getSystemMemory");
+    }
+
+    // create path and map variables
+    String path = "/Systems/{identifier}/Memory/{id}/MemoryMetrics".replaceAll("\\{format\\}","json")
+            .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()))
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    final String[] accepts = {
+            "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+            "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+
+    GenericType<Memory100MemoryMetrics> returnType = new GenericType<Memory100MemoryMetrics>() {};
     return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
 
   }
